@@ -116,18 +116,20 @@
         background: var(--primary-color);
       }
 
-      /* Programs Carousel */
-      .programs-carousel .carousel-item {
-        padding: 2rem;
+       /* Programs Carousel */
+      .programs-carousel {
+        padding: 0 40px;
+        position: relative;
       }
 
-      .program-card {
+       .program-card {
         border: none;
         border-radius: 10px;
         overflow: hidden;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         transition: all 0.3s ease;
         height: 100%;
+        margin-bottom: 20px;
       }
 
       .program-card:hover {
@@ -138,16 +140,88 @@
       .program-card .card-img-top {
         height: 200px;
         object-fit: cover;
+        width: 100%;
       }
 
       .program-card .card-body {
         padding: 1.5rem;
       }
+      .program-card .card-title {
+        color:var(--text-dark);
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .program-card .card-text {
+        color: #7f8c8d;
+        margin-bottom: 20px;
+      }
+
+      .program-card .card-footer {
+        padding: 0 1.5rem 1.5rem;
+        background: transparent;
+        border: none;
+      }
+
+      .btn-outline-primary {
+        border: 2px solid #4caf50;
+        color: #4caf50;
+        font-weight: 500;
+        border-radius: 30px;
+        padding: 8px 20px;
+        transition: all 0.3s;
+      }
+
+      .btn-outline-primary:hover {
+        background: #4caf50;
+        color: white;
+        transform: translateY(-2px);
+      }
 
       .carousel-control-prev,
       .carousel-control-next {
-        width: 5%;
+        width: 50px;
+        height: 50px;
+        background: rgba(76, 175, 80, 0.8);
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0.8;
+        transition: opacity 0.3s;
       }
+
+       .carousel-control-prev {
+        left: -25px;
+      }
+
+      .carousel-control-next {
+        right: -25px;
+      }
+
+      .carousel-control-prev:hover,
+      .carousel-control-next:hover {
+        opacity: 1;
+      }
+
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        width: 20px;
+        height: 20px;
+      }
+       .btn-primary {
+        background: #4caf50;
+        border: none;
+        padding: 12px 30px;
+        font-weight: 500;
+        border-radius: 30px;
+        transition: all 0.3s;
+      }
+
+      .btn-primary:hover {
+        background: #388e3c;
+        transform: translateY(-2px);
+      }
+      
 
       /* Impact Stats */
       .impact-section {
@@ -214,8 +288,28 @@
           font-size: 1.2rem;
         }
 
-        .programs-carousel .carousel-item {
-          padding: 1rem;
+        .programs-carousel {
+          padding: 0 20px;
+        }
+        
+        .carousel-control-prev,
+        .carousel-control-next {
+          width: 40px;
+          height: 40px;
+        }
+        
+        .carousel-control-prev-icon, 
+        .carousel-control-next-icon {
+          width: 18px;
+          height: 18px;
+        }
+        
+        .carousel-control-prev {
+          left: -10px;
+        }
+        
+        .carousel-control-next {
+          right: -10px;
         }
       }
 
@@ -230,6 +324,32 @@
 
         .stat-number {
           font-size: 2.5rem;
+        }
+        .content-section {
+          padding: 3rem 0;
+        }
+        
+        .section-title {
+          font-size: 1.75rem;
+          margin-bottom: 30px;
+        }
+        
+        .programs-carousel {
+          padding: 0 10px;
+        }
+        
+        .carousel-control-prev {
+          left: -5px;
+        }
+        
+        .carousel-control-next {
+          right: -5px;
+        }
+        
+        .carousel-control-prev,
+        .carousel-control-next {
+          width: 35px;
+          height: 35px;
         }
       }
     </style>
@@ -384,8 +504,7 @@
                 <span class="title-underline"></span>
               </h2>
               <p class="lead mb-4 fs-4">
-                To identify, nurture, and develop talents among students at
-                Kisii National Polytechnic, creating future stars and innovators
+                To identify, nurture, and develop talents among students,youths  creating future stars and innovators
                 who will transform society.
               </p>
               <div class="d-flex flex-wrap gap-3">
@@ -511,7 +630,7 @@
     </style>
 
     <!-- Programs Highlights -->
-    <section class="content-section bg-light">
+     <section class="content-section bg-light">
       <div class="container">
         <h2 class="section-title">Our Key Programs</h2>
 
@@ -523,10 +642,10 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <div class="row g-4">
-                <div class="col-md-4">
-                  <div class="program-card card h-100" data-aos="slide-right">
+                <div class="col-lg-4 col-md-6">
+                  <div class="program-card card h-100">
                     <img
-                      src="images/IMG-20250407-WA0424.jpg"
+                      src="images/IMG-20250901-WA0051.jpg"
                       class="card-img-top"
                       alt="Talent Day"
                     />
@@ -547,10 +666,10 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4">
-                  <div class="program-card card h-100" data-aos="slide-up">
+                <div class="col-lg-4 col-md-6">
+                  <div class="program-card card h-100">
                     <img
-                      src="images/IMG-20250407-WA0425.jpg"
+                      src="images/IMG-20250901-WA0052.jpg"
                       class="card-img-top"
                       alt="Workshop"
                     />
@@ -571,10 +690,10 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4">
-                  <div class="program-card card h-100" data-aos="slide-left">
+                <div class="col-lg-4 col-md-6">
+                  <div class="program-card card h-100">
                     <img
-                      src="images/IMG-20250407-WA0429.jpg"
+                      src="images/IMG-20250901-WA0053.jpg" 
                       class="card-img-top"
                       alt="Exchange Program"
                     />
@@ -599,10 +718,10 @@
             </div>
             <div class="carousel-item">
               <div class="row g-4">
-                <div class="col-md-4">
+                <div class="col-lg-4 col-md-6">
                   <div class="program-card card h-100">
                     <img
-                      src="images/IMG-20250407-WA0424.jpg"
+                      src="images/IMG-20250901-WA0054.jpg"
                       class="card-img-top"
                       alt="Mentorship Program"
                     />
@@ -623,10 +742,10 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-lg-4 col-md-6">
                   <div class="program-card card h-100">
                     <img
-                      src="images/IMG-20250407-WA0436.jpg"
+                      src="images/IMG-20250901-WA0055.jpg"
                       class="card-img-top"
                       alt="Showcase"
                     />
@@ -647,10 +766,10 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-lg-4 col-md-6">
                   <div class="program-card card h-100">
                     <img
-                      src="images/IMG-20250407-WA0429.jpg"
+                      src="https://placehold.co/600x400/4caf50/ffffff?text=Community"
                       class="card-img-top"
                       alt="Community Service"
                     />
@@ -680,10 +799,7 @@
             data-bs-target="#programsCarousel"
             data-bs-slide="prev"
           >
-            <span
-              class="carousel-control-prev-icon bg-primary rounded-circle p-3"
-              aria-hidden="true"
-            ></span>
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
           <button
@@ -692,10 +808,7 @@
             data-bs-target="#programsCarousel"
             data-bs-slide="next"
           >
-            <span
-              class="carousel-control-next-icon bg-primary rounded-circle p-3"
-              aria-hidden="true"
-            ></span>
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
         </div>
@@ -841,8 +954,7 @@
           <div class="col-lg-4 mb-4 mb-lg-0">
             <h3 class="h4 mb-3">IGAT Club</h3>
             <p>
-              Identifying and nurturing talents among students at Kisii National
-              Polytechnic since 2018.
+              Identifying and nurturing talents among students, youths creating future stars.
             </p>
             <div class="social-icons mt-4">
               <a href="#" class="text-white me-3"
@@ -879,11 +991,10 @@
             <h3 class="h4 mb-3">Contact Info</h3>
             <ul class="list-unstyled">
               <li class="mb-2">
-                <i class="fas fa-map-marker-alt me-2"></i> Kisii National
-                Polytechnic
+                <i class="fas fa-map-marker-alt me-2"></i> I got a talent club
               </li>
               <li class="mb-2">
-                <i class="fas fa-phone me-2"></i> 0722 995 763
+                <i class="fas fa-phone me-2"></i> 0722 995 763/ 0729 669 820/ 0725 597 121
               </li>
               <li class="mb-2">
                 <i class="fas fa-envelope me-2"></i> bosiboriperis@gmail.com
