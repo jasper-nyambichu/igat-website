@@ -106,6 +106,9 @@
       .content-section {
         padding: var(--section-padding);
       }
+      .bg-light {
+            background-color: #f8f9fa !important;
+        }
 
       .section-title {
         position: relative;
@@ -294,7 +297,7 @@
       <div class="container">
         <div class="row mb-5">
           <div class="col-12 text-center">
-            <h2 class="fw-bold text-primary">Success Stories</h2>
+            <h2 class="fw-bold text-primary section-title">Success Stories</h2>
             <p class="lead">How IGAT Club has transformed students' lives</p>
           </div>
         </div>
@@ -371,6 +374,61 @@
         </div>
       </div>
     </section>
+     <!-- Story Modals -->
+    <div class="modal fade" id="storyModal1" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">From Campus to National Stage</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <img
+              src="images/images (1).jpg"
+              class="img-fluid mb-3"
+              alt="Success Story"
+            />
+            <p>
+              Sarah had always loved singing but never considered it more than a
+              hobby until she participated in KNP Talent Day 2020. Her
+              performance caught the attention of the judges, including a
+              visiting music producer.
+            </p>
+            <p>
+              "IGAT Club gave me the platform I needed to showcase my talent.
+              The workshops helped me improve my vocal techniques and stage
+              presence," Sarah recalls.
+            </p>
+            <p>
+              After winning the campus competition, Sarah was encouraged to
+              audition for Kenya's Got Talent, where she made it to the finals.
+              This exposure led to a recording contract with a local label.
+              Today, Sarah has released two singles and performs regularly at
+              events across the country.
+            </p>
+            <p>
+              "I'm studying business, but thanks to IGAT, I now have a parallel
+              career in music. They showed me that my talent had real value,"
+              she says.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
    
 
@@ -659,61 +717,7 @@
       </div>
     </footer>
 
-    <!-- Story Modals -->
-    <div class="modal fade" id="storyModal1" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">From Campus to National Stage</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <img
-              src="images/images (1).jpg"
-              class="img-fluid mb-3"
-              alt="Success Story"
-            />
-            <p>
-              Sarah had always loved singing but never considered it more than a
-              hobby until she participated in KNP Talent Day 2020. Her
-              performance caught the attention of the judges, including a
-              visiting music producer.
-            </p>
-            <p>
-              "IGAT Club gave me the platform I needed to showcase my talent.
-              The workshops helped me improve my vocal techniques and stage
-              presence," Sarah recalls.
-            </p>
-            <p>
-              After winning the campus competition, Sarah was encouraged to
-              audition for Kenya's Got Talent, where she made it to the finals.
-              This exposure led to a recording contract with a local label.
-              Today, Sarah has released two singles and performs regularly at
-              events across the country.
-            </p>
-            <p>
-              "I'm studying business, but thanks to IGAT, I now have a parallel
-              career in music. They showed me that my talent had real value,"
-              she says.
-            </p>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-primary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+   
 
     <div class="modal fade" id="storyModal2" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog modal-lg">
@@ -824,6 +828,7 @@
     </div>
 
     <!-- Bootstrap JS -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- Custom JS -->
