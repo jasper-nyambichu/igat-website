@@ -23,7 +23,7 @@
       rel="stylesheet"
     />
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/style.css"/>
     <style>
       :root {
         /* Primary Colors */
@@ -141,6 +141,36 @@
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
       }
 
+      /* Buttons  */
+
+      .btn-outline-primary {
+        border: 2px solid #4caf50;
+        color: #4caf50;
+        font-weight: 500;
+        border-radius: 30px;
+        padding: 8px 20px;
+        transition: all 0.3s;
+      }
+
+      .btn-outline-primary:hover {
+        background: #4caf50;
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      .btn-primary {
+        background: #4caf50;
+        border: none;
+        padding: 12px 30px;
+        font-weight: 500;
+        border-radius: 30px;
+        transition: all 0.3s;
+      }
+
+      .btn-primary:hover {
+        background: #388e3c;
+        transform: translateY(-2px);
+      }
       /* Responsive Adjustments */
       @media (max-width: 992px) {
         :root {
@@ -499,52 +529,61 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-4">
+  <footer class="bg-dark text-white py-5">
       <div class="container">
         <div class="row">
-          <div class="col-md-4">
-            <h5>About IGAT Club</h5>
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <h3 class="h4 mb-3">IGAT Club</h3>
             <p>
-              Identifying and nurturing talents among students at Kisii National
-              Polytechnic since 2018.
+              Identifying and nurturing talents among students, youths creating future stars.
             </p>
-            <div class="social-icons">
-              <a href="#" class="text-white me-2"
+            <div class="social-icons mt-4">
+              <a href="#" class="text-white me-3"
                 ><i class="fab fa-facebook-f"></i
               ></a>
-              <a href="#" class="text-white me-2"
+              <a href="#" class="text-white me-3"
                 ><i class="fab fa-twitter"></i
               ></a>
-              <a href="#" class="text-white me-2"
+              <a href="#" class="text-white me-3"
                 ><i class="fab fa-instagram"></i
               ></a>
               <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
             </div>
           </div>
-          <div class="col-md-2">
-            <h5>Quick Links</h5>
+          <div class="col-lg-2 mb-4 mb-lg-0">
+            <h3 class="h4 mb-3">Quick Links</h3>
             <ul class="list-unstyled">
-              <li><a href="index.html" class="text-white">Home</a></li>
-              <li><a href="about.html" class="text-white">About</a></li>
-              <li><a href="programs.html" class="text-white">Programs</a></li>
-              <li><a href="news.html" class="text-white">News</a></li>
+              <li class="mb-2">
+                <a href="index.html" class="text-white">Home</a>
+              </li>
+              <li class="mb-2">
+                <a href="about.html" class="text-white">About</a>
+              </li>
+              <li class="mb-2">
+                <a href="programs.html" class="text-white">Programs</a>
+              </li>
+              <li class="mb-2">
+                <a href="news.html" class="text-white">News</a>
+              </li>
+              <li><a href="contact.html" class="text-white">Contact</a></li>
             </ul>
           </div>
-          <div class="col-md-3">
-            <h5>Contact Info</h5>
+          <div class="col-lg-3 mb-4 mb-lg-0">
+            <h3 class="h4 mb-3">Contact Info</h3>
             <ul class="list-unstyled">
-              <li>
-                <i class="fas fa-map-marker-alt me-2"></i> Kisii National
-                Polytechnic
+              <li class="mb-2">
+                <i class="fas fa-map-marker-alt me-2"></i> I got a talent club
               </li>
-              <li><i class="fas fa-phone me-2"></i> 0722 995 763</li>
-              <li>
+              <li class="mb-2">
+                <i class="fas fa-phone me-2"></i> 0722 995 763/ 0729 669 820/ 0725 597 121
+              </li>
+              <li class="mb-2">
                 <i class="fas fa-envelope me-2"></i> bosiboriperis@gmail.com
               </li>
             </ul>
           </div>
-          <div class="col-md-3">
-            <h5>Newsletter</h5>
+          <div class="col-lg-3">
+            <h3 class="h4 mb-3">Newsletter</h3>
             <p>Subscribe to our newsletter for updates</p>
             <form class="mb-3">
               <div class="input-group">
@@ -558,14 +597,18 @@
             </form>
           </div>
         </div>
-        <hr class="my-4" />
+        <hr class="my-4 bg-light" />
         <div class="row">
-          <div class="col-md-6">
-            <p class="mb-0">&copy; 2023 IGAT Club. All rights reserved.</p>
+          <div class="col-md-6 text-center text-md-start">
+            <p class="small mb-0">
+              &copy; 2023 IGAT Club. All rights reserved.
+            </p>
           </div>
-          <div class="col-md-6 text-md-end">
-            <a href="privacy.html" class="text-white me-3">Privacy Policy</a>
-            <a href="terms.html" class="text-white">Terms of Service</a>
+          <div class="col-md-6 text-center text-md-end">
+            <a href="privacy.html" class="text-white me-3 small"
+              >Privacy Policy</a
+            >
+            <a href="terms.html" class="text-white small">Terms of Service</a>
           </div>
         </div>
       </div>
