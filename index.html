@@ -235,21 +235,106 @@
         margin-bottom: 0.5rem;
       }
 
-      /* Testimonials */
+      /* IMPROVED TESTIMONIALS SECTION */
+       .testimonial-section {
+            padding: var(--section-padding);
+            background-color: #f9fafb;
+        }
       .testimonial-card {
-        background: white;
-        border-radius: 10px;
-        padding: 2rem;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      }
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin: 1rem;
+            transition: all 0.3s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
 
-      .testimonial-img {
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-        border: 5px solid var(--primary-light);
-      }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
 
+        .testimonial-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 3rem;
+            color: var(--primary-light);
+            opacity: 0.5;
+        }
+
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .testimonial-text::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: -15px;
+            font-size: 4rem;
+            color: var(--primary-light);
+            font-family: Arial, sans-serif;
+            line-height: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+        .author-initials {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .author-info h5 {
+            margin-bottom: 0.3rem;
+            color: var(--text-dark);
+        }
+
+        .author-info p {
+            color: var(--primary-color);
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-meta {
+            display: flex;
+            align-items: center;
+            margin-top: 1rem;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-meta i {
+            margin-right: 5px;
+            color: var(--primary-color);
+        }
       /* Call to Action */
       .cta-section {
         background-color: var(--light-color);
@@ -678,7 +763,7 @@
                       alt="Talent Day"
                     />
                     <div class="card-body">
-                      <h5 class="card-title">KNP Talent Day</h5>
+                      <h5 class="card-title">IGAT Talent Day</h5>
                       <p class="card-text">
                         Semesterly talent competitions where students showcase
                         their abilities in various categories.
@@ -879,58 +964,103 @@
       </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="content-section">
+   <!-- Testimonials Section -->
+    <section class="testimonial-section">
       <div class="container">
-        <h2 class="section-title">What Our Students Say</h2>
-        <div class="row justify-content-center">
-          <div class="col-lg-10">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="section-title">What Our Talents Say</h2>
+            <p class="lead">
+              Hear from students who've benefited from IGAT Club
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
             <div
-              id="testimonialCarousel"
+              id="showcaseTestimonials"
               class="carousel slide"
               data-bs-ride="carousel"
             >
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <div class="testimonial-card text-center p-5">
-                    <img
-                      src="images/IMG-20250407-WA0444.jpg"
-                      class="rounded-circle testimonial-img mb-4"
-                      alt="Student"
-                    />
-                    <p class="lead mb-4">
-                      "IGAT club helped me discover my singing talent. Through
-                      their platform, I got to perform at national events and
-                      even won a scholarship!"
-                    </p>
-                    <h5>Sarah M.</h5>
-                    <p class="text-muted">Music Talent</p>
+                  <div class="testimonial-card">
+                    <i class="fas fa-quote-right testimonial-icon"></i>
+                    <div class="testimonial-content">
+                      <p class="testimonial-text">
+                        "IGAT Club gave me the confidence to pursue music
+                        professionally. The workshops and performance
+                        opportunities were invaluable."
+                      </p>
+                      <div class="testimonial-author">
+                        <div class="author-initials">MN</div>
+                        <div class="author-info">
+                          <h5>Michael N.</h5>
+                          <p>Music Talent, Class of 2022</p>
+                        </div>
+                      </div>
+                      <div class="testimonial-meta">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Scholarship recipient</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <div class="testimonial-card text-center p-5">
-                    <img
-                      src="images/IMG-20250407-WA0444.jpg"
-                      class="rounded-circle testimonial-img mb-4"
-                      alt="Student"
-                    />
-                    <p class="lead mb-4">
-                      "The coding workshops organized by IGAT connected me with
-                      industry mentors. I've now developed three mobile apps!"
-                    </p>
-                    <h5>James K.</h5>
-                    <p class="text-muted">Tech Innovation</p>
+                  <div class="testimonial-card">
+                    <i class="fas fa-quote-right testimonial-icon"></i>
+                    <div class="testimonial-content">
+                      <p class="testimonial-text">
+                        "Through IGAT's tech challenges, I discovered my passion
+                        for coding and now have a promising career in software
+                        development."
+                      </p>
+                      <div class="testimonial-author">
+                        <div class="author-initials">LO</div>
+                        <div class="author-info">
+                          <h5>Linda O.</h5>
+                          <p>Tech Innovation, Class of 2021</p>
+                        </div>
+                      </div>
+                      <div class="testimonial-meta">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Software Developer at TechSolutions Ltd</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="testimonial-card">
+                    <i class="fas fa-quote-right testimonial-icon"></i>
+                    <div class="testimonial-content">
+                      <p class="testimonial-text">
+                        "The art exhibition organized by IGAT led to my first
+                        commission. I now run a successful graphic design
+                        business."
+                      </p>
+                      <div class="testimonial-author">
+                        <div class="author-initials">DM</div>
+                        <div class="author-info">
+                          <h5>David M.</h5>
+                          <p>Visual Arts, Class of 2020</p>
+                        </div>
+                      </div>
+                      <div class="testimonial-meta">
+                        <i class="fas fa-rocket"></i>
+                        <span>Founder of CreativeDesign Studios</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
               <button
                 class="carousel-control-prev"
                 type="button"
-                data-bs-target="#testimonialCarousel"
+                data-bs-target="#showcaseTestimonials"
                 data-bs-slide="prev"
               >
                 <span
-                  class="carousel-control-prev-icon bg-primary rounded-circle p-3"
+                  class="carousel-control-prev-icon"
                   aria-hidden="true"
                 ></span>
                 <span class="visually-hidden">Previous</span>
@@ -938,11 +1068,11 @@
               <button
                 class="carousel-control-next"
                 type="button"
-                data-bs-target="#testimonialCarousel"
+                data-bs-target="#showcaseTestimonials"
                 data-bs-slide="next"
               >
                 <span
-                  class="carousel-control-next-icon bg-primary rounded-circle p-3"
+                  class="carousel-control-next-icon"
                   aria-hidden="true"
                 ></span>
                 <span class="visually-hidden">Next</span>

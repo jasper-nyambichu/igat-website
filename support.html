@@ -116,6 +116,13 @@
         background: #388e3c;
         transform: translateY(-2px);
       }
+      
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .payment-option-card {
+          margin-bottom: 20px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -195,9 +202,9 @@
           </div>
         </div>
 
-        <div class="row justify-content-center">
+        <div class="row">
           <!-- Registration Fee -->
-          <div class="col-md-5 mb-4">
+          <div class="col-md-4 mb-4">
             <div class="card payment-option-card h-100">
               <div class="card-header text-center">
                 <i class="fas fa-user-plus me-2"></i>Registration
@@ -228,11 +235,8 @@
             </div>
           </div>
 
-          <!-- Spacer for larger screens -->
-          <div class="col-md-1 d-none d-md-block"></div>
-
           <!-- Membership Fee -->
-          <div class="col-md-5 mb-4">
+          <div class="col-md-4 mb-4">
             <div class="card payment-option-card h-100">
               <div class="card-header text-center">
                 <i class="fas fa-users me-2"></i>Membership
@@ -258,6 +262,38 @@
                   data-amount="5"
                 >
                   Pay Membership Fee
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Donation Fee -->
+          <div class="col-md-4 mb-4">
+            <div class="card payment-option-card h-100">
+              <div class="card-header text-center">
+                <i class="fas fa-hand-holding-heart me-2"></i>Donation
+              </div>
+              <div class="card-body text-center">
+                <div class="payment-icon">
+                  <i class="fas fa-donate"></i>
+                </div>
+                <h3 class="card-title">Any Amount</h3>
+                <p class="card-text">
+                  Make a donation to support our programs and initiatives
+                </p>
+                <p class="text-muted">
+                  Your contribution helps us nurture more talents
+                </p>
+              </div>
+              <div class="card-footer bg-transparent text-center">
+                <button
+                  class="btn btn-payment w-100"
+                  data-bs-toggle="modal"
+                  data-bs-target="#paymentModal"
+                  data-type="donation"
+                  data-amount=""
+                >
+                  Make a Donation
                 </button>
               </div>
             </div>
@@ -586,6 +622,7 @@
           const fullName = document.getElementById("fullName").value;
           const phone = document.getElementById("phone").value;
           const mpesaRef = document.getElementById("mpesaRef").value;
+          const paymentType = document.getElementById("paymentType").value;
 
           if (!amount || amount < 1) {
             alert("Please enter a valid amount");
@@ -632,31 +669,36 @@
             });
           }
 
-          // console.table(data);
+          // Determine which API endpoint to use based on payment type
+          let endpoint = "";
+          let successMessage = "";
+          
+          if (paymentType === "registration") {
+            endpoint = "https://igat-admin.vercel.app/api/registration";
+            successMessage = "Registration Sent";
+          } else if (paymentType === "membership") {
+            endpoint = "https://igat-admin.vercel.app/api/renewal";
+            successMessage = "Renewal Sent";
+          } else if (paymentType === "donation") {
+            endpoint = "https://igat-admin.vercel.app/api/donation";
+            successMessage = "Donation Sent";
+          }
 
           async function POST(data) {
             try {
-              const request = await fetch(
-                amount == 10
-                  ? `https://igat-admin.vercel.app/api/registration`
-                  : `https://igat-admin.vercel.app/api/renewal`,
-                {
-                  method: "POST",
-                  headers: {
-                    "Content-Type": "application/json",
-                    Accept: "application/json",
-                  },
-                  body: JSON.stringify(data),
-                }
-              );
+              const request = await fetch(endpoint, {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  Accept: "application/json",
+                },
+                body: JSON.stringify(data),
+              });
 
               const response = await request.json();
 
               if (response) {
-                sweetAlert(
-                  "success",
-                  amount == 10 ? "Registration Sent" : "Renewal Sent "
-                );
+                sweetAlert("success", successMessage);
               }
             } catch (error) {
               sweetAlert("error", error.message);
@@ -665,13 +707,9 @@
 
           POST(data);
 
-          // Here you would normally send the data to your server
-          // For now, we'll just close the modal
+          // Close the modal
           var modal = bootstrap.Modal.getInstance(paymentModal);
           modal.hide();
-
-          // You might want to show a success message elsewhere on the page
-          // instead of using an alert
         });
     </script>
   </body>
