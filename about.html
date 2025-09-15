@@ -21,14 +21,18 @@
       rel="stylesheet"
     />
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/style.css" />
     <style>
       :root {
         /* Primary Colors */
-        --primary-color: #4caf50;
+        --primary: #4caf50;
         --primary-dark: #388e3c;
         --primary-light: #c8e6c9;
+        --secondary: #ff9800;
+        --dark: #2c3e50;
+        --light: #f8f9fa;
+        --gray: #6c757d;
+        --transition: all 0.3s ease;
 
         /* Text Colors */
         --text-dark: #2c3e50;
@@ -43,9 +47,11 @@
 
       /* Base Styles */
       body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Poppins", sans-serif;
         color: var(--text-medium);
         line-height: 1.7;
+        overflow-x: hidden;
+        color: #555;
       }
 
       /* Navbar Styles */
@@ -58,6 +64,8 @@
         left: 0;
         right: 0;
         z-index: 1030;
+        transition: var(--transition);
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
         transition: all 0.3s ease;
         width: 100%;
       }
@@ -97,21 +105,31 @@
         font-size: 3.5rem;
         font-weight: 800;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        color: white;
+        margin-bottom: 1.5rem;
       }
 
       .page-header .lead {
         font-size: 1.5rem;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
       }
+      .page-header p {
+        font-size: 1.4rem;
+        max-width: 700px;
+        margin: 0 auto 2rem;
+      }
 
       /* Content Sections */
+      .section {
+        padding: 80px 0;
+      }
       .content-section {
         padding: var(--section-padding);
       }
 
       .section-title {
         position: relative;
-        padding-bottom: 1rem;
+        padding-bottom: 0.5rem;
         margin-bottom: 3rem;
       }
 
@@ -126,20 +144,182 @@
         background: var(--primary-color);
       }
 
+/* Section Styling */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            margin: 20px auto;
+            border-radius: 2px;
+        } */
+
       /* Cards */
-      .custom-card {
+      .card {
         border: none;
-        border-radius: 10px;
+        border-radius: 12px;
         overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition: var(--transition);
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .icon-box {
+        width: 80px;
+        height: 80px;
+        background: var(--primary-light);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 25px;
+        transition: var(--transition);
+      }
+
+      .icon-box i {
+        font-size: 2rem;
+        color: var(--primary);
+      }
+
+      /* Founder Card */
+      .founder-card {
+        border: 3px solid var(--primary);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 15px 40px rgba(76, 175, 80, 0.2);
+        transition: var(--transition);
+      }
+
+      .founder-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 50px rgba(76, 175, 80, 0.3);
+      }
+
+      .founder-img-container {
+        position: relative;
+        overflow: hidden;
         height: 100%;
       }
 
-      .custom-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      .founder-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
       }
+
+      .founder-card:hover .founder-img {
+        transform: scale(1.05);
+      }
+
+      .founder-info {
+        padding: 30px;
+      }
+
+      .founder-title {
+        color: var(--primary-dark);
+        font-weight: 700;
+        margin-bottom: 5px;
+      }
+
+      .founder-subtitle {
+        color: var(--gray);
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+      }
+
+      .founder-contact {
+        background-color: var(--primary-light);
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 25px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .contact-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .contact-icon {
+        width: 40px;
+        height: 40px;
+        background-color: var(--primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        color: white;
+      }
+
+      /* Values Section */
+      .values-section {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-dark) 100%
+        );
+        color: white;
+      }
+
+      .value-card {
+        padding: 30px 25px;
+        border-radius: 12px;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        transition: var(--transition);
+        text-align: center;
+      }
+
+      .value-card:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateY(-5px);
+      }
+
+      .value-card i {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: white;
+      }
+
+      .value-card h4 {
+        color: white;
+        margin-bottom: 15px;
+      }
+
       .btn-outline-primary {
         border: 2px solid #4caf50;
         color: #4caf50;
@@ -164,97 +344,127 @@
         transition: all 0.3s;
       }
 
+      /* Animations */
+      .fade-in {
+        animation: fadeIn 1s ease;
+      }
+
       .btn-primary:hover {
         background: #388e3c;
         transform: translateY(-2px);
       }
 
-      /* Responsive Adjustments */
-      @media (max-width: 992px) {
-        :root {
-          --section-padding: var(--section-padding-md);
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
         }
-
-        .page-header h1 {
-          font-size: 3rem;
-        }
-
-        .page-header .lead {
-          font-size: 1.3rem;
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
       }
 
-      @media (max-width: 768px) {
-        :root {
-          --section-padding: var(--section-padding-sm);
+      /* Responsive */
+        @media (max-width: 992px) {
+            .page-header h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
         }
 
-        .page-header h1 {
-          font-size: 2.5rem;
+        @media (max-width: 768px) {
+            
+            .page-header {
+                padding: 100px 0 60px;
+            }
+            
+            .page-header h1 {
+                font-size: 2.3rem;
+            }
+            
+            .page-header p {
+                font-size: 1.2rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .founder-img-container {
+                height: 300px;
+            }
         }
 
-        .page-header .lead {
-          font-size: 1.2rem;
+        @media (max-width: 576px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .founder-info {
+                padding: 20px;
+            }
         }
-      }
 
-      @media (max-width: 576px) {
-        .page-header h1 {
-          font-size: 2rem;
-        }
-
-        .page-header .lead {
-          font-size: 1.1rem;
-        }
-      }
     </style>
   </head>
   <body>
     <!-- Navigation -->
-   <nav class="navbar">
-  <div class="brand">
-    <!-- Logo container with the image -->
-    <a href="index.html" class="logo-link">
-      <img 
-        src="images/logo.png" 
-        alt="IGAT GOTATALENT Logo" 
-        class="brand-logo"
+    <nav class="navbar">
+      <div class="brand">
+        <!-- Logo container with the image -->
+        <a href="index.html" class="logo-link">
+          <img
+            src="images/logo.png"
+            alt="IGAT GOTATALENT Logo"
+            class="brand-logo"
+          />
+        </a>
+        <a href="#" class="brand-name">IGAT Club</a>
+      </div>
+
+      <button
+        class="menu-toggle"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="nav-list"
       >
-    </a>
-    <a href="#" class="brand-name">IGAT Club</a>
-  </div>
+        ☰
+      </button>
 
-  <button
-    class="menu-toggle"
-    aria-label="Menu"
-    aria-expanded="false"
-    aria-controls="nav-list"
-  >
-    ☰
-  </button>
+      <!-- Moved overlay to be sibling of nav-container -->
+      <div class="nav-overlay" aria-hidden="true"></div>
 
-  <!-- Moved overlay to be sibling of nav-container -->
-  <div class="nav-overlay" aria-hidden="true"></div>
-
-  <div class="nav-container">
-    <ul class="nav-list" id="nav-list" aria-hidden="true">
-      <li class="nav-item active"><a href="index.html">Home</a></li>
-      <li class="nav-item"><a href="about.html">About Us</a></li>
-      <li class="nav-item"><a href="programs.html">Programs</a></li>
-      <li class="nav-item dropdown">
-        <a href="#" aria-haspopup="true" aria-expanded="false">More</a>
-        <div class="dropdown-content">
-          <a href="impact.html">Impact</a>
-          <a href="showcase.html">Showcase</a>
-          <a href="news.html">News</a>
-          <a href="support.html">Support</a>
-          <a href="faq.html">FAQ</a>
-        </div>
-      </li>
-      <li class="nav-item"><a href="contact.html">Contact</a></li>
-    </ul>
-  </div>
-</nav>
+      <div class="nav-container">
+        <ul class="nav-list" id="nav-list" aria-hidden="true">
+          <li class="nav-item active"><a href="index.html">Home</a></li>
+          <li class="nav-item"><a href="about.html">About Us</a></li>
+          <li class="nav-item"><a href="programs.html">Programs</a></li>
+          <li class="nav-item dropdown">
+            <a href="#" aria-haspopup="true" aria-expanded="false">More</a>
+            <div class="dropdown-content">
+              <a href="impact.html">Impact</a>
+              <a href="showcase.html">Showcase</a>
+              <a href="news.html">News</a>
+              <a href="support.html">Support</a>
+              <a href="faq.html">FAQ</a>
+            </div>
+          </li>
+          <li class="nav-item"><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
 
     <!-- Page Header -->
     <header
@@ -263,7 +473,7 @@
     >
       <div class="container h-100">
         <div class="row h-100 align-items-center">
-          <div class="col-12 text-center">
+          <div class="col-12 text-center" data-aos="fade-in">
             <h1 class="display-3 fw-bold mb-4">About IGAT Club</h1>
             <p class="lead mb-5">
               Discovering and nurturing talents since 2018
@@ -277,13 +487,15 @@
     </header>
 
     <!-- Our Story -->
-     
-    <section class="content-section" id="our-story">
-      <div class="container" data-aos="fade-up">
-        <div class="row justify-content-center">
-          <div class="col-lg-8 text-center">
-            <h2 class="section-title">Our Story</h2>
-            <p class="mb-5">
+    <section id="our-story" class="section">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>Our Story</h2>
+          <p>The journey of IGAT Club from inception to impact</p>
+        </div>
+        <div class="row align-items-center">
+          <div class="col-lg-6" data-aos="fade-right">
+            <p class="lead">
               IGAT (I Got A Talent) Club was founded in 2018 at Kisii National
               Polytechnic by Mrs. Peris Bosibori Ongori with the vision of
               creating a platform where students could discover, develop, and
@@ -299,11 +511,10 @@
             </p>
             <p>
               Today, the club has grown to become a vibrant community that
-              identifies and nurtures talents across all departments of Kisii
-              National Polytechnic, regardless of year of study or gender.
+              identifies and nurtures talents beyond Kisii National Polytechnic.
             </p>
           </div>
-          <div class="col-lg-6 mt-5" data-aos="zoom-in">
+          <div class="col-lg-6 mt-4 mt-lg-0" data-aos="fade-left">
             <img
               src="images/IMG-20250407-WA0440.jpg"
               alt="Club History"
@@ -314,35 +525,79 @@
       </div>
     </section>
 
-    <!-- Mission & Vision -->
-    <section class="content-section bg-light">
+    <!-- Founder Section -->
+    <section class="section bg-light">
       <div class="container">
-        <div class="row g-4">
-          <div class="col-md-6" data-aos="flip-right">
-            <div class="custom-card card">
-              <div class="card-body text-center p-4">
-                <i class="fas fa-bullseye fa-3x mb-3 text-primary"></i>
-                <h3>Our Mission</h3>
-                <p>
-                  To identify, nurture, and develop talents among students at
-                  Kisii National Polytechnic, creating future stars and
-                  innovators who will transform society through their unique
-                  abilities.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6" data-aos="flip-left">
-            <div class="custom-card card">
-              <div class="card-body text-center p-4">
-                <i class="fas fa-eye fa-3x mb-3 text-primary"></i>
-                <h3>Our Vision</h3>
-                <p>
-                  To become the leading talent identification and development
-                  platform in technical institutions, producing globally
-                  competitive individuals who excel in both their professions
-                  and talents.
-                </p>
+        <div class="section-title" data-aos="fade-up">
+          <h2>Our Founder</h2>
+          <p>The visionary behind IGAT Club's success</p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="founder-card" data-aos="flip-left">
+              <div class="row g-0">
+                <div class="col-md-5">
+                  <div class="founder-img-container">
+                    <img
+                      src="images/peris.jpg"
+                      alt="Peris B. Ongori - Founder of IGAT Club"
+                      class="founder-img"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-7">
+                  <div class="founder-info">
+                    <h3 class="founder-title">Peris B. Ongori</h3>
+                    <p class="founder-subtitle">
+                      Lecturer | ICT Specialist | Public Speaker | Entrepreneur
+                    </p>
+
+                    <p>
+                      Peris B. Ongori is a dedicated ICT Lecturer at Kisii
+                      National Polytechnic, where she equips students with
+                      essential digital skills and knowledge in the
+                      ever-evolving field of technology. With a passion for
+                      education and innovation, she blends academic expertise
+                      with real-world applications to inspire the next
+                      generation of tech professionals.
+                    </p>
+
+                    <p>
+                      Beyond academia, Peris is an entrepreneur in Computer
+                      Accessories, providing high-quality tech solutions to meet
+                      market demands. As a public speaker, she actively engages
+                      in technology and business forums, sharing insights on ICT
+                      trends, digital transformation, and entrepreneurship.
+                    </p>
+
+                    <div class="founder-contact">
+                      <div class="contact-item">
+                        <div class="contact-icon">
+                          <i class="fas fa-phone"></i>
+                        </div>
+                        <div>0722 995763</div>
+                      </div>
+                      <div class="contact-item">
+                        <div class="contact-icon">
+                          <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>bosiboriperis@gmail.com</div>
+                      </div>
+                      <div class="contact-item">
+                        <div class="contact-icon">
+                          <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <div>LinkedIn: Peris B. Ongori</div>
+                      </div>
+                      <div class="contact-item">
+                        <div class="contact-icon">
+                          <i class="fas fa-globe"></i>
+                        </div>
+                        <div>www: igotatalent.org</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -350,8 +605,42 @@
       </div>
     </section>
 
+    <!-- Mission & Vision -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Our Purpose</h2>
+                <p>Driving talent development and innovation</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-4" data-aos="fade-right" data-aos-delay="100">
+                    <div class="card h-100 text-center py-4">
+                        <div class="card-body">
+                            <div class="icon-box">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h3>Our Mission</h3>
+                            <p>To identify, nurture, and develop talents among students at Kisii National Polytechnic, creating future stars and innovators who will transform society through their unique abilities.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4" data-aos="fade-left" data-aos-delay="100">
+                    <div class="card h-100 text-center py-4">
+                        <div class="card-body">
+                            <div class="icon-box">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h3>Our Vision</h3>
+                            <p>To become the leading talent identification and development platform in technical institutions, producing globally competitive individuals who excel in both their professions and talents.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Our Team -->
-    <section class="py-5">
+    <!-- <section class="py-5">
       <div class="container">
         <h2 class="text-center mb-5">Our Team</h2>
         <div id="team" class="row g-4"></div>
@@ -359,47 +648,39 @@
           <a href="contact.html" class="btn btn-primary">Contact Our Team</a>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Why Talent Matters -->
-    <section class="content-section bg-primary text-white">
-      <div class="container" data-aos="slide-right">
-        <h2 class="text-center section-title">
-          Why Talent Development Matters
-        </h2>
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="text-center p-4">
-              <i class="fas fa-graduation-cap fa-3x mb-3"></i>
-              <h4>Complementary to Academics</h4>
-              <p>
-                Talent development enhances academic performance by building
-                confidence and diverse skills.
-              </p>
+    <section class="section values-section">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Why Talent Development Matters</h2>
+                <p>Unlocking potential beyond academics</p>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="text-center p-4">
-              <i class="fas fa-briefcase fa-3x mb-3"></i>
-              <h4>Career Opportunities</h4>
-              <p>
-                Many talents can be monetized, creating alternative career paths
-                for students.
-              </p>
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="0">
+                    <div class="value-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h4>Complementary to Academics</h4>
+                        <p>Talent development enhances academic performance by building confidence and diverse skills.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="value-card">
+                        <i class="fas fa-briefcase"></i>
+                        <h4>Career Opportunities</h4>
+                        <p>Many talents can be monetized, creating alternative career paths for students.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="value-card">
+                        <i class="fas fa-heart"></i>
+                        <h4>Personal Fulfillment</h4>
+                        <p>Engaging in one's talents leads to greater life satisfaction and mental well-being.</p>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="text-center p-4">
-              <i class="fas fa-heart fa-3x mb-3"></i>
-              <h4>Personal Fulfillment</h4>
-              <p>
-                Engaging in one's talents leads to greater life satisfaction and
-                mental well-being.
-              </p>
-            </div>
-          </div>
         </div>
-      </div>
     </section>
 
     <!-- Footer -->
@@ -409,7 +690,8 @@
           <div class="col-lg-4 mb-4 mb-lg-0">
             <h3 class="h4 mb-3">IGAT Club</h3>
             <p>
-              Identifying and nurturing talents among students, youths creating future stars.
+              Identifying and nurturing talents among students, youths creating
+              future stars.
             </p>
             <div class="social-icons mt-4">
               <a href="#" class="text-white me-3"
@@ -449,7 +731,8 @@
                 <i class="fas fa-map-marker-alt me-2"></i> I got a talent club
               </li>
               <li class="mb-2">
-                <i class="fas fa-phone me-2"></i> 0722 995 763/ 0729 669 820/ 0725 597 121
+                <i class="fas fa-phone me-2"></i> 0722 995 763/ 0729 669 820/
+                0725 597 121
               </li>
               <li class="mb-2">
                 <i class="fas fa-envelope me-2"></i> bosiboriperis@gmail.com

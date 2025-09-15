@@ -116,7 +116,7 @@
         background: #388e3c;
         transform: translateY(-2px);
       }
-      
+
       /* Responsive adjustments */
       @media (max-width: 768px) {
         .payment-option-card {
@@ -203,6 +203,37 @@
         </div>
 
         <div class="row">
+          <!-- Donation Fee -->
+          <div class="col-md-4 mb-4">
+            <div class="card payment-option-card h-100">
+              <div class="card-header text-center">
+                <i class="fas fa-hand-holding-heart me-2"></i>Donation
+              </div>
+              <div class="card-body text-center">
+                <div class="payment-icon">
+                  <i class="fas fa-donate"></i>
+                </div>
+                <h3 class="card-title">Any Amount</h3>
+                <p class="card-text">
+                  Make a donation to support our programs and initiatives
+                </p>
+                <p class="text-muted">
+                  Your contribution helps us nurture more talents
+                </p>
+              </div>
+              <div class="card-footer bg-transparent text-center">
+                <button
+                  class="btn btn-payment w-100"
+                  data-bs-toggle="modal"
+                  data-bs-target="#paymentModal"
+                  data-type="donation"
+                  data-amount=""
+                >
+                  Make a Donation
+                </button>
+              </div>
+            </div>
+          </div>
           <!-- Registration Fee -->
           <div class="col-md-4 mb-4">
             <div class="card payment-option-card h-100">
@@ -262,38 +293,6 @@
                   data-amount="5"
                 >
                   Pay Membership Fee
-                </button>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Donation Fee -->
-          <div class="col-md-4 mb-4">
-            <div class="card payment-option-card h-100">
-              <div class="card-header text-center">
-                <i class="fas fa-hand-holding-heart me-2"></i>Donation
-              </div>
-              <div class="card-body text-center">
-                <div class="payment-icon">
-                  <i class="fas fa-donate"></i>
-                </div>
-                <h3 class="card-title">Any Amount</h3>
-                <p class="card-text">
-                  Make a donation to support our programs and initiatives
-                </p>
-                <p class="text-muted">
-                  Your contribution helps us nurture more talents
-                </p>
-              </div>
-              <div class="card-footer bg-transparent text-center">
-                <button
-                  class="btn btn-payment w-100"
-                  data-bs-toggle="modal"
-                  data-bs-target="#paymentModal"
-                  data-type="donation"
-                  data-amount=""
-                >
-                  Make a Donation
                 </button>
               </div>
             </div>
@@ -672,7 +671,7 @@
           // Determine which API endpoint to use based on payment type
           let endpoint = "";
           let successMessage = "";
-          
+
           if (paymentType === "registration") {
             endpoint = "https://igat-admin.vercel.app/api/registration";
             successMessage = "Registration Sent";
