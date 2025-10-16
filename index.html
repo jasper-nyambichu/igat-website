@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home - IGAT Club</title>
-    <!-- Bootstrap CSS -->
+    <title> Home - IGAT Club </title>
+    <!-- Bootstrap CSS --> 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -14,25 +14,26 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" />
     <style>
       :root {
         /* Primary Colors */
         --primary: #4caf50;
-        --primary-dark: #388e3c;
-        --primary-light: #c8e6c9;
-        --secondary: #ff9800;
-        --dark: #2c3e50;
-        --light: #f8f9fa;
-        --gray: #6c757d;
-        --transition: all 0.3s ease;
+            --primary-dark: #388e3c;
+            --primary-light: #c8e6c9;
+            --secondary: #ff9800;
+            --dark: #2c3e50;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --transition: all 0.3s ease;
 
         /* Text Colors */
         --text-dark: #2c3e50;
@@ -47,10 +48,10 @@
 
       /* Base Styles */
       body {
-        font-family: "Poppins", sans-serif;
-        color: #555;
-        line-height: 1.7;
-        overflow-x: hidden;
+       font-family: 'Poppins', sans-serif;
+       color: #555;
+       line-height: 1.7;
+      overflow-x: hidden;
       }
 
       h1,
@@ -74,7 +75,7 @@
         right: 0;
         z-index: 1030;
         transition: all 0.3s ease;
-        width: 100%;
+        width:100%;
       }
 
       .brand-name {
@@ -84,32 +85,32 @@
       }
 
       .hero-section h1 {
-        font-size: 3.5rem;
-        font-weight: 800;
-        color: rgb(255, 255, 255);
-        margin-bottom: 1.5rem;
-        padding: 0 1rem;
-        text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.8);
+       font-size: 3.5rem;
+            font-weight: 800;
+            color:rgb(255, 255, 255);
+            margin-bottom: 1.5rem;
+            padding: 0 1rem;
+            text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.8);
       }
 
-      .hero-section p {
-        font-size: 1.4rem;
-        max-width: 700px;
-        margin: 0 auto 2rem;
-        color: rgb(255, 255, 255);
-        text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
-      }
+       .hero-section p {
+            font-size: 1.4rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+           color:rgb(255, 255, 255);
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+        }
 
       .hero-section .lead {
         font-size: 1.5rem;
         text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
         margin-bottom: 2rem;
       }
+
       /* Content Sections */
       .section {
-        padding: 80px 0;
-      }
-
+            padding: 80px 0;
+        }
       .content-section {
         padding: var(--section-padding);
       }
@@ -120,18 +121,16 @@
         margin-bottom: 50px;
         text-align: center;
       }
-
       .section-title h2 {
-        font-size: 2.5rem;
-        margin-bottom: 15px;
-      }
-
-      .section-title p {
-        font-size: 1.2rem;
-        color: var(--gray);
-        max-width: 700px;
-        margin: 0 auto;
-      }
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
 
       .section-title::after {
         content: "";
@@ -144,7 +143,99 @@
         background: var(--primary);
       }
 
-      .btn-primary {
+       /* Programs Carousel */
+      .programs-carousel {
+        padding: 0 40px;
+        position: relative;
+      }
+
+       .program-card {
+        border: none;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        height: 100%;
+        margin-bottom: 20px;
+      }
+
+      .program-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      .program-card .card-img-top {
+        height: 200px;
+        object-fit: cover;
+        width: 100%;
+      }
+
+      .program-card .card-body {
+        padding: 1.5rem;
+      }
+      .program-card .card-title {
+        color:var(--text-dark);
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .program-card .card-text {
+        color: #7f8c8d;
+        margin-bottom: 20px;
+      }
+
+      .program-card .card-footer {
+        padding: 0 1.5rem 1.5rem;
+        background: transparent;
+        border: none;
+      }
+
+      .btn-outline-primary {
+        border: 2px solid #4caf50;
+        color: #4caf50;
+        font-weight: 500;
+        border-radius: 30px;
+        padding: 8px 20px;
+        transition: all 0.3s;
+      }
+
+      .btn-outline-primary:hover {
+        background: #4caf50;
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      .carousel-control-prev,
+      .carousel-control-next {
+        width: 50px;
+        height: 50px;
+        background: rgba(76, 175, 80, 0.8);
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0.8;
+        transition: opacity 0.3s;
+      }
+
+       .carousel-control-prev {
+        left: -25px;
+      }
+
+      .carousel-control-next {
+        right: -25px;
+      }
+
+      .carousel-control-prev:hover,
+      .carousel-control-next:hover {
+        opacity: 1;
+      }
+
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        width: 20px;
+        height: 20px;
+      }
+       .btn-primary {
         background: #4caf50;
         border: none;
         padding: 12px 30px;
@@ -157,391 +248,123 @@
         background: #388e3c;
         transform: translateY(-2px);
       }
+      
 
-      /* Enhanced Impact Section */
+      /* Impact Stats */
       .impact-section {
-        background: linear-gradient(
-          135deg,
-          var(--primary) 0%,
-          var(--primary-dark) 100%
-        );
+        background-color: var(--primary);
         color: white;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .impact-section::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" opacity="0.1"><polygon fill="white" points="100,100 200,50 300,100 400,50 500,100 600,50 700,100 800,50 900,100 1000,50 1000,150 900,200 800,150 700,200 600,150 500,200 400,150 300,200 200,150 100,200 0,150 0,50"/></svg>');
-        background-size: 300px 300px;
-      }
-
-      .impact-card {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        border-radius: 20px;
-        padding: 2.5rem 1.5rem;
-        text-align: center;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        transition: all 0.3s ease;
-        height: 100%;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .impact-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.1),
-          transparent
-        );
-        transition: left 0.6s ease;
-      }
-
-      .impact-card:hover::before {
-        left: 100%;
-      }
-
-      .impact-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-        background: rgba(255, 255, 255, 0.15);
-      }
-
-      .impact-icon {
-        width: 80px;
-        height: 80px;
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 1.5rem;
-        font-size: 2rem;
-        transition: all 0.3s ease;
-      }
-
-      .impact-card:hover .impact-icon {
-        transform: scale(1.1) rotate(5deg);
-        background: rgba(255, 255, 255, 0.3);
       }
 
       .stat-number {
         font-size: 3.5rem;
-        font-weight: 800;
+        font-weight: 700;
         margin-bottom: 0.5rem;
-        background: linear-gradient(135deg, #ffffff 0%, #e8f5e8 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        line-height: 1;
       }
 
-      .stat-label {
-        font-size: 1.1rem;
-        font-weight: 600;
-        opacity: 0.9;
-      }
-
-      /* Enhanced Impact Section Button */
-      .impact-section .btn-light {
-        background: rgba(255, 255, 255, 0.9);
-        color: var(--primary);
-        border: 2px solid transparent;
-        padding: 12px 35px;
-        font-weight: 600;
-        border-radius: 50px;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
-        text-decoration: none;
-        display: inline-block;
-      }
-
-      .impact-section .btn-light::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-        transition: left 0.6s ease;
-      }
-
-      .impact-section .btn-light:hover::before {
-        left: 100%;
-      }
-
-      .impact-section .btn-light:hover {
-        background: white;
-        transform: translateY(-3px);
-        box-shadow: 0 15px 35px rgba(255, 255, 255, 0.3);
-        color: var(--primary-dark);
-        text-decoration: none;
-      }
-
-      .impact-section .btn-light:active {
-        transform: translateY(-1px);
-        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
-      }
-
-      /* Enhanced Upcoming Events Preview */
-      .event-preview-card {
-        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-        border-radius: 20px;
-        transition: all 0.3s ease;
-        border: 2px solid transparent;
-        padding: 2rem;
-        height: 100%;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .event-preview-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(
-          135deg,
-          var(--primary) 0%,
-          var(--secondary) 100%
-        );
-      }
-
-      .event-preview-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 40px rgba(76, 175, 80, 0.15);
-        border-color: var(--primary);
-      }
-
-      .event-icon {
-        width: 80px;
-        height: 80px;
-        background: linear-gradient(
-          135deg,
-          var(--primary) 0%,
-          var(--primary-dark) 100%
-        );
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 1.5rem;
-        color: white;
-        font-size: 2rem;
-        transition: all 0.3s ease;
-      }
-
-      .event-preview-card:hover .event-icon {
-        transform: scale(1.1) rotate(5deg);
-      }
-
-      /* Enhanced Testimonials */
-      .testimonial-section {
-        background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
-        position: relative;
-      }
-
+      /* IMPROVED TESTIMONIALS SECTION */
+       .testimonial-section {
+            padding: var(--section-padding);
+            background-color: #f9fafb;
+        }
       .testimonial-card {
-        background: white;
-        border-radius: 20px;
-        padding: 2.5rem;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        margin: 1rem;
-        transition: all 0.3s ease;
-        height: 100%;
-        position: relative;
-        overflow: hidden;
-        border: 1px solid #f0f0f0;
-      }
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin: 1rem;
+            transition: all 0.3s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
 
-      .testimonial-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-      }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
 
-      /* Enhanced CTA Section */
+        .testimonial-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 3rem;
+            color: var(--primary-light);
+            opacity: 0.5;
+        }
+
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .testimonial-text::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: -15px;
+            font-size: 4rem;
+            color: var(--primary-light);
+            font-family: Arial, sans-serif;
+            line-height: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+        .author-initials {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .author-info h5 {
+            margin-bottom: 0.3rem;
+            color: var(--text-dark);
+        }
+
+        .author-info p {
+            color: var(--primary);
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-meta {
+            display: flex;
+            align-items: center;
+            margin-top: 1rem;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-meta i {
+            margin-right: 5px;
+            color: var(--primary);
+        }
+      /* Call to Action */
       .cta-section {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .cta-section::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" opacity="0.1"><circle fill="white" cx="200" cy="200" r="100"/><circle fill="white" cx="600" cy="300" r="150"/><circle fill="white" cx="800" cy="600" r="120"/></svg>');
-      }
-
-      .cta-section .section-title::after {
-        background: white;
-      }
-
-      /* Enhanced CTA Button Styles */
-      .cta-section .btn-light {
-        background: rgba(255, 255, 255, 0.95);
-        color: var(--primary);
-        border: 2px solid transparent;
-        padding: 12px 35px;
-        font-weight: 600;
-        border-radius: 50px;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
-        text-decoration: none;
-        display: inline-block;
-      }
-
-      .cta-section .btn-light::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-        transition: left 0.6s ease;
-      }
-
-      .cta-section .btn-light:hover::before {
-        left: 100%;
-      }
-
-      .cta-section .btn-light:hover {
-        background: white;
-        transform: translateY(-3px);
-        box-shadow: 0 15px 35px rgba(255, 255, 255, 0.3);
-        color: var(--primary-dark);
-      }
-
-      .cta-section .btn-light:active {
-        transform: translateY(-1px);
-        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
-      }
-
-      .cta-section .btn-outline-light {
-        background: transparent;
-        color: white;
-        border: 2px solid white;
-        padding: 12px 35px;
-        font-weight: 600;
-        border-radius: 50px;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        position: relative;
-        overflow: hidden;
-        backdrop-filter: blur(10px);
-        text-decoration: none;
-        display: inline-block;
-      }
-
-      .cta-section .btn-outline-light::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-        transition: left 0.6s ease;
-      }
-
-      .cta-section .btn-outline-light:hover::before {
-        left: 100%;
-      }
-
-      .cta-section .btn-outline-light:hover {
-        background: rgba(255, 255, 255, 0.15);
-        border-color: white;
-        color: white;
-        transform: translateY(-3px);
-        box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(15px);
-      }
-
-      .cta-section .btn-outline-light:active {
-        transform: translateY(-1px);
-        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
-      }
-
-      /* Buttons Enhancement */
-      .btn-primary {
-        background: linear-gradient(
-          135deg,
-          var(--primary) 0%,
-          var(--primary-dark) 100%
-        );
-        border: none;
-        padding: 12px 30px;
-        font-weight: 600;
-        border-radius: 50px;
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .btn-primary::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.2),
-          transparent
-        );
-        transition: left 0.5s ease;
-      }
-
-      .btn-primary:hover::before {
-        left: 100%;
-      }
-
-      .btn-primary:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 12px 25px rgba(76, 175, 80, 0.3);
-      }
-
-      .btn-outline-primary {
-        border: 2px solid var(--primary);
-        color: var(--primary);
-        font-weight: 600;
-        border-radius: 50px;
-        padding: 10px 25px;
-        transition: all 0.3s ease;
-        background: transparent;
-      }
-
-      .btn-outline-primary:hover {
-        background: var(--primary);
-        color: white;
-        transform: translateY(-3px);
-        box-shadow: 0 12px 25px rgba(76, 175, 80, 0.2);
+        background-color: var(--light);
       }
 
       /* Responsive Adjustments */
@@ -550,12 +373,14 @@
           --section-padding: var(--section-padding-md);
         }
 
-        .section-title h2 {
-          font-size: 2.2rem;
-        }
-
-        .stat-number {
+        .hero-section h1 {
           font-size: 3rem;
+        }
+.section-title h2 {
+                font-size: 2.2rem;
+            }
+        .hero-section .lead {
+          font-size: 1.3rem;
         }
       }
 
@@ -564,135 +389,155 @@
           --section-padding: var(--section-padding-sm);
         }
 
-        .impact-card,
-        .event-preview-card {
-          margin-bottom: 1.5rem;
+        .hero-section {
+          background-attachment: scroll;
+          min-height: auto;
+        }
+
+        .hero-section h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero-section .lead {
+          font-size: 1.2rem;
+        }
+
+        .programs-carousel {
+          padding: 0 20px;
+        }
+        
+        .carousel-control-prev,
+        .carousel-control-next {
+          width: 40px;
+          height: 40px;
+        }
+        
+        .carousel-control-prev-icon, 
+        .carousel-control-next-icon {
+          width: 18px;
+          height: 18px;
+        }
+        
+        .carousel-control-prev {
+          left: -10px;
+        }
+        
+        .carousel-control-next {
+          right: -10px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .hero-section h1 {
+          font-size: 2rem;
+        }
+
+        .hero-section .lead {
+          font-size: 1.1rem;
         }
 
         .stat-number {
           font-size: 2.5rem;
         }
-
-        .cta-section .btn-light,
-        .cta-section .btn-outline-light,
-        .impact-section .btn-light {
-          padding: 10px 25px;
-          font-size: 1rem;
-          width: 100%;
-          max-width: 280px;
+        .content-section {
+          padding: 3rem 0;
         }
         
-        .cta-section .d-flex.justify-content-center.gap-3.flex-wrap {
-          gap: 1rem !important;
+        .section-title {
+          font-size: 1.75rem;
+          margin-bottom: 30px;
         }
-      }
-
-      @media (max-width: 576px) {
-        .section-title h2 {
-          font-size: 1.8rem;
+        
+        .programs-carousel {
+          padding: 0 10px;
         }
-
-        .stat-number {
-          font-size: 2.2rem;
+        
+        .carousel-control-prev {
+          left: -5px;
         }
-
-        .impact-card,
-        .event-preview-card,
-        .testimonial-card {
-          padding: 1.5rem;
+        
+        .carousel-control-next {
+          right: -5px;
         }
-
-        .cta-section .btn-light,
-        .cta-section .btn-outline-light,
-        .impact-section .btn-light {
-          padding: 0.8rem 2rem;
-          font-size: 0.95rem;
+        
+        .carousel-control-prev,
+        .carousel-control-next {
+          width: 35px;
+          height: 35px;
         }
       }
     </style>
   </head>
   <body>
     <!-- Navigation -->
-    <nav class="navbar at-hero">
-      <div class="brand">
-        <a href="index.html" class="logo-link">
-          <img
-            src="images/logo.png"
-            alt="IGAT GOTATALENT Logo"
-            class="brand-logo"
-          />
-        </a>
-        <a href="#" class="brand-name">IGAT Club</a>
-      </div>
-
-      <button
-        class="menu-toggle"
-        aria-label="Menu"
-        aria-expanded="false"
-        aria-controls="nav-list"
+     <nav class="navbar">
+  <div class="brand">
+    <!-- Logo container with the image -->
+    <a href="index.html" class="logo-link">
+      <img 
+        src="images/logo.png" 
+        alt="IGAT GOTATALENT Logo" 
+        class="brand-logo"
       >
-        ☰
-      </button>
+    </a>
+    <a href="#" class="brand-name">IGAT Club</a>
+  </div>
 
-      <div class="nav-overlay" aria-hidden="true"></div>
+  <button
+    class="menu-toggle"
+    aria-label="Menu"
+    aria-expanded="false"
+    aria-controls="nav-list"
+  >
+    ☰
+  </button>
 
-      <div class="nav-container">
-        <ul class="nav-list" id="nav-list" aria-hidden="true">
-          <li class="nav-item active"><a href="index.html">Home</a></li>
-          <li class="nav-item"><a href="about.html">About Us</a></li>
-          <li class="nav-item"><a href="programs.html">Programs</a></li>
-          <li class="nav-item dropdown">
-            <a href="#" aria-haspopup="true" aria-expanded="false">More</a>
-            <div class="dropdown-content">
-              <a href="impact.html">Impact</a>
-              <a href="showcase.html">Showcase</a>
-              <a href="news.html">News</a>
-              <a href="support.html">Support</a>
-              <a href="faq.html">FAQ</a>
-            </div>
-          </li>
-          <li class="nav-item"><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
+  <!-- Moved overlay to be sibling of nav-container -->
+  <div class="nav-overlay" aria-hidden="true"></div>
+
+  <div class="nav-container">
+    <ul class="nav-list" id="nav-list" aria-hidden="true">
+      <li class="nav-item active"><a href="index.html">Home</a></li>
+      <li class="nav-item"><a href="about.html">About Us</a></li>
+      <li class="nav-item"><a href="programs.html">Programs</a></li>
+      <li class="nav-item dropdown">
+        <a href="#" aria-haspopup="true" aria-expanded="false">More</a>
+        <div class="dropdown-content">
+          <a href="impact.html">Impact</a>
+          <a href="showcase.html">Showcase</a>
+          <a href="news.html">News</a>
+          <a href="support.html">Support</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
     <!-- Hero Section -->
     <header class="hero-section" data-aos="fade-in">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 text-center">
-            <h1 data-aos="fade-up">Unlocking Potential Through Talent</h1>
-            <p data-aos="fade-up" data-aos-delay="100" class="lead">
-              Discover, Develop, and Showcase Your Hidden Talents
-            </p>
-            <div class="d-flex justify-content-center gap-3 flex-wrap">
-              <a
-                href="programs.html"
-                class="btn btn-light btn-lg px-4 py-2"
-                data-aos="fade-right"
-                data-aos-delay="200"
-              >
-                Explore Programs <i class="fas fa-arrow-right ms-2"></i>
-              </a>
-              <a
-                href="support.html"
-                class="btn btn-outline-light btn-lg px-4 py-2"
-                data-aos="fade-left"
-                data-aos-delay="200"
-              >
-                Support Us
-              </a>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 data-aos="fade-up">Unlocking Potential Through Talent</h1>
+                    <p data-aos="fade-up" data-aos-delay="100" class="lead">Discover, Develop, and Showcase Your Hidden Talents</p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <a href="programs.html" class="btn btn-light btn-lg px-4 py-2" data-aos="fade-right" data-aos-delay="200">
+                            Explore Programs <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                        <a href="support.html" class="btn btn-outline-light btn-lg px-4 py-2" data-aos="fade-left" data-aos-delay="200">
+                            Support Us
+                        </a>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </header>
-
     <style>
       /* Updated Hero Section Styles */
       .hero-section {
-        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
-          url("images/WhatsApp Image 2025-10-07 at 13.55.16_25f21e11.jpg");
+       background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('images/WhatsApp Image 2025-10-07 at 13.55.16_25f21e11.jpg');
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
@@ -706,12 +551,12 @@
       }
 
       .hero-section h1 {
-        font-size: 3.5rem;
-        font-weight: 800;
-        color: rgb(255, 255, 255);
-        margin-bottom: 1.5rem;
-        text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.8);
-        line-height: 1.2;
+         font-size: 3.5rem;
+            font-weight: 800;
+            color:rgb(255, 255, 255);
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.8);
+            line-height: 1.2;
       }
 
       .hero-section .lead {
@@ -724,44 +569,86 @@
         margin-right: auto;
         line-height: 1.6;
       }
+      /* Buttons */
+        .btn-primary {
+            background: var(--primary);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 500;
+            border-radius: 30px;
+            transition: var(--transition);
+        }
 
-      /* Hero Section Buttons */
-      .btn-light {
-        background: white;
-        color: var(--primary);
-        border: none;
-        padding: 12px 30px;
-        font-weight: 600;
-        border-radius: 50px;
-        transition: all 0.3s ease;
-      }
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
 
-      .btn-light:hover {
-        background: #f8f9fa;
-        transform: translateY(-2px);
-        color: var(--primary-dark);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-      }
+        .btn-outline-primary {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            font-weight: 500;
+            border-radius: 30px;
+            padding: 10px 25px;
+            transition: var(--transition);
+        }
 
-      .btn-outline-light {
-        border: 2px solid white;
-        color: white;
-        font-weight: 600;
-        border-radius: 50px;
-        padding: 10px 25px;
-        transition: all 0.3s ease;
-      }
+        .btn-outline-primary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
 
-      .btn-outline-light:hover {
-        background: white;
-        color: var(--primary);
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        .btn-light {
+            background: white;
+            color: var(--primary);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 500;
+            border-radius: 30px;
+            transition: var(--transition);
+        }
+
+        .btn-light:hover {
+            background: #f8f9fa;
+            transform: translateY(-2px);
+            color: var(--primary-dark);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-outline-light {
+            border: 2px solid white;
+            color: white;
+            font-weight: 500;
+            border-radius: 30px;
+            padding: 10px 25px;
+            transition: var(--transition);
+        }
+
+        .btn-outline-light:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+      /* Responsive Adjustments */
+      @media (max-width: 992px) {
+        .hero-section h1 {
+          font-size: 3rem;
+        }
+
+        .hero-section .lead {
+          font-size: 1.3rem;
+        }
       }
 
       @media (max-width: 768px) {
         .hero-section {
           background-attachment: scroll;
+          min-height: auto;
           padding: 6rem 0;
         }
 
@@ -772,10 +659,15 @@
         .hero-section .lead {
           font-size: 1.2rem;
         }
-
+        
         .hero-section .d-flex {
           flex-direction: column;
           gap: 1rem !important;
+        }
+        
+        .hero-section .btn {
+          width: 100%;
+          max-width: 250px;
         }
       }
 
@@ -783,7 +675,7 @@
         .hero-section {
           padding: 5rem 0;
         }
-
+        
         .hero-section h1 {
           font-size: 2rem;
         }
@@ -798,6 +690,7 @@
     <section class="py-5 bg-light">
       <div class="container">
         <div class="row align-items-center g-5">
+          <!-- Text Content -->
           <div class="col-lg-6 order-lg-1 order-2" data-aos="fade-right">
             <div class="mission-content pe-lg-5">
               <h2 class="display-4 fw-bold text-primary position-relative mb-4">
@@ -805,9 +698,8 @@
                 <span class="title-underline"></span>
               </h2>
               <p class="lead mb-4 fs-4">
-                To identify, nurture, and develop talents among students and
-                youths, creating future stars and innovators who will transform
-                society.
+                To identify, nurture, and develop talents among students,youths  creating future stars and innovators
+                who will transform society.
               </p>
               <div class="d-flex flex-wrap gap-3">
                 <a href="about.html" class="btn btn-primary btn-lg px-4 py-3">
@@ -824,6 +716,7 @@
             </div>
           </div>
 
+          <!-- Image -->
           <div class="col-lg-6 order-lg-2 order-1" data-aos="fade-left">
             <div class="mission-image-container position-relative">
               <img
@@ -874,8 +767,8 @@
         height: 100%;
         background: linear-gradient(
           135deg,
-          rgba(76, 175, 80, 0.1) 0%,
-          rgba(76, 175, 80, 0.05) 100%
+          rgba(13, 110, 253, 0.1) 0%,
+          rgba(13, 110, 253, 0.05) 100%
         );
       }
 
@@ -887,6 +780,22 @@
         font-size: 1.1rem;
       }
 
+      .btn-primary,
+      .btn-outline-primary {
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
+      }
+
+      .btn-outline-primary:hover {
+        background-color: var(--primary);
+        color: white;
+      }
+
+      /* Responsive Adjustments */
       @media (max-width: 992px) {
         .mission-content {
           text-align: center;
@@ -897,22 +806,207 @@
           left: 50%;
           transform: translateX(-50%);
         }
+
+        .d-flex {
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 768px) {
+        h2 {
+          font-size: 2.5rem !important;
+        }
+
+        .lead {
+          font-size: 1.25rem !important;
+        }
       }
     </style>
 
     <!-- Programs Highlights -->
-    <section class="content-section bg-light">
+     <section class="content-section bg-light">
       <div class="container">
         <h2 class="section-title" data-aos="fade-up">Our Key Programs</h2>
-        <!-- Your existing programs carousel code remains the same -->
+
         <div
           id="programsCarousel"
           class="carousel slide programs-carousel"
-          data-bs-ride="carousel"
-          data-aos="fade-up"
+          data-bs-ride="carousel" data-aos="fade-up"
         >
-          <!-- Carousel content remains unchanged -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                  <div class="program-card card h-100">
+                    <img
+                      src="images/IMG-20250901-WA0051.jpg"
+                      class="card-img-top"
+                      alt="Talent Day"
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">IGAT Talent Day</h5>
+                      <p class="card-text">
+                        Semesterly talent competitions where students showcase
+                        their abilities in various categories.
+                      </p>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                      <a
+                        href="programs.html#talent-day"
+                        class="btn btn-outline-primary"
+                      >
+                        Read More <i class="fas fa-arrow-right ms-2"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                  <div class="program-card card h-100">
+                    <img
+                      src="images/IMG-20250901-WA0052.jpg"
+                      class="card-img-top"
+                      alt="Workshop"
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">Talent Development Workshops</h5>
+                      <p class="card-text">
+                        Regular workshops with industry experts to help students
+                        refine their talents.
+                      </p>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                      <a
+                        href="programs.html#workshops"
+                        class="btn btn-outline-primary"
+                      >
+                        Read More <i class="fas fa-arrow-right ms-2"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                  <div class="program-card card h-100">
+                    <img
+                      src="images/IMG-20250901-WA0053.jpg" 
+                      class="card-img-top"
+                      alt="Exchange Program"
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">College Exchange Programs</h5>
+                      <p class="card-text">
+                        Opportunities for students to interact with talent clubs
+                        from other institutions.
+                      </p>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                      <a
+                        href="programs.html#exchange"
+                        class="btn btn-outline-primary"
+                      >
+                        Read More <i class="fas fa-arrow-right ms-2"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                  <div class="program-card card h-100">
+                    <img
+                      src="images/IMG-20250901-WA0054.jpg"
+                      class="card-img-top"
+                      alt="Mentorship Program"
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">Talent Mentorship</h5>
+                      <p class="card-text">
+                        One-on-one mentorship connecting students with
+                        professionals in their talent fields.
+                      </p>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                      <a
+                        href="programs.html#mentorship"
+                        class="btn btn-outline-primary"
+                      >
+                        Read More <i class="fas fa-arrow-right ms-2"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                  <div class="program-card card h-100">
+                    <img
+                      src="images/IMG-20250901-WA0055.jpg"
+                      class="card-img-top"
+                      alt="Showcase"
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">Annual Talent Showcase</h5>
+                      <p class="card-text">
+                        Grand event featuring the best talents from across the
+                        institution.
+                      </p>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                      <a
+                        href="programs.html#showcase"
+                        class="btn btn-outline-primary"
+                      >
+                        Read More <i class="fas fa-arrow-right ms-2"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                  <div class="program-card card h-100">
+                    <img
+                      src="images/MAZ_6250.jpg"
+                      class="card-img-top"
+                      alt="Community Service"
+                    />
+                    <div class="card-body">
+                      <h5 class="card-title">Talent for Community</h5>
+                      <p class="card-text">
+                        Using talents to serve the community through various
+                        outreach programs.
+                      </p>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                      <a
+                        href="programs.html#community"
+                        class="btn btn-outline-primary"
+                      >
+                        Read More <i class="fas fa-arrow-right ms-2"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#programsCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#programsCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
+
         <div class="text-center mt-5" data-aos="fade-up">
           <a href="programs.html" class="btn btn-primary btn-lg"
             >View All Programs</a
@@ -921,141 +1015,37 @@
       </div>
     </section>
 
-    <!-- Upcoming Events Preview -->
-    <section class="content-section bg-white">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 text-center mb-5">
-            <h2 class="section-title" data-aos="fade-up">Upcoming Events</h2>
-            <p class="lead" data-aos="fade-up" data-aos-delay="100">
-              Don't miss out on our exciting upcoming events and opportunities
-            </p>
-          </div>
-        </div>
-        <div class="row g-4">
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="event-preview-card text-center h-100">
-              <div class="event-icon">
-                <i class="fas fa-users"></i>
-              </div>
-              <h4 class="h5 mb-3">IGAT Youth Mentorship</h4>
-              <p class="text-muted mb-3">
-                November 21st - Transformative mentorship program for young
-                talents
-              </p>
-              <div class="event-countdown mb-3">
-                <span class="badge bg-primary">Registration Open</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="event-preview-card text-center h-100">
-              <div class="event-icon">
-                <i class="fas fa-search"></i>
-              </div>
-              <h4 class="h5 mb-3">IGAT Talent Search</h4>
-              <p class="text-muted mb-3">
-                January 31st - Annual talent competition with amazing prizes
-              </p>
-              <div class="event-countdown mb-3">
-                <span class="badge bg-success">Coming Soon</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
-            <div class="event-preview-card text-center h-100">
-              <div class="event-icon">
-                <i class="fas fa-calendar-plus"></i>
-              </div>
-              <h4 class="h5 mb-3">More Events</h4>
-              <p class="text-muted mb-3">
-                Stay updated with our regular workshops and talent development
-                programs
-              </p>
-              <div class="event-countdown mb-3">
-                <span class="badge bg-warning text-dark">Weekly Updates</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="text-center mt-5" data-aos="fade-up">
-          <a
-            href="programs.html#upcoming-events"
-            class="btn btn-primary btn-lg"
-          >
-            <i class="fas fa-calendar-alt me-2"></i>View All Upcoming Events
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Enhanced Impact Stats -->
+    <!-- Impact Stats -->
     <section class="content-section impact-section text-white">
       <div class="container">
         <h2 class="section-title text-white" data-aos="fade-up">Our Impact</h2>
-        <div class="row g-4">
-          <div
-            class="col-md-6 col-lg-3"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div class="impact-card">
-              <div class="impact-icon">
-                <i class="fas fa-users"></i>
-              </div>
-              <div class="stat-number">500+</div>
-              <p class="stat-label">Students Engaged</p>
-            </div>
+        <div class="row text-center">
+          <div class="col-md-3 mb-4 mb-md-0">
+            <div class="stat-number">500+</div>
+            <p class="h5">Students Engaged</p>
           </div>
-          <div
-            class="col-md-6 col-lg-3"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <div class="impact-card">
-              <div class="impact-icon">
-                <i class="fas fa-star"></i>
-              </div>
-              <div class="stat-number">50+</div>
-              <p class="stat-label">Talents Identified</p>
-            </div>
+          <div class="col-md-3 mb-4 mb-md-0">
+            <div class="stat-number">50+</div>
+            <p class="h5">Talents Identified</p>
           </div>
-          <div
-            class="col-md-6 col-lg-3"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <div class="impact-card">
-              <div class="impact-icon">
-                <i class="fas fa-handshake"></i>
-              </div>
-              <div class="stat-number">10+</div>
-              <p class="stat-label">Industry Partners</p>
-            </div>
+          <div class="col-md-3 mb-4 mb-md-0">
+            <div class="stat-number">10+</div>
+            <p class="h5">Industry Partners</p>
           </div>
-          <div
-            class="col-md-6 col-lg-3"
-            data-aos="fade-up"
-            data-aos-delay="400"
-          >
-            <div class="impact-card">
-              <div class="impact-icon">
-                <i class="fas fa-calendar-check"></i>
-              </div>
-              <div class="stat-number">5+</div>
-              <p class="stat-label">Annual Events</p>
-            </div>
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
+            <div class="stat-number">5+</div>
+            <p class="h5">Annual Events</p>
           </div>
         </div>
-        <div class="text-center mt-5" data-aos="fade-up">
-          <a href="impact.html" class="btn btn-light btn-lg">
-            See Our Full Impact
-          </a>
+        <div class="text-center mt-5"  data-aos="fade-up">
+          <a href="impact.html" class="btn btn-light btn-lg"
+            >See Our Full Impact</a
+          >
         </div>
       </div>
     </section>
 
-    <!-- Testimonials Section -->
+   <!-- Testimonials Section -->
     <section class="testimonial-section">
       <div class="container">
         <div class="row mb-5">
@@ -1066,31 +1056,130 @@
             </p>
           </div>
         </div>
-        <!-- Your existing testimonials code remains the same -->
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <div
+              id="showcaseTestimonials"
+              class="carousel slide"
+              data-bs-ride="carousel"
+              data-aos="fade-up"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="testimonial-card">
+                    <i class="fas fa-quote-right testimonial-icon"></i>
+                    <div class="testimonial-content">
+                      <p class="testimonial-text">
+                        "IGAT Club gave me the confidence to pursue music
+                        professionally. The workshops and performance
+                        opportunities were invaluable."
+                      </p>
+                      <div class="testimonial-author">
+                        <div class="author-initials">MN</div>
+                        <div class="author-info">
+                          <h5>Michael N.</h5>
+                          <p>Music Talent, Class of 2022</p>
+                        </div>
+                      </div>
+                      <div class="testimonial-meta">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Scholarship recipient</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="testimonial-card">
+                    <i class="fas fa-quote-right testimonial-icon"></i>
+                    <div class="testimonial-content">
+                      <p class="testimonial-text">
+                        "Through IGAT's tech challenges, I discovered my passion
+                        for coding and now have a promising career in software
+                        development."
+                      </p>
+                      <div class="testimonial-author">
+                        <div class="author-initials">LO</div>
+                        <div class="author-info">
+                          <h5>Linda O.</h5>
+                          <p>Tech Innovation, Class of 2021</p>
+                        </div>
+                      </div>
+                      <div class="testimonial-meta">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Software Developer at TechSolutions Ltd</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="testimonial-card">
+                    <i class="fas fa-quote-right testimonial-icon"></i>
+                    <div class="testimonial-content">
+                      <p class="testimonial-text">
+                        "The art exhibition organized by IGAT led to my first
+                        commission. I now run a successful graphic design
+                        business."
+                      </p>
+                      <div class="testimonial-author">
+                        <div class="author-initials">DM</div>
+                        <div class="author-info">
+                          <h5>David M.</h5>
+                          <p>Visual Arts, Class of 2020</p>
+                        </div>
+                      </div>
+                      <div class="testimonial-meta">
+                        <i class="fas fa-rocket"></i>
+                        <span>Founder of CreativeDesign Studios</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#showcaseTestimonials"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#showcaseTestimonials"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Enhanced Call to Action -->
-    <section class="content-section cta-section text-white">
+    <!-- Call to Action -->
+    <section class="content-section cta-section">
       <div class="container text-center">
-        <h2 class="section-title text-white" data-aos="fade-up">
-          Ready to Make a Difference?
-        </h2>
-        <p class="lead mb-5" data-aos="fade-up" data-aos-delay="100">
-          Join us in nurturing the next generation of talented individuals who
-          will transform our society
+        <h2 class="section-title" data-aos="fade-up">Ready to Make a Difference?</h2>
+        <p class="lead mb-5">
+          Support talented students by donating, volunteering or partnering with
+          us.
         </p>
-        <div
-          class="d-flex justify-content-center gap-3 flex-wrap"
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
-          <a href="support.html" class="btn btn-light btn-lg px-4 py-2">
+        <div class="d-flex justify-content-center gap-3">
+          <a href="support.html" class="btn btn-primary btn-lg px-4 py-2">
             Support Our Cause
           </a>
           <a
             href="contact.html"
-            class="btn btn-outline-light btn-lg px-4 py-2"
+            class="btn btn-outline-primary btn-lg px-4 py-2"
           >
             Contact Us
           </a>
@@ -1105,8 +1194,7 @@
           <div class="col-lg-4 mb-4 mb-lg-0">
             <h3 class="h4 mb-3">IGAT Club</h3>
             <p>
-              Identifying and nurturing talents among students, youths creating
-              future stars.
+              Identifying and nurturing talents among students, youths creating future stars.
             </p>
             <div class="social-icons mt-4">
               <a href="#" class="text-white me-3"
@@ -1146,8 +1234,7 @@
                 <i class="fas fa-map-marker-alt me-2"></i> I got a talent club
               </li>
               <li class="mb-2">
-                <i class="fas fa-phone me-2"></i> 0722 995 763/ 0729 669 820/
-                0725 597 121
+                <i class="fas fa-phone me-2"></i> 0722 995 763/ 0729 669 820/ 0725 597 121
               </li>
               <li class="mb-2">
                 <i class="fas fa-envelope me-2"></i> bosiboriperis@gmail.com
@@ -1186,17 +1273,37 @@
       </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
     <script src="script.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      // Initialize carousel with interval
+      document.addEventListener("DOMContentLoaded", function () {
+        // Programs carousel
+        const programsCarousel = new bootstrap.Carousel("#programsCarousel", {
+          interval: 5000,
+          wrap: true,
+        });
+
+        // Testimonial carousel
+        const testimonialCarousel = new bootstrap.Carousel(
+          "#showcaseTestimonials",
+          {
+            interval: 6000,
+            wrap: true,
+          }
+        );
+      });
+    </script>
+     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init({
-        duration: 1000,
-        once: true,
-        disable: function () {
-          return window.innerWidth <= 768;
-        },
+        duration: 3000,
+        once: false,
+        disable: function() {
+    return window.innerWidth <=768; // Disable below 768px
+  }
       });
     </script>
     <script
