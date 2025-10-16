@@ -40,7 +40,46 @@
         color: var(--text-medium);
         line-height: 1.7;
       }
+.page-header {
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: var(--section-padding);
+        margin-top: 80px;
+        position: relative;
+      }
+.page-header h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        color: white;
+        margin-bottom: 1.5rem;
+      }
 
+      .page-header .lead {
+        font-size: 1.5rem;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        color: white;;
+      }
+      .page-header p {
+        font-size: 1.4rem;
+        max-width: 700px;
+        margin: 0 auto 2rem;
+      }
+      .page-header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+      }
+
+      .page-header .container {
+        position: relative;
+        z-index: 1;
+      }
       .payment-option-card {
         border: 1px solid #e0e0e0;
         border-radius: 10px;
@@ -170,6 +209,19 @@
         </ul>
       </div>
     </nav>
+     <header class="support-header page-header"
+    style="background-image: url('images/football\ 10\ \(4\).JPG')">
+      <div class="container h-100">
+        <div class="row h-100 align-items-center">
+          <div class="col-12 text-center">
+            <h1 class="fw-bold text-white">Talent Showcase</h1>
+            <p class="lead text-white">
+              Celebrating the creativity and innovation of our students
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
     <!-- Payment Options Section -->
     <section class="py-5 bg-light" id="payment-options">
       <div class="container">

@@ -14,7 +14,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
@@ -45,6 +45,8 @@
         font-family: "Poppins", sans-serif;
         color: var(--text-medium);
         line-height: 1.7;
+        overflow-x: hidden;
+        color: #555;
       }
 
       h1,
@@ -57,35 +59,32 @@
         color: var(--text-dark);
       }
 
-      /* Navbar Styles */
-      .navbar {
-        background-color: rgba(76, 175, 80, 0.9);
-        backdrop-filter: blur(10px);
-        padding: 1rem 2rem;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1030;
-        transition: all 0.3s ease;
-      }
-
-      .brand-name {
-        font-weight: 700;
-        font-size: 1.3rem;
-        color: white;
-      }
-
-      /* Header/Hero Sections */
       .page-header {
         background-size: cover;
         background-position: center;
         color: white;
         padding: var(--section-padding);
-        margin-top: 40px;
+        margin-top: 80px;
         position: relative;
       }
+.page-header h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        color: white;
+        margin-bottom: 1.5rem;
+      }
 
+      .page-header .lead {
+        font-size: 1.5rem;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        color: white;;
+      }
+      .page-header p {
+        font-size: 1.4rem;
+        max-width: 700px;
+        margin: 0 auto 2rem;
+      }
       .page-header::before {
         content: "";
         position: absolute;
@@ -105,7 +104,10 @@
       .content-section {
         padding: var(--section-padding);
       }
-
+      /* Section Styling */
+      .section {
+        padding: 80px 0;
+      }
       .section-title {
         position: relative;
         padding-bottom: 1rem;
@@ -262,54 +264,54 @@
   <body>
     <!-- Navigation -->
     <nav class="navbar">
-  <div class="brand">
-    <!-- Logo container with the image -->
-    <a href="index.html" class="logo-link">
-      <img 
-        src="images/logo.png" 
-        alt="IGAT GOTATALENT Logo" 
-        class="brand-logo"
+      <div class="brand">
+        <!-- Logo container with the image -->
+        <a href="index.html" class="logo-link">
+          <img
+            src="images/logo.png"
+            alt="IGAT GOTATALENT Logo"
+            class="brand-logo"
+          />
+        </a>
+        <a href="#" class="brand-name">IGAT Club</a>
+      </div>
+
+      <button
+        class="menu-toggle"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="nav-list"
       >
-    </a>
-    <a href="#" class="brand-name">IGAT Club</a>
-  </div>
+        ☰
+      </button>
 
-  <button
-    class="menu-toggle"
-    aria-label="Menu"
-    aria-expanded="false"
-    aria-controls="nav-list"
-  >
-    ☰
-  </button>
+      <!-- Moved overlay to be sibling of nav-container -->
+      <div class="nav-overlay" aria-hidden="true"></div>
 
-  <!-- Moved overlay to be sibling of nav-container -->
-  <div class="nav-overlay" aria-hidden="true"></div>
-
-  <div class="nav-container">
-    <ul class="nav-list" id="nav-list" aria-hidden="true">
-      <li class="nav-item active"><a href="index.html">Home</a></li>
-      <li class="nav-item"><a href="about.html">About Us</a></li>
-      <li class="nav-item"><a href="programs.html">Programs</a></li>
-      <li class="nav-item dropdown">
-        <a href="#" aria-haspopup="true" aria-expanded="false">More</a>
-        <div class="dropdown-content">
-          <a href="impact.html">Impact</a>
-          <a href="showcase.html">Showcase</a>
-          <a href="news.html">News</a>
-          <a href="support.html">Support</a>
-          <a href="faq.html">FAQ</a>
-        </div>
-      </li>
-      <li class="nav-item"><a href="contact.html">Contact</a></li>
-    </ul>
-  </div>
-</nav>
+      <div class="nav-container">
+        <ul class="nav-list" id="nav-list" aria-hidden="true">
+          <li class="nav-item active"><a href="index.html">Home</a></li>
+          <li class="nav-item"><a href="about.html">About Us</a></li>
+          <li class="nav-item"><a href="programs.html">Programs</a></li>
+          <li class="nav-item dropdown">
+            <a href="#" aria-haspopup="true" aria-expanded="false">More</a>
+            <div class="dropdown-content">
+              <a href="impact.html">Impact</a>
+              <a href="showcase.html">Showcase</a>
+              <a href="news.html">News</a>
+              <a href="support.html">Support</a>
+              <a href="faq.html">FAQ</a>
+            </div>
+          </li>
+          <li class="nav-item"><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
 
     <!-- Page Header -->
     <header
-      class="page-header"
-      style="background-image: url('images/IMG-20250407-WA0457.jpg')"
+      class="programs-header page-header"
+      style="background-image: url('images/program.jpg')"
     >
       <div class="container h-100">
         <div class="row h-100 align-items-center">
@@ -763,88 +765,93 @@
     </section>
 
     <!-- Upcoming Events -->
-  <div class="row g-4">
-  <div class="col-md-6 col-lg-4" data-aos="slide-up">
-    <div class="event-card card h-100">
-      <div class="card-header bg-primary text-white">
-        <h5 class="mb-0">IGAT Youth Mentorship</h5>
-      </div>
-      <div class="card-body">
-        <div class="event-date mb-3">
-          <i class="fas fa-calendar-alt text-primary me-2"></i>
-          <strong>November 21st</strong>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" data-aos="slide-up">
+        <div class="event-card card h-100">
+          <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">IGAT Youth Mentorship</h5>
+          </div>
+          <div class="card-body">
+            <div class="event-date mb-3">
+              <i class="fas fa-calendar-alt text-primary me-2"></i>
+              <strong>November 21st</strong>
+            </div>
+            <p class="card-text">
+              Join our youth mentorship program designed to guide and inspire
+              young talents. We open registration at 6:07 PM for this
+              transformative journey.
+            </p>
+            <div class="event-highlights">
+              <span class="badge bg-light text-dark mb-2"
+                >Registration Open</span
+              >
+              <span class="badge bg-warning text-dark mb-2">Limited Slots</span>
+            </div>
+          </div>
+          <div class="card-footer bg-transparent">
+            <a href="contact.html" class="btn btn-primary w-100">
+              <i class="fas fa-user-plus me-2"></i>Register Now
+            </a>
+          </div>
         </div>
-        <p class="card-text">
-          Join our youth mentorship program designed to guide and inspire young talents. 
-          We open registration at 6:07 PM for this transformative journey.
-        </p>
-        <div class="event-highlights">
-          <span class="badge bg-light text-dark mb-2">Registration Open</span>
-          <span class="badge bg-warning text-dark mb-2">Limited Slots</span>
+      </div>
+
+      <div class="col-md-6 col-lg-4" data-aos="slide-up" data-aos-delay="100">
+        <div class="event-card card h-100">
+          <div class="card-header bg-success text-white">
+            <h5 class="mb-0">IGAT Talent Search</h5>
+          </div>
+          <div class="card-body">
+            <div class="event-date mb-3">
+              <i class="fas fa-calendar-alt text-success me-2"></i>
+              <strong>January 31st</strong>
+            </div>
+            <p class="card-text">
+              Discover your hidden talents in our annual talent search
+              competition. Showcase your skills and stand a chance to win
+              amazing prizes and recognition.
+            </p>
+            <div class="event-highlights">
+              <span class="badge bg-light text-dark mb-2">Coming Soon</span>
+              <span class="badge bg-info text-dark mb-2">Prize Pool</span>
+            </div>
+          </div>
+          <div class="card-footer bg-transparent">
+            <a href="contact.html" class="btn btn-success w-100">
+              <i class="fas fa-binoculars me-2"></i>Get Notified
+            </a>
+          </div>
         </div>
       </div>
-      <div class="card-footer bg-transparent">
-        <a href="contact.html" class="btn btn-primary w-100">
-          <i class="fas fa-user-plus me-2"></i>Register Now
-        </a>
+
+      <div class="col-md-6 col-lg-4" data-aos="slide-up" data-aos-delay="200">
+        <div class="event-card card h-100">
+          <div class="card-header bg-warning text-dark">
+            <h5 class="mb-0">Stay Tuned</h5>
+          </div>
+          <div class="card-body">
+            <div class="event-date mb-3">
+              <i class="fas fa-calendar-plus text-warning me-2"></i>
+              <strong>More Events Coming</strong>
+            </div>
+            <p class="card-text">
+              We're constantly organizing new events and workshops. Subscribe to
+              our newsletter to be the first to know about upcoming
+              opportunities.
+            </p>
+            <div class="event-highlights">
+              <span class="badge bg-light text-dark mb-2">Weekly Updates</span>
+              <span class="badge bg-primary text-white mb-2">Exclusive</span>
+            </div>
+          </div>
+          <div class="card-footer bg-transparent">
+            <a href="contact.html" class="btn btn-warning text-dark w-100">
+              <i class="fas fa-bell me-2"></i>Subscribe
+            </a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  
-  <div class="col-md-6 col-lg-4" data-aos="slide-up" data-aos-delay="100">
-    <div class="event-card card h-100">
-      <div class="card-header bg-success text-white">
-        <h5 class="mb-0">IGAT Talent Search</h5>
-      </div>
-      <div class="card-body">
-        <div class="event-date mb-3">
-          <i class="fas fa-calendar-alt text-success me-2"></i>
-          <strong>January 31st</strong>
-        </div>
-        <p class="card-text">
-          Discover your hidden talents in our annual talent search competition. 
-          Showcase your skills and stand a chance to win amazing prizes and recognition.
-        </p>
-        <div class="event-highlights">
-          <span class="badge bg-light text-dark mb-2">Coming Soon</span>
-          <span class="badge bg-info text-dark mb-2">Prize Pool</span>
-        </div>
-      </div>
-      <div class="card-footer bg-transparent">
-        <a href="contact.html" class="btn btn-success w-100">
-          <i class="fas fa-binoculars me-2"></i>Get Notified
-        </a>
-      </div>
-    </div>
-  </div>
-  
-  <div class="col-md-6 col-lg-4" data-aos="slide-up" data-aos-delay="200">
-    <div class="event-card card h-100">
-      <div class="card-header bg-warning text-dark">
-        <h5 class="mb-0">Stay Tuned</h5>
-      </div>
-      <div class="card-body">
-        <div class="event-date mb-3">
-          <i class="fas fa-calendar-plus text-warning me-2"></i>
-          <strong>More Events Coming</strong>
-        </div>
-        <p class="card-text">
-          We're constantly organizing new events and workshops. Subscribe to our 
-          newsletter to be the first to know about upcoming opportunities.
-        </p>
-        <div class="event-highlights">
-          <span class="badge bg-light text-dark mb-2">Weekly Updates</span>
-          <span class="badge bg-primary text-white mb-2">Exclusive</span>
-        </div>
-      </div>
-      <div class="card-footer bg-transparent">
-        <a href="contact.html" class="btn btn-warning text-dark w-100">
-          <i class="fas fa-bell me-2"></i>Subscribe
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
 
     <!-- Call to Action -->
     <section class="content-section bg-primary text-white">
@@ -871,7 +878,8 @@
           <div class="col-lg-4 mb-4 mb-lg-0">
             <h3 class="h4 mb-3">IGAT Club</h3>
             <p>
-              Identifying and nurturing talents among students, youths creating future stars.
+              Identifying and nurturing talents among students, youths creating
+              future stars.
             </p>
             <div class="social-icons mt-4">
               <a href="#" class="text-white me-3"
@@ -911,7 +919,8 @@
                 <i class="fas fa-map-marker-alt me-2"></i> I got a talent club
               </li>
               <li class="mb-2">
-                <i class="fas fa-phone me-2"></i> 0722 995 763/ 0729 669 820/ 0725 597 121
+                <i class="fas fa-phone me-2"></i> 0722 995 763/ 0729 669 820/
+                0725 597 121
               </li>
               <li class="mb-2">
                 <i class="fas fa-envelope me-2"></i> bosiboriperis@gmail.com
@@ -999,9 +1008,9 @@
       AOS.init({
         duration: 2000,
         once: false,
-        disable: function() {
-    return window.innerWidth <=768; // Disable below 768px
-  }
+        disable: function () {
+          return window.innerWidth <= 768; // Disable below 768px
+        },
       });
     </script>
     <script
