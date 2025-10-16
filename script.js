@@ -1,154 +1,198 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // ==================== NAVBAR FUNCTIONALITY ====================
-  // Mobile menu elements
-  // ==================== NAVBAR FUNCTIONALITY ====================
-  // Mobile menu elements
-  const menuToggle = document.querySelector(".menu-toggle");
-  const menuClose = document.querySelector(".menu-close");
-  const navContainer = document.querySelector(".nav-container");
-  const navOverlay = document.querySelector(".nav-overlay");
-  const dropdownToggles = document.querySelectorAll(".dropdown > a");
+  // ==================== UNIVERSAL NAVBAR FUNCTIONALITY ====================
+// Mobile menu elements
+const menuToggle = document.querySelector(".menu-toggle");
+const menuClose = document.querySelector(".menu-close");
+const navContainer = document.querySelector(".nav-container");
+const navOverlay = document.querySelector(".nav-overlay");
+const dropdownToggles = document.querySelectorAll(".dropdown > a");
 
-  // Toggle mobile menu
-  function toggleMenu() {
-    navContainer.classList.toggle("active");
-    navOverlay.classList.toggle("active");
-    document.body.style.overflow = navContainer.classList.contains("active")
-      ? "hidden"
-      : "";
+// Toggle mobile menu
+function toggleMenu() {
+  navContainer.classList.toggle("active");
+  navOverlay.classList.toggle("active");
+  document.body.style.overflow = navContainer.classList.contains("active")
+    ? "hidden"
+    : "";
 
-    // Update ARIA attributes
-    const isExpanded = navContainer.classList.contains("active");
-    menuToggle.setAttribute("aria-expanded", isExpanded);
-    document
-      .getElementById("nav-list")
-      .setAttribute("aria-hidden", !isExpanded);
-  }
+  // Update ARIA attributes
+  const isExpanded = navContainer.classList.contains("active");
+  menuToggle.setAttribute("aria-expanded", isExpanded);
+  document
+    .getElementById("nav-list")
+    .setAttribute("aria-hidden", !isExpanded);
+}
 
-  // Close mobile menu
-  function closeMenu() {
-    navContainer.classList.remove("active");
-    navOverlay.classList.remove("active");
-    document.body.style.overflow = "";
-    menuToggle.setAttribute("aria-expanded", "false");
-    document.getElementById("nav-list").setAttribute("aria-hidden", "true");
+// Close mobile menu
+function closeMenu() {
+  navContainer.classList.remove("active");
+  navOverlay.classList.remove("active");
+  document.body.style.overflow = "";
+  menuToggle.setAttribute("aria-expanded", "false");
+  document.getElementById("nav-list").setAttribute("aria-hidden", "true");
 
-    // Close any open dropdowns
-    document.querySelectorAll(".dropdown.active").forEach((dropdown) => {
-      dropdown.classList.remove("active");
-      dropdown.querySelector("a").setAttribute("aria-expanded", "false");
-    });
-  }
-
-  // Event listeners
-  if (menuToggle) {
-    menuToggle.addEventListener("click", toggleMenu);
-  }
-
-  if (menuClose) {
-    menuClose.addEventListener("click", closeMenu);
-  }
-
-  // Modified overlay click handler
-  if (navOverlay) {
-    navOverlay.addEventListener("click", function (e) {
-      // Only close if clicking directly on overlay (not bubbling from nav)
-      if (e.target === navOverlay) {
-        closeMenu();
-      }
-    });
-  }
-
-  // Add click handler to document to close when clicking outside
-  document.addEventListener("click", function (e) {
-    // If nav is open and click is outside nav container
-    if (
-      navContainer.classList.contains("active") &&
-      !navContainer.contains(e.target) &&
-      e.target !== menuToggle
-    ) {
-      closeMenu();
-
-      // Allow the original click action to proceed
-      return true;
-    }
+  // Close any open dropdowns
+  document.querySelectorAll(".dropdown.active").forEach((dropdown) => {
+    dropdown.classList.remove("active");
+    dropdown.querySelector("a").setAttribute("aria-expanded", "false");
   });
+}
 
-  // Rest of your existing code remains the same...
-  dropdownToggles.forEach((toggle) => {
-    toggle.addEventListener("click", function (e) {
-      if (window.innerWidth <= 768) {
-        e.preventDefault();
-        const dropdown = this.parentElement;
-        const isExpanding = !dropdown.classList.contains("active");
+// Event listeners
+if (menuToggle) {
+  menuToggle.addEventListener("click", toggleMenu);
+}
 
-        document
-          .querySelectorAll(".dropdown.active")
-          .forEach((activeDropdown) => {
-            if (activeDropdown !== dropdown) {
-              activeDropdown.classList.remove("active");
-              activeDropdown
-                .querySelector("a")
-                .setAttribute("aria-expanded", "false");
-            }
-          });
+if (menuClose) {
+  menuClose.addEventListener("click", closeMenu);
+}
 
-        dropdown.classList.toggle("active");
-        this.setAttribute(
-          "aria-expanded",
-          dropdown.classList.contains("active")
-        );
-
-        if (isExpanding) {
-          setTimeout(() => {
-            dropdown.scrollIntoView({ block: "nearest", behavior: "smooth" });
-          }, 100);
-        }
-      }
-    });
-  });
-
-  document.querySelectorAll(".nav-item:not(.dropdown) > a").forEach((link) => {
-    link.addEventListener("click", function () {
-      if (window.innerWidth <= 768) {
-        closeMenu();
-      }
-    });
-  });
-
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && navContainer.classList.contains("active")) {
+// Modified overlay click handler
+if (navOverlay) {
+  navOverlay.addEventListener("click", function (e) {
+    // Only close if clicking directly on overlay (not bubbling from nav)
+    if (e.target === navOverlay) {
       closeMenu();
     }
   });
+}
 
-  // ==================== NAVBAR SCROLL BEHAVIOR ====================
-  const navbar = document.querySelector(".navbar");
-  if (navbar) {
-    let lastScrollTop = 0;
+// Add click handler to document to close when clicking outside
+document.addEventListener("click", function (e) {
+  // If nav is open and click is outside nav container
+  if (
+    navContainer.classList.contains("active") &&
+    !navContainer.contains(e.target) &&
+    e.target !== menuToggle
+  ) {
+    closeMenu();
 
-    window.addEventListener("scroll", function () {
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
+    // Allow the original click action to proceed
+    return true;
+  }
+});
 
-      if (scrollTop > lastScrollTop) {
-        // Scrolling down
-        if (scrollTop > 100) {
-          navbar.classList.remove("scrolled-up");
-        }
+// Rest of your existing code remains the same...
+dropdownToggles.forEach((toggle) => {
+  toggle.addEventListener("click", function (e) {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      const dropdown = this.parentElement;
+      const isExpanding = !dropdown.classList.contains("active");
+
+      document
+        .querySelectorAll(".dropdown.active")
+        .forEach((activeDropdown) => {
+          if (activeDropdown !== dropdown) {
+            activeDropdown.classList.remove("active");
+            activeDropdown
+              .querySelector("a")
+              .setAttribute("aria-expanded", "false");
+          }
+        });
+
+      dropdown.classList.toggle("active");
+      this.setAttribute(
+        "aria-expanded",
+        dropdown.classList.contains("active")
+      );
+
+      if (isExpanding) {
+        setTimeout(() => {
+          dropdown.scrollIntoView({ block: "nearest", behavior: "smooth" });
+        }, 100);
+      }
+    }
+  });
+});
+
+document.querySelectorAll(".nav-item:not(.dropdown) > a").forEach((link) => {
+  link.addEventListener("click", function () {
+    if (window.innerWidth <= 768) {
+      closeMenu();
+    }
+  });
+});
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" && navContainer.classList.contains("active")) {
+    closeMenu();
+  }
+});
+
+// ==================== UNIVERSAL NAVBAR SCROLL BEHAVIOR ====================
+const navbar = document.querySelector(".navbar");
+if (navbar) {
+  let lastScrollTop = 0;
+
+  // Universal function to detect if we're in a hero/header section
+  function isInHeroSection() {
+    // Check for different types of hero/header sections across pages
+    const heroSection = document.querySelector('.hero-section');
+    const pageHeader = document.querySelector('.page-header');
+    
+    if (heroSection) {
+      // For index.html - hero section
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const heroHeight = heroSection.offsetHeight;
+      return scrollTop < heroHeight - 100;
+    } else if (pageHeader) {
+      // For about.html and other pages - page header
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const headerHeight = pageHeader.offsetHeight;
+      return scrollTop < headerHeight - 100;
+    } else {
+      // For pages without specific hero sections
+      return window.scrollY < 100;
+    }
+  }
+
+  window.addEventListener("scroll", function () {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    // Update navbar theme based on scroll position
+    if (isInHeroSection()) {
+      navbar.classList.add("at-hero");
+      navbar.classList.remove("scrolled");
+    } else {
+      navbar.classList.remove("at-hero");
+      navbar.classList.add("scrolled");
+    }
+
+    // Existing scroll direction behavior (preserved)
+    if (scrollTop > lastScrollTop) {
+      // Scrolling down
+      if (scrollTop > 100) {
+        navbar.classList.remove("scrolled-up");
+      }
+    } else {
+      // Scrolling up
+      if (scrollTop > 100) {
+        navbar.classList.add("scrolled-up");
       } else {
-        // Scrolling up
-        if (scrollTop > 100) {
-          navbar.classList.add("scrolled-up");
-        } else {
-          // At top of page
-          navbar.classList.remove("scrolled-up");
-        }
+        // At top of page
+        navbar.classList.remove("scrolled-up");
       }
+    }
 
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    });
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+
+  // Initialize navbar state
+  function initializeNavbar() {
+    if (isInHeroSection()) {
+      navbar.classList.add("at-hero");
+    } else {
+      navbar.classList.add("scrolled");
+    }
   }
+
+  // Initialize on page load
+  initializeNavbar();
+  
+  // Re-initialize when page fully loads (in case images affect layout)
+  window.addEventListener('load', initializeNavbar);
+}
 
   // ==================== EXISTING CODE (optimized) ====================
   // Initialize tooltips only if elements exist
