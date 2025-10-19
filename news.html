@@ -1,70 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News & Updates - IGAT Club</title>
     <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Custom CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" />
     <style>
-      :root {
-        /* Primary Colors */
-        --primary-color: #4caf50;
-        --primary-dark: #388e3c;
-        --primary-light: #c8e6c9;
+        :root {
+            --primary-color: #4caf50;
+            --primary-dark: #388e3c;
+            --primary-light: #c8e6c9;
+            --text-dark: #2c3e50;
+            --text-medium: #555;
+            --text-light: #f8f9fa;
+            --section-padding: 5rem 0;
+            --section-padding-md: 4rem 0;
+            --section-padding-sm: 3rem 0;
+        }
 
-        /* Text Colors */
-        --text-dark: #2c3e50;
-        --text-medium: #555;
-        --text-light: #f8f9fa;
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-medium);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
 
-        /* Spacing */
-        --section-padding: 5rem 0;
-        --section-padding-md: 4rem 0;
-        --section-padding-sm: 3rem 0;
-      }
+        /* Navbar Styles */
+        .navbar {
+            background-color: rgba(76, 175, 80, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1030;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
 
-      /* Base Styles */
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        color: var(--text-medium);
-        line-height: 1.7;
-      }
-
-      /* Navbar Styles */
-      .navbar {
-        background-color: rgba(76, 175, 80, 0.9);
-        backdrop-filter: blur(10px);
-        padding: 1rem 2rem;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1030;
-        transition: all 0.3s ease;
-      }
-
-      .brand-name {
-        font-weight: 700;
-        font-size: 1.3rem;
-        color: white;
-      }
+        .brand-name {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: white;
+        }
 
       /* Header/Hero Sections */
       .page-header {
@@ -104,160 +91,409 @@
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
       }
 
-      /* Content Sections */
-      .content-section {
-        padding: var(--section-padding);
-      }
-
-      .section-title {
-        position: relative;
-        padding-bottom: 1rem;
-        margin-bottom: 3rem;
-      }
-
-      .section-title::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 4px;
-        background: var(--primary-color);
-      }
-
-      /* Cards */
-      .custom-card {
-        border: none;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        height: 100%;
-      }
-
-      .custom-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-      }
-
-      /* Buttons */
-
-      .btn-outline-primary {
-        border: 2px solid #4caf50;
-        color: #4caf50;
-        font-weight: 500;
-        border-radius: 30px;
-        padding: 8px 20px;
-        transition: all 0.3s;
-      }
-
-      .btn-outline-primary:hover {
-        background: #4caf50;
-        color: white;
-        transform: translateY(-2px);
-      }
-
-      .btn-primary {
-        background: #4caf50;
-        border: none;
-        padding: 12px 30px;
-        font-weight: 500;
-        border-radius: 30px;
-        transition: all 0.3s;
-      }
-
-      .btn-primary:hover {
-        background: #388e3c;
-        transform: translateY(-2px);
-      }
-
-      /* Responsive Adjustments */
-      @media (max-width: 992px) {
-        :root {
-          --section-padding: var(--section-padding-md);
+        /* Content Sections */
+        .content-section {
+            padding: var(--section-padding);
         }
 
-        .page-header h1 {
-          font-size: 3rem;
+        .section-title {
+            position: relative;
+            padding-bottom: 1rem;
+            margin-bottom: 3rem;
+            text-align: center;
         }
 
-        .page-header .lead {
-          font-size: 1.3rem;
-        }
-      }
-
-      @media (max-width: 768px) {
-        :root {
-          --section-padding: var(--section-padding-sm);
-        }
-
-        .page-header h1 {
-          font-size: 2.5rem;
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
         }
 
-        .page-header .lead {
-          font-size: 1.2rem;
+        /* Featured News */
+        .featured-news {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
         }
-      }
 
-      @media (max-width: 576px) {
-        .page-header h1 {
-          font-size: 2rem;
+        .featured-news img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
         }
 
-        .page-header .lead {
-          font-size: 1.1rem;
+        .featured-news:hover img {
+            transform: scale(1.03);
         }
-      }
+
+        .featured-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+            color: white;
+            padding: 2.5rem;
+        }
+
+        .featured-badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* News Cards */
+        .news-card {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            position: relative;
+        }
+
+        .news-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .news-card img {
+            height: 220px;
+            object-fit: cover;
+            width: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .news-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .news-card .card-body {
+            padding: 1.75rem;
+        }
+
+        .news-card .card-date {
+            font-size: 0.875rem;
+            color: #6c757d;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .news-card .card-date i {
+            margin-right: 0.5rem;
+        }
+
+        .news-card .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            line-height: 1.4;
+        }
+
+        .news-card .card-text {
+            color: var(--text-medium);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .news-card .card-footer {
+            background: transparent;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 1.25rem 1.75rem;
+        }
+
+        /* Sidebar Cards */
+        .sidebar-card {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-card .card-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.25rem 1.5rem;
+            border-bottom: none;
+        }
+
+        .sidebar-card .card-body {
+            padding: 1.5rem;
+        }
+
+        .category-list .list-group-item {
+            border: none;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 0.875rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .category-list .list-group-item:last-child {
+            border-bottom: none;
+        }
+
+        .recent-news .list-group-item {
+            border: none;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 1rem 0;
+            transition: all 0.2s ease;
+        }
+
+        .recent-news .list-group-item:hover {
+            background-color: rgba(76, 175, 80, 0.05);
+        }
+
+        .recent-news .list-group-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Event Cards */
+        .event-card {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .event-date {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.25rem;
+            text-align: center;
+            border-radius: 10px;
+            margin-right: 1.5rem;
+            min-width: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .event-date .day {
+            font-size: 1.75rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .event-date .month {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Newsletter Section */
+        .newsletter-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 4rem 0;
+        }
+
+        .newsletter-section .form-control {
+            border: none;
+            border-radius: 30px 0 0 30px;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+        }
+
+        .newsletter-section .btn-light {
+            border-radius: 0 30px 30px 0;
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background: var(--primary-color);
+            border: none;
+            padding: 0.75rem 1.75rem;
+            font-weight: 500;
+            border-radius: 30px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        .btn-outline-primary {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            font-weight: 500;
+            border-radius: 30px;
+            padding: 0.5rem 1.25rem;
+            transition: all 0.3s;
+        }
+
+        .btn-outline-primary:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Pagination */
+        .pagination .page-link {
+            color: var(--primary-color);
+            border: 1px solid #dee2e6;
+            padding: 0.5rem 0.75rem;
+        }
+
+        .pagination .page-item.active .page-link {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            :root {
+                --section-padding: var(--section-padding-md);
+            }
+
+            .page-header h1 {
+                font-size: 3rem;
+            }
+
+            .page-header .lead {
+                font-size: 1.3rem;
+            }
+
+            .featured-news img {
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --section-padding: var(--section-padding-sm);
+            }
+
+            .page-header {
+                background-attachment: scroll;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .page-header .lead {
+                font-size: 1.2rem;
+            }
+
+            .featured-news img {
+                height: 300px;
+            }
+
+            .event-date {
+                margin-right: 1rem;
+                margin-bottom: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .page-header .lead {
+                font-size: 1.1rem;
+            }
+
+            .featured-news img {
+                height: 250px;
+            }
+
+            .featured-content {
+                padding: 1.5rem;
+            }
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <!-- Navigation -->
-     <nav class="navbar">
-  <div class="brand">
-    <!-- Logo container with the image -->
-    <a href="index.html" class="logo-link">
-      <img 
-        src="images/logo.png" 
-        alt="IGAT GOTATALENT Logo" 
-        class="brand-logo"
-      >
-    </a>
-    <a href="#" class="brand-name">IGAT Club</a>
-  </div>
+       <nav class="navbar">
+      <div class="brand">
+        <a href="index.html" class="logo-link">
+          <img src="images/logo.png" alt="IGAT GOTATALENT Logo" class="brand-logo" />
+        </a>
+        <a href="#" class="brand-name">IGAT Club</a>
+      </div>
 
-  <button
-    class="menu-toggle"
-    aria-label="Menu"
-    aria-expanded="false"
-    aria-controls="nav-list"
-  >
-    ☰
-  </button>
+      <button class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-list">
+        ☰
+      </button>
 
-  <!-- Moved overlay to be sibling of nav-container -->
-  <div class="nav-overlay" aria-hidden="true"></div>
+      <div class="nav-overlay" aria-hidden="true"></div>
 
-  <div class="nav-container">
-    <ul class="nav-list" id="nav-list" aria-hidden="true">
-      <li class="nav-item active"><a href="index.html">Home</a></li>
-      <li class="nav-item"><a href="about.html">About Us</a></li>
-      <li class="nav-item"><a href="programs.html">Programs</a></li>
-      <li class="nav-item dropdown">
-        <a href="#" aria-haspopup="true" aria-expanded="false">More</a>
-        <div class="dropdown-content">
-          <a href="impact.html">Impact</a>
-          <a href="showcase.html">Showcase</a>
-          <a href="news.html">News</a>
-          <a href="support.html">Support</a>
-          <a href="faq.html">FAQ</a>
-        </div>
-      </li>
-      <li class="nav-item"><a href="contact.html">Contact</a></li>
-    </ul>
-  </div>
-</nav>
+      <div class="nav-container">
+        <ul class="nav-list" id="nav-list" aria-hidden="true">
+          <li class="nav-item active"><a href="index.html">Home</a></li>
+          <li class="nav-item"><a href="about.html">About Us</a></li>
+          <li class="nav-item"><a href="programs.html">Programs</a></li>
+          <li class="nav-item dropdown">
+            <a href="#" aria-haspopup="true" aria-expanded="false">More</a>
+            <div class="dropdown-content">
+              <a href="impact.html">Impact</a>
+              <a href="showcase.html">Showcase</a>
+              <a href="news.html">News</a>
+              <a href="support.html">Support</a>
+              <a href="faq.html">FAQ</a>
+            </div>
+          </li>
+          <li class="nav-item"><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
     <!-- Page Header -->
     <header
       class="news-header page-header"
@@ -278,69 +514,345 @@
       </div>
     </header>
 
+    <!-- Featured News Section -->
+    <section class="content-section bg-light" id="featured">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Featured Story</h2>
+                    <p class="text-muted">Highlighting our most impactful recent event</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="featured-news" data-aos="fade-up">
+                        <img src="images/IMG-20250901-WA0054.jpg" alt="Roundtable Leadership Conversations">
+                        <div class="featured-content">
+                            <span class="featured-badge">Featured Event</span>
+                            <h2 class="text-white mb-3">Roundtable Leadership Conversations: Social Capital</h2>
+                            <p class="text-white mb-4 lead">Networks as the New Leadership Currency - The Art of Building and Leveraging Networks for Transformation</p>
+                            <div class="d-flex flex-wrap align-items-center text-white">
+                                <div class="me-4 mb-2">
+                                    <i class="fas fa-calendar me-2"></i>
+                                    <span>Wednesday, 8th October 2025</span>
+                                </div>
+                                <div class="me-4 mb-2">
+                                    <i class="fas fa-clock me-2"></i>
+                                    <span>2:00 PM - 5:00 PM</span>
+                                </div>
+                                <div class="mb-2">
+                                    <i class="fas fa-map-marker-alt me-2"></i>
+                                    <span>Nwanza Place, Kieli, Kenya</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- News Section -->
     <section class="content-section" id="news">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-12 text-center">
-            <h2 class="section-title">Latest News</h2>
-            <p class="mb-5">
-              Updates from IGAT Club and the world of talent development
-            </p>
-          </div>
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Latest News</h2>
+                    <p class="text-muted">Updates from IGAT Club and the world of talent development</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Main News Content -->
+                <div class="col-lg-8">
+                    <div class="row g-4" id="news-list">
+                        <!-- News Item 1 -->
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                            <div class="news-card card">
+                                <img src="images/IMG-20250407-WA0452.jpg" class="card-img-top" alt="Interactivity Across Organizations">
+                                <div class="card-body">
+                                    <div class="card-date">
+                                        <i class="fas fa-calendar me-1"></i> October 15, 2025
+                                    </div>
+                                    <h5 class="card-title">Interactivity Across Organizations</h5>
+                                    <p class="card-text">Interaction across different organizations has resulted in growth of our club, creating and opening more opportunities for our members.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="#" class="btn btn-outline-primary">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- News Item 2 -->
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                            <div class="news-card card">
+                                <img src="images/IMG-20250407-WA0457.jpg" class="card-img-top" alt="Technology in Talent Development">
+                                <div class="card-body">
+                                    <div class="card-date">
+                                        <i class="fas fa-calendar me-1"></i> October 10, 2025
+                                    </div>
+                                    <h5 class="card-title">Technology in Talent Development</h5>
+                                    <p class="card-text">Exploring how technology is transforming talent identification and development in our programs and initiatives.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="#" class="btn btn-outline-primary">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- News Item 3 -->
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                            <div class="news-card card">
+                                <img src="images/show.jpg" class="card-img-top" alt="STEM Champion Recognition">
+                                <div class="card-body">
+                                    <div class="card-date">
+                                        <i class="fas fa-calendar me-1"></i> October 5, 2025
+                                    </div>
+                                    <h5 class="card-title">STEM Champion Recognition</h5>
+                                    <p class="card-text">Celebrating our multi-award winning educationist and STEM champion for their outstanding contributions to youth development.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="#" class="btn btn-outline-primary">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- News Item 4 -->
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                            <div class="news-card card">
+                                <img src="images/show.jpg" class="card-img-top" alt="Youth Talent Showcase Success">
+                                <div class="card-body">
+                                    <div class="card-date">
+                                        <i class="fas fa-calendar me-1"></i> September 28, 2025
+                                    </div>
+                                    <h5 class="card-title">Youth Talent Showcase Success</h5>
+                                    <p class="card-text">Our recent talent showcase event highlighted incredible skills and creativity among youth participants from across the region.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="#" class="btn btn-outline-primary">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="row mt-5">
+                        <div class="col-12">
+                            <nav aria-label="News pagination">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1">
+                                            <i class="fas fa-chevron-left me-1"></i> Previous
+                                        </a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">
+                                            Next <i class="fas fa-chevron-right ms-1"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <!-- Categories -->
+                    <div class="sidebar-card card" data-aos="fade-left">
+                        <div class="card-header">
+                            <h5 class="mb-0"><i class="fas fa-folder me-2"></i> Categories</h5>
+                        </div>
+                        <div class="card-body p-0">
+                            <ul class="list-group list-group-flush category-list">
+                                <li class="list-group-item">
+                                    <span>Events</span>
+                                    <span class="badge bg-primary rounded-pill">4</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span>Announcements</span>
+                                    <span class="badge bg-primary rounded-pill">7</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span>Success Stories</span>
+                                    <span class="badge bg-primary rounded-pill">12</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span>Partnerships</span>
+                                    <span class="badge bg-primary rounded-pill">3</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <span>Workshops</span>
+                                    <span class="badge bg-primary rounded-pill">5</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Recent News -->
+                    <div class="sidebar-card card" data-aos="fade-left" data-aos-delay="200">
+                        <div class="card-header">
+                            <h5 class="mb-0"><i class="fas fa-clock me-2"></i> Recent News</h5>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="list-group list-group-flush recent-news">
+                                <a href="#" class="list-group-item list-group-item-action">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h6 class="mb-1">New Partnership Announcement</h6>
+                                        <small>3 days ago</small>
+                                    </div>
+                                    <p class="mb-1 text-muted">Exciting collaboration with local schools to expand our talent programs.</p>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h6 class="mb-1">Upcoming Talent Competition</h6>
+                                        <small>1 week ago</small>
+                                    </div>
+                                    <p class="mb-1 text-muted">Registration now open for our annual talent showcase event.</p>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h6 class="mb-1">Student Achievement</h6>
+                                        <small>2 weeks ago</small>
+                                    </div>
+                                    <p class="mb-1 text-muted">Our student wins national art competition with original painting.</p>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h6 class="mb-1">New Workshop Series</h6>
+                                        <small>3 weeks ago</small>
+                                    </div>
+                                    <p class="mb-1 text-muted">Launching digital arts workshops for aspiring young creators.</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Newsletter Signup -->
+                    <div class="sidebar-card card bg-primary text-white" data-aos="fade-left" data-aos-delay="300">
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-3">Stay Updated</h5>
+                            <p class="card-text mb-3">Subscribe to our newsletter for the latest news and events.</p>
+                            <form>
+                                <div class="mb-3">
+                                    <input type="email" class="form-control" placeholder="Your email address">
+                                </div>
+                                <button type="submit" class="btn btn-light w-100">Subscribe Now</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="row g-4">
-          <!-- News List -->
-          <div class="col-lg-6">
-            <div class="news-list" id="news"></div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- Events Section -->
-    <section class="py-5">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-12 text-center">
-            <h2 class="fw-bold text-primary">Upcoming Events</h2>
-            <p class="lead">
-              Mark your calendar for these exciting opportunities
-            </p>
-          </div>
+    <section class="content-section bg-light" id="events">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Upcoming Events</h2>
+                    <p class="text-muted">Mark your calendar for these exciting opportunities</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <!-- Event 1 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                    <div class="card event-card h-100">
+                        <div class="card-body d-flex align-items-start">
+                            <div class="event-date flex-shrink-0">
+                                <div class="day">08</div>
+                                <div class="month">Oct</div>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h5 class="card-title">Roundtable Leadership</h5>
+                                <p class="card-text">Social Capital: Networks as the New Leadership Currency</p>
+                                <div class="d-flex align-items-center text-muted mt-3">
+                                    <i class="fas fa-map-marker-alt me-2"></i>
+                                    <small>Nwanza Place, Kieli</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Event 2 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card event-card h-100">
+                        <div class="card-body d-flex align-items-start">
+                            <div class="event-date flex-shrink-0">
+                                <div class="day">15</div>
+                                <div class="month">Oct</div>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h5 class="card-title">Youth Talent Showcase</h5>
+                                <p class="card-text">Annual talent competition and exhibition featuring our most promising members</p>
+                                <div class="d-flex align-items-center text-muted mt-3">
+                                    <i class="fas fa-map-marker-alt me-2"></i>
+                                    <small>IGAT Club Center</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Event 3 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card event-card h-100">
+                        <div class="card-body d-flex align-items-start">
+                            <div class="event-date flex-shrink-0">
+                                <div class="day">22</div>
+                                <div class="month">Oct</div>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h5 class="card-title">STEM Workshop</h5>
+                                <p class="card-text">Hands-on science and technology session for students interested in innovation</p>
+                                <div class="d-flex align-items-center text-muted mt-3">
+                                    <i class="fas fa-map-marker-alt me-2"></i>
+                                    <small>Tech Hub Nairobi</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <a href="#" class="btn btn-primary px-4 py-2">
+                        <i class="fas fa-calendar-alt me-2"></i>View All Events
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="row g-4" id="events"></div>
-      </div>
     </section>
 
     <!-- Newsletter Section -->
-    <section class="py-5 bg-primary text-white">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6 mb-4 mb-lg-0">
-            <h2 class="fw-bold mb-3">Stay Updated</h2>
-            <p class="lead mb-0">
-              Subscribe to our newsletter for the latest news, events, and
-              talent spotlights delivered to your inbox.
-            </p>
-          </div>
-          <div class="col-lg-6">
-            <form class="newsletter-form">
-              <div class="input-group">
-                <input
-                  type="email"
-                  class="form-control"
-                  placeholder="Your email address"
-                />
-                <button class="btn btn-light" type="submit">Subscribe</button>
-              </div>
-              <div class="form-text text-white-50">
-                We'll never share your email with anyone else.
-              </div>
-            </form>
-          </div>
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="fw-bold mb-3">Never Miss an Update</h2>
+                    <p class="lead mb-0">
+                        Subscribe to our newsletter for the latest news, events, and talent spotlights delivered to your inbox.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your email address">
+                            <button class="btn btn-light" type="submit">Subscribe</button>
+                        </div>
+                        <div class="form-text mt-2">
+                            <i class="fas fa-lock me-1"></i> We'll never share your email with anyone else.
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- Footer -->
@@ -434,25 +946,18 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- Custom JS -->
     <script src="script.js"></script>
-    <script>
-      const carousel = new bootstrap.Carousel("#myCarousel");
-    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-      AOS.init({
-        duration: 2000,
-        once: false,
-        easing: "ease-in-out",
-        mirror: false,
-        disable: function () {
-          return window.innerWidth <= 768; // Disable below 768px
-        },
-      });
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-in-out',
+        });
     </script>
-    <script
-      src="https://kit.fontawesome.com/7b3b6f1d2f.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="js/news.js"></script>
-    <script src="js/upcomingEvents.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/7b3b6f1d2f.js" crossorigin="anonymous"></script>
+</body>
 </html>
