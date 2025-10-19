@@ -57,7 +57,7 @@
         color: var(--text-dark);
       }
 
-.page-header {
+      .page-header {
         background-size: cover;
         background-position: center;
         color: white;
@@ -65,7 +65,8 @@
         margin-top: 80px;
         position: relative;
       }
-.page-header h1 {
+      
+      .page-header h1 {
         font-size: 3.5rem;
         font-weight: 800;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -76,13 +77,15 @@
       .page-header .lead {
         font-size: 1.5rem;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-        color: white;;
+        color: white;
       }
+      
       .page-header p {
         font-size: 1.4rem;
         max-width: 700px;
         margin: 0 auto 2rem;
       }
+      
       .page-header::before {
         content: "";
         position: absolute;
@@ -96,16 +99,6 @@
       .page-header .container {
         position: relative;
         z-index: 1;
-      }
-
-      /* Header/Hero Sections */
-      .showcase-header {
-        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                    url('images/showcase-bg.jpg') center/cover no-repeat;
-        color: white;
-        padding: 8rem 0;
-        margin-top: 60px;
-        position: relative;
       }
 
       /* Content Sections */
@@ -131,119 +124,146 @@
         background: var(--primary-color);
       }
 
-      /* Program Cards */
-      .program-card {
+      /* Modern Cards */
+      .modern-card {
         border: none;
-        border-radius: 10px;
+        border-radius: 15px;
         overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s ease;
         height: 100%;
+        background: white;
       }
 
-      .program-card:hover {
+      .modern-card:hover {
         transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
       }
 
-      .program-card .card-img-top {
-        height: 250px;
-        object-fit: cover;
+      /* Leadership Events Section */
+      .leadership-section {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
       }
 
-      /* Feature List */
-      .feature-list {
-        list-style: none;
-        padding: 0;
-      }
-
-      .feature-list li {
-        padding: 0.5rem 0;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-      }
-
-      .feature-list li:last-child {
-        border-bottom: none;
-      }
-
-      .feature-list i {
-        color: var(--primary-color);
-        margin-right: 0.5rem;
-      }
-
-      /* Benefits Grid */
-      .benefit-card {
+      .leadership-card {
         border: none;
-        border-radius: 10px;
-        padding: 1.5rem;
-        height: 100%;
-        transition: all 0.3s ease;
-        background-color: white;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      }
-
-      .benefit-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      }
-
-      .benefit-icon {
-        font-size: 2rem;
-        color: var(--primary-color);
-        margin-bottom: 1rem;
-      }
-
-      /* Event Cards */
-      .event-card {
-        border: 2px solid var(--primary-light);
-        border-radius: 10px;
+        border-radius: 20px;
         overflow: hidden;
-        transition: all 0.3s ease;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s ease;
         height: 100%;
+        background: white;
+        position: relative;
       }
 
-      .event-card:hover {
-        border-color: var(--primary-color);
-        transform: translateY(-5px);
+      .leadership-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
       }
 
-      .event-card .card-header {
-        background-color: var(--primary-color);
+      .leadership-img-container {
+        position: relative;
+        height: 300px;
+        overflow: hidden;
+      }
+
+      .leadership-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .leadership-card:hover .leadership-img {
+        transform: scale(1.05);
+      }
+
+      .leadership-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: var(--primary-color);
+        color: white;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        z-index: 2;
+      }
+
+      .leadership-content {
+        padding: 2rem;
+      }
+
+      .leadership-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--text-dark);
+      }
+
+      .leadership-theme {
+        font-style: italic;
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+      }
+
+      .leadership-details {
+        margin-bottom: 1.5rem;
+      }
+
+      .leadership-detail {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.8rem;
+      }
+
+      .leadership-detail i {
+        color: var(--primary-color);
+        margin-right: 10px;
+        width: 20px;
+      }
+
+      .featured-speaker {
+        background: var(--primary-light);
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin-top: 1.5rem;
+      }
+
+      .speaker-name {
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 0.5rem;
+      }
+
+      .speaker-role {
+        color: var(--primary-dark);
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .speaker-description {
+        font-size: 0.9rem;
+        color: var(--text-medium);
+      }
+
+      .reservation-info {
+        background: var(--primary-color);
         color: white;
         padding: 1rem;
+        border-radius: 10px;
+        text-align: center;
+        margin-top: 1.5rem;
+        font-weight: 600;
       }
 
-      /* Buttons */
-      .btn-outline-primary {
-        border: 2px solid #4caf50;
-        color: #4caf50;
-        font-weight: 500;
-        border-radius: 30px;
-        padding: 8px 20px;
-        transition: all 0.3s;
+      /* Talent Showcase Section */
+      .talent-showcase-section {
+        background: white;
       }
 
-      .btn-outline-primary:hover {
-        background: #4caf50;
-        color: white;
-        transform: translateY(-2px);
-      }
-
-      .btn-primary {
-        background: #4caf50;
-        border: none;
-        padding: 12px 30px;
-        font-weight: 500;
-        border-radius: 30px;
-        transition: all 0.3s;
-      }
-
-      .btn-primary:hover {
-        background: #388e3c;
-        transform: translateY(-2px);
-      }
-
-      /* IMPROVED FEATURED TALENTS SECTION */
       .talent-card {
         border: none;
         border-radius: 15px;
@@ -312,109 +332,140 @@
         color: var(--text-medium);
       }
 
-      /* IMPROVED TESTIMONIALS SECTION */
-       .testimonial-section {
-            padding: var(--section-padding);
-            background-color: #f9fafb;
-        }
+      /* Testimonials Section */
+      .testimonial-section {
+        padding: var(--section-padding);
+        background-color: #f9fafb;
+      }
+      
       .testimonial-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2.5rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            margin: 1rem;
-            transition: all 0.3s ease;
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-        }
+        background: white;
+        border-radius: 15px;
+        padding: 2.5rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        margin: 1rem;
+        transition: all 0.3s ease;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+      }
 
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-        }
+      .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+      }
 
-        .testimonial-icon {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 3rem;
-            color: var(--primary-light);
-            opacity: 0.5;
-        }
+      .testimonial-icon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 3rem;
+        color: var(--primary-light);
+        opacity: 0.5;
+      }
 
-        .testimonial-content {
-            position: relative;
-            z-index: 1;
-        }
+      .testimonial-content {
+        position: relative;
+        z-index: 1;
+      }
 
-        .testimonial-text {
-            font-style: italic;
-            color: var(--text-medium);
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            position: relative;
-            padding-left: 2rem;
-        }
+      .testimonial-text {
+        font-style: italic;
+        color: var(--text-medium);
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+        position: relative;
+        padding-left: 2rem;
+      }
 
-        .testimonial-text::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: -15px;
-            font-size: 4rem;
-            color: var(--primary-light);
-            font-family: Arial, sans-serif;
-            line-height: 1;
-        }
+      .testimonial-text::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: -15px;
+        font-size: 4rem;
+        color: var(--primary-light);
+        font-family: Arial, sans-serif;
+        line-height: 1;
+      }
 
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            margin-top: 1.5rem;
-        }
-        .author-initials {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--primary-color);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.2rem;
-            margin-right: 15px;
-            flex-shrink: 0;
-        }
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        margin-top: 1.5rem;
+      }
+      
+      .author-initials {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: var(--primary-color);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.2rem;
+        margin-right: 15px;
+        flex-shrink: 0;
+      }
 
-        .author-info h5 {
-            margin-bottom: 0.3rem;
-            color: var(--text-dark);
-        }
+      .author-info h5 {
+        margin-bottom: 0.3rem;
+        color: var(--text-dark);
+      }
 
-        .author-info p {
-            color: var(--primary-color);
-            margin-bottom: 0;
-            font-size: 0.9rem;
-        }
+      .author-info p {
+        color: var(--primary-color);
+        margin-bottom: 0;
+        font-size: 0.9rem;
+      }
 
-        .testimonial-meta {
-            display: flex;
-            align-items: center;
-            margin-top: 1rem;
-            color: #6c757d;
-            font-size: 0.9rem;
-        }
+      .testimonial-meta {
+        display: flex;
+        align-items: center;
+        margin-top: 1rem;
+        color: #6c757d;
+        font-size: 0.9rem;
+      }
 
-        .testimonial-meta i {
-            margin-right: 5px;
-            color: var(--primary-color);
-        }
+      .testimonial-meta i {
+        margin-right: 5px;
+        color: var(--primary-color);
+      }
 
+      /* Buttons */
+      .btn-outline-primary {
+        border: 2px solid #4caf50;
+        color: #4caf50;
+        font-weight: 500;
+        border-radius: 30px;
+        padding: 8px 20px;
+        transition: all 0.3s;
+      }
 
+      .btn-outline-primary:hover {
+        background: #4caf50;
+        color: white;
+        transform: translateY(-2px);
+      }
 
+      .btn-primary {
+        background: #4caf50;
+        border: none;
+        padding: 12px 30px;
+        font-weight: 500;
+        border-radius: 30px;
+        transition: all 0.3s;
+      }
+
+      .btn-primary:hover {
+        background: #388e3c;
+        transform: translateY(-2px);
+      }
+
+      /* Carousel Controls */
       .carousel-control-prev,
       .carousel-control-next {
         width: 50px;
@@ -459,41 +510,38 @@
           --section-padding: var(--section-padding-sm);
         }
 
-        .program-card .card-img-top {
-          height: 200px;
-        }
-
         .talent-img-container {
           height: 220px;
         }
 
-        .testimonial-item {
+        .leadership-img-container {
+          height: 250px;
+        }
+
+        .testimonial-card {
           padding: 2rem 1.5rem;
         }
-         .testimonial-card {
-                padding: 2rem 1.5rem;
-            }
 
-            .testimonial-text {
-                padding-left: 1.5rem;
-                font-size: 1rem;
-            }
+        .testimonial-text {
+          padding-left: 1.5rem;
+          font-size: 1rem;
+        }
 
-            .testimonial-text::before {
-                font-size: 3rem;
-                top: -10px;
-            }
+        .testimonial-text::before {
+          font-size: 3rem;
+          top: -10px;
+        }
       }
 
       @media (max-width: 576px) {
-         .testimonial-author {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+        .testimonial-author {
+          flex-direction: column;
+          align-items: flex-start;
+        }
 
-            .author-initials {
-                margin-bottom: 10px;
-            }
+        .author-initials {
+          margin-bottom: 10px;
+        }
 
         .section-title {
           margin-bottom: 2rem;
@@ -503,6 +551,14 @@
         .carousel-control-next {
           width: 40px;
           height: 40px;
+        }
+        
+        .page-header h1 {
+          font-size: 2.5rem;
+        }
+        
+        .page-header .lead {
+          font-size: 1.2rem;
         }
       }
     </style>
@@ -536,14 +592,14 @@
 
       <div class="nav-container">
         <ul class="nav-list" id="nav-list" aria-hidden="true">
-          <li class="nav-item active"><a href="index.html">Home</a></li>
+          <li class="nav-item"><a href="index.html">Home</a></li>
           <li class="nav-item"><a href="about.html">About Us</a></li>
           <li class="nav-item"><a href="programs.html">Programs</a></li>
           <li class="nav-item dropdown">
             <a href="#" aria-haspopup="true" aria-expanded="false">More</a>
             <div class="dropdown-content">
               <a href="impact.html">Impact</a>
-              <a href="showcase.html">Showcase</a>
+              <a href="showcase.html" class="active">Showcase</a>
               <a href="news.html">News</a>
               <a href="support.html">Support</a>
               <a href="faq.html">FAQ</a>
@@ -556,70 +612,146 @@
 
     <!-- Page Header -->
     <header class="showcase-header page-header"
-    style="background-image: url('images/football\ 10\ \(4\).JPG')">
+    style="background-image: url('images/showcase.jpg')">
       <div class="container h-100">
         <div class="row h-100 align-items-center">
           <div class="col-12 text-center">
-            <h1 class="fw-bold text-white">Talent Showcase</h1>
-            <p class="lead text-white">
-              Celebrating the creativity and innovation of our students
+            <h1 class="fw-bold text-white" data-aos="fade-up">Talent Showcase</h1>
+            <p class="lead text-white" data-aos="fade-up" data-aos-delay="200">
+              Celebrating the creativity, innovation, and leadership of our students
             </p>
           </div>
         </div>
       </div>
     </header>
 
-    <!-- Gallery Filters -->
-    <section class="py-5 bg-light">
+    <!-- Leadership Events Section -->
+    <section class="leadership-section content-section">
       <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8 text-center">
-            <h2 class="fw-bold text-primary mb-4">Explore Our Gallery</h2>
-            <p>
-              Browse through outstanding talents and innovations from our
-              students
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="section-title" data-aos="fade-up">Leadership & Networking Events</h2>
+            <p class="lead" data-aos="fade-up" data-aos-delay="100">
+              Showcasing our participation in leadership conversations and networking events
             </p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Gallery Grid -->
-    <section class="py-5">
-      <div class="container">
-        <div id="gallery" class="row g-4 gallery-grid">
-          <!-- Other -->
-          <div class="col-md-6 col-lg-4 gallery-item" data-category="other">
-            <div class="card border-0 shadow-sm h-100">
-              <div class="card-img-top position-relative">
+        
+        <div class="row g-4">
+          <!-- ARISE Circle Event -->
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="leadership-card">
+              <div class="leadership-img-container">
                 <img
-                  src="images/showcase6.jpg"
-                  class="img-fluid w-100"
-                  alt="Fashion Design"
+                  src="images/IMG-20251016-WA0002.jpg"
+                  class="leadership-img"
+                  alt="ARISE Circle Leadership Event"
                 />
-                <div class="badge bg-primary position-absolute top-0 end-0 m-2">
-                  Other
-                </div>
-                <a
-                  href="images/showcase6.jpg"
-                  class="gallery-preview"
-                  data-fslightbox="gallery"
-                  data-caption="Eco-friendly fashion collection by fashion design students"
-                >
-                  <div class="preview-overlay">
-                    <i class="fas fa-search-plus fa-2x"></i>
-                  </div>
-                </a>
+                <div class="leadership-badge">Leadership Event</div>
               </div>
-              <div class="card-body">
-                <h5 class="card-title">Eco-Friendly Fashion</h5>
-                <p class="card-text">
-                  Sustainable fashion collection made from recycled materials by
-                  fashion design students.
-                </p>
-                <a href="#" class="btn btn-sm btn-outline-primary"
-                  >Designer Profiles</a
-                >
+              <div class="leadership-content">
+                <h3 class="leadership-title">ARISE Circle Leadership Conversations</h3>
+                <p class="leadership-theme">Social Capital: Networks as the New Leadership Currency</p>
+                
+                <div class="leadership-details">
+                  <div class="leadership-detail">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span><strong>Date:</strong> Wed, 8th October 2025</span>
+                  </div>
+                  <div class="leadership-detail">
+                    <i class="fas fa-clock"></i>
+                    <span><strong>Time:</strong> 2:00pm - 4:00pm</span>
+                  </div>
+                  <div class="leadership-detail">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span><strong>Venue:</strong> Kwanza Place, Kisii, Kenya</span>
+                  </div>
+                </div>
+                
+                <div class="featured-speaker">
+                  <h5 class="speaker-name">Peris Ongori</h5>
+                  <p class="speaker-role">Panel Discussant</p>
+                  <p class="speaker-description">
+                    Multi award winning & Celebrated educationist, STEM champion, Keynote speaker, 
+                    Entrepreneur & Founder I got a talent-IGAT.
+                  </p>
+                </div>
+                
+                <div class="reservation-info">
+                  For Reservation: <strong>+254722513505</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- ARISE Circle Branding -->
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="leadership-card">
+              <div class="leadership-img-container">
+                <img
+                  src="images/IMG-20251016-WA0003.jpg"
+                  class="leadership-img"
+                  alt="ARISE Circle Brand Identity"
+                />
+                <div class="leadership-badge">Brand Identity</div>
+              </div>
+              <div class="leadership-content">
+                <h3 class="leadership-title">ARISE Circle Brand Identity</h3>
+                <p class="leadership-theme">Modern Leadership Platform</p>
+                
+                <div class="leadership-details">
+                  <p>This image displays the ARISE Circle branding with a clean, modern design featuring the organization's name prominently. The minimalist aesthetic reflects the professional nature of the leadership platform, showcasing the visual identity used for their events and materials.</p>
+                  <p>The design conveys sophistication and contemporary leadership principles, representing the high-quality conversations and networking opportunities that ARISE Circle facilitates.</p>
+                </div>
+                
+                <div class="featured-speaker">
+                  <h5 class="speaker-name">Professional Design</h5>
+                  <p class="speaker-role">Visual Identity</p>
+                  <p class="speaker-description">
+                    The clean, professional branding reflects the quality of leadership conversations 
+                    and networking opportunities offered by ARISE Circle.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- ARISE Circle Theme -->
+        <div class="row mt-4">
+          <div class="col-12" data-aos="fade-up">
+            <div class="leadership-card">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <div class="leadership-img-container h-100">
+                    <img
+                      src="images/IMG-20251016-WA0005.jpg"
+                      class="leadership-img"
+                      alt="ARISE Circle Leadership Theme"
+                    />
+                    <div class="leadership-badge">Theme Preview</div>
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <div class="leadership-content h-100">
+                    <h3 class="leadership-title">ARISE Circle Leadership Theme</h3>
+                    <p class="leadership-theme">The Art of Building and Leveraging Networks for Transformation</p>
+                    
+                    <div class="leadership-details">
+                      <p>This graphic provides a thematic overview of the ARISE Circle leadership conversations, highlighting the focus on "Social Capital: Networks as the New Leadership Currency."</p>
+                      <p>The design elements suggest an exploration of how networks and relationships serve as valuable assets in modern leadership, emphasizing the art of building connections for transformative impact.</p>
+                      <p>This theme aligns perfectly with IGAT Club's mission of nurturing talents and creating networks that empower young leaders to transform society.</p>
+                    </div>
+                    
+                    <div class="featured-speaker">
+                      <h5 class="speaker-name">Transformative Networking</h5>
+                      <p class="speaker-role">Leadership Development</p>
+                      <p class="speaker-description">
+                        Building meaningful connections that create opportunities for personal and professional growth.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -627,23 +759,25 @@
       </div>
     </section>
 
-    <!-- Featured Talents -->
-    <section class="py-5 bg-primary text-white">
+    <!-- Talent Showcase Section -->
+    <section class="talent-showcase-section content-section">
       <div class="container">
         <div class="row mb-5">
           <div class="col-12 text-center">
-            <h2 class="fw-bold">Featured Talents</h2>
-            <p class="lead">
+            <h2 class="section-title" data-aos="fade-up">Featured Talents</h2>
+            <p class="lead" data-aos="fade-up" data-aos-delay="100">
               Spotlight on exceptional students discovered through IGAT Club
             </p>
           </div>
         </div>
+        
         <div class="row g-4">
-          <div class="col-md-4">
+          <!-- Talent 1 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="talent-card">
               <div class="talent-img-container">
                 <img
-                  src="images/fooball 1 (8).JPG"
+                  src="images/showcase.jpg"
                   class="talent-img"
                   alt="Sarah M. - Music Talent"
                 />
@@ -656,15 +790,17 @@
                   Won Kenya's Got Talent after being discovered at KNP Talent
                   Day. Now a recording artist with two singles.
                 </p>
-                <a href="#" class="btn btn-light">View Profile</a>
+                <a href="#" class="btn btn-primary">View Profile</a>
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          
+          <!-- Talent 2 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
             <div class="talent-card">
               <div class="talent-img-container">
                 <img
-                  src="images/fooball 1 (7).JPG"
+                  src="images/program.jpg"
                   class="talent-img"
                   alt="James K. - Technology"
                 />
@@ -677,15 +813,17 @@
                   Developed inventory management app that's now used by 50+
                   businesses. Runs his own startup.
                 </p>
-                <a href="#" class="btn btn-light">View Profile</a>
+                <a href="#" class="btn btn-primary">View Profile</a>
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          
+          <!-- Talent 3 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
             <div class="talent-card">
               <div class="talent-img-container">
                 <img
-                  src="images/fooball 1 (4).JPG"
+                  src="images/show.jpg"
                   class="talent-img"
                   alt="Grace W. - Visual Arts"
                 />
@@ -698,7 +836,7 @@
                   Earned full scholarship to Italy for her paintings. Currently
                   studying fine art in Florence.
                 </p>
-                <a href="#" class="btn btn-light">View Profile</a>
+                <a href="#" class="btn btn-primary">View Profile</a>
               </div>
             </div>
           </div>
@@ -711,18 +849,20 @@
       <div class="container">
         <div class="row mb-5">
           <div class="col-12 text-center">
-            <h2 class="section-title">What Our Talents Say</h2>
-            <p class="lead">
+            <h2 class="section-title" data-aos="fade-up">What Our Talents Say</h2>
+            <p class="lead" data-aos="fade-up" data-aos-delay="100">
               Hear from students who've benefited from IGAT Club
             </p>
           </div>
         </div>
+        
         <div class="row">
           <div class="col-lg-10 mx-auto">
             <div
               id="showcaseTestimonials"
               class="carousel slide"
               data-bs-ride="carousel"
+              data-aos="fade-up"
             >
               <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -748,6 +888,7 @@
                     </div>
                   </div>
                 </div>
+                
                 <div class="carousel-item">
                   <div class="testimonial-card">
                     <i class="fas fa-quote-right testimonial-icon"></i>
@@ -771,6 +912,7 @@
                     </div>
                   </div>
                 </div>
+                
                 <div class="carousel-item">
                   <div class="testimonial-card">
                     <i class="fas fa-quote-right testimonial-icon"></i>
@@ -795,6 +937,7 @@
                   </div>
                 </div>
               </div>
+              
               <button
                 class="carousel-control-prev"
                 type="button"
@@ -807,6 +950,7 @@
                 ></span>
                 <span class="visually-hidden">Previous</span>
               </button>
+              
               <button
                 class="carousel-control-next"
                 type="button"
@@ -826,19 +970,20 @@
     </section>
 
     <!-- Call to Action -->
-    <section class="py-5 bg-light">
+    <section class="content-section bg-light">
       <div class="container text-center">
-        <h2 class="mb-4">Ready to Showcase Your Talent?</h2>
-        <p class="lead mb-4">
-          Join IGAT Club and get opportunities to demonstrate your unique
-          abilities
+        <h2 class="mb-4" data-aos="fade-up">Ready to Showcase Your Talent?</h2>
+        <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">
+          Join IGAT Club and get opportunities to demonstrate your unique abilities
         </p>
-        <a href="contact.html" class="btn btn-primary btn-lg me-2"
-          >Contact Us</a
-        >
-        <a href="programs.html" class="btn btn-outline-primary btn-lg"
-          >View Programs</a
-        >
+        <div data-aos="fade-up" data-aos-delay="200">
+          <a href="contact.html" class="btn btn-primary btn-lg me-3"
+            >Contact Us</a
+          >
+          <a href="programs.html" class="btn btn-outline-primary btn-lg"
+            >View Programs</a
+          >
+        </div>
       </div>
     </section>
 
@@ -865,6 +1010,7 @@
               <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
             </div>
           </div>
+          
           <div class="col-lg-2 mb-4 mb-lg-0">
             <h3 class="h4 mb-3">Quick Links</h3>
             <ul class="list-unstyled">
@@ -883,6 +1029,7 @@
               <li><a href="contact.html" class="text-white">Contact</a></li>
             </ul>
           </div>
+          
           <div class="col-lg-3 mb-4 mb-lg-0">
             <h3 class="h4 mb-3">Contact Info</h3>
             <ul class="list-unstyled">
@@ -898,6 +1045,7 @@
               </li>
             </ul>
           </div>
+          
           <div class="col-lg-3">
             <h3 class="h4 mb-3">Newsletter</h3>
             <p>Subscribe to our newsletter for updates</p>
@@ -913,7 +1061,9 @@
             </form>
           </div>
         </div>
+        
         <hr class="my-4 bg-light" />
+        
         <div class="row">
           <div class="col-md-6 text-center text-md-start">
             <p class="small mb-0">
@@ -930,105 +1080,28 @@
       </div>
     </footer>
 
-    <!-- Video Modals -->
-    <div class="modal fade" id="videoModal1" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Sarah's Vocal Performance</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <div class="ratio ratio-16x9">
-              <iframe
-                src="https://www.youtube.com/embed/example1"
-                allowfullscreen
-              ></iframe>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-primary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="videoModal2" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Traditional Dance Performance</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <div class="ratio ratio-16x9">
-              <iframe
-                src="https://www.youtube.com/embed/example2"
-                allowfullscreen
-              ></iframe>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-primary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bootstrap JS -->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- Lightbox JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.3.1/index.min.js"></script>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <!-- Custom JS -->
     <script src="script.js"></script>
-    <script src="js/gallery.js"></script>
+    
     <script>
-      // Gallery filtering
-      document.querySelectorAll(".filter-buttons button").forEach((button) => {
-        button.addEventListener("click", function () {
-          // Update active button
-          document
-            .querySelector(".filter-buttons button.active")
-            .classList.remove("active");
-          this.classList.add("active");
-
-          const filter = this.getAttribute("data-filter");
-          const items = document.querySelectorAll(".gallery-item");
-
-          items.forEach((item) => {
-            if (
-              filter === "all" ||
-              item.getAttribute("data-category") === filter
-            ) {
-              item.style.display = "block";
-            } else {
-              item.style.display = "none";
-            }
-          });
+      // Initialize AOS animations
+      AOS.init({
+        duration: 1000,
+        once: true,
+        disable: function() {
+          return window.innerWidth <= 768;
+        },
+      });
+      
+      // Initialize carousel
+      document.addEventListener("DOMContentLoaded", function() {
+        const testimonialCarousel = new bootstrap.Carousel("#showcaseTestimonials", {
+          interval: 5000,
+          wrap: true
         });
       });
     </script>
