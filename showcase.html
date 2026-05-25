@@ -949,7 +949,7 @@
               <div class="gallery-column">
                 <div class="egekabu-card tall">
                   <img
-                    src="images/egekabu_1.jpg"
+                    src="images/egekabu_1.jpg" data-img="egekabu_1"
                     alt="Egekabu Vintage Radio Showcase"
                     class="gallery-img"
                   />
@@ -959,7 +959,7 @@
                 </div>
                 <div class="egekabu-card">
                   <img
-                    src="images/egekabu_3.jpg"
+                    src="images/egekabu_3.jpg" data-img="egekabu_2"
                     alt="Egekabu Live Performance Group"
                     class="gallery-img"
                   />
@@ -972,7 +972,7 @@
               <div class="gallery-column">
                 <div class="egekabu-card">
                   <img
-                    src="images/egekabu_5.jpg"
+                    src="images/egekabu_5.jpg" data-img="egekabu_3"
                     alt="Egekabu Traditional Aesthetics"
                     class="gallery-img"
                   />
@@ -982,7 +982,7 @@
                 </div>
                 <div class="egekabu-card">
                   <img
-                    src="images/egekabu_6.jpg"
+                    src="images/egekabu_6.jpg" data-img="egekabu_4"
                     alt="Egekabu Culture Collective"
                     class="gallery-img"
                   />
@@ -995,7 +995,7 @@
               <div class="gallery-column">
                 <div class="egekabu-card">
                   <img
-                    src="images/egekabu_4.jpg"
+                    src="images/egekabu_4.jpg" data-img="egekabu_5"
                     alt="Egekabu Vintage Props and Talents"
                     class="gallery-img"
                   />
@@ -1005,7 +1005,7 @@
                 </div>
                 <div class="egekabu-card tall">
                   <img
-                    src="images/egekabu_2.jpg"
+                    src="images/egekabu_2.jpg" data-img="egekabu_6"
                     alt="Egekabu Live Crew and Talents"
                     class="gallery-img"
                   />
@@ -1038,7 +1038,7 @@
             <div class="leadership-card h-100 d-flex flex-column">
               <div class="leadership-img-container">
                 <img
-                  src="images/IMG-20251016-WA0002.jpg"
+                  src="images/IMG-20251016-WA0002.jpg" data-img="leadership_1"
                   class="leadership-img"
                   alt="ARISE Circle Leadership Event"
                 />
@@ -1083,7 +1083,7 @@
             <div class="leadership-card h-100 d-flex flex-column">
               <div class="leadership-img-container">
                 <img
-                  src="images/IMG-20251016-WA0003.jpg"
+                  src="images/IMG-20251016-WA0003.jpg" data-img="leadership_2"
                   class="leadership-img"
                   alt="ARISE Circle Brand Identity"
                 />
@@ -1114,7 +1114,7 @@
             <div class="leadership-card h-100 d-flex flex-column">
               <div class="leadership-img-container">
                 <img
-                  src="images/IMG-20251016-WA0005.jpg"
+                  src="images/IMG-20251016-WA0005.jpg" data-img="leadership_3"
                   class="leadership-img"
                   alt="ARISE Circle Leadership Theme"
                 />
@@ -1161,7 +1161,7 @@
             <div class="talent-card h-100 d-flex flex-column">
               <div class="talent-img-container">
                 <img
-                  src="images/showcase.jpg"
+                  src="images/showcase.jpg" data-img="talent_1"
                   class="talent-img"
                   alt="Sarah M. - Music Talent"
                 />
@@ -1188,7 +1188,7 @@
             <div class="talent-card h-100 d-flex flex-column">
               <div class="talent-img-container">
                 <img
-                  src="images/program.jpg"
+                  src="images/program.jpg" data-img="talent_2"
                   class="talent-img"
                   alt="James K. - Technology"
                 />
@@ -1215,7 +1215,7 @@
             <div class="talent-card h-100 d-flex flex-column">
               <div class="talent-img-container">
                 <img
-                  src="images/show.jpg"
+                  src="images/show.jpg" data-img="talent_3"
                   class="talent-img"
                   alt="Grace W. - Visual Arts"
                 />
@@ -1499,6 +1499,43 @@
           interval: 5000,
           wrap: true
         });
+      });
+    </script>
+
+    <!--
+    ╔══════════════════════════════════════════════════════════════╗
+    ║  SHOWCASE PAGE — IMAGE CONFIGURATION                        ║
+    ║  To update an image:                                        ║
+    ║  1. Add the new photo to your /images/ folder               ║
+    ║  2. Change the filename in the IMAGES object below          ║
+    ║  3. Save, commit, push — Vercel redeploys automatically     ║
+    ╚══════════════════════════════════════════════════════════════╝
+    -->
+    <script>
+      const IMAGES = {
+        // ── Egekabu Gallery (6 photos) ──────────────────────────
+        egekabu_1: "images/egekabu_1.jpg",
+        egekabu_2: "images/egekabu_3.jpg",
+        egekabu_3: "images/egekabu_5.jpg",
+        egekabu_4: "images/egekabu_6.jpg",
+        egekabu_5: "images/egekabu_4.jpg",
+        egekabu_6: "images/egekabu_2.jpg",
+
+        // ── Leadership / ARISE Circle Events (3 photos) ─────────
+        leadership_1: "images/IMG-20251016-WA0002.jpg",
+        leadership_2: "images/IMG-20251016-WA0003.jpg",
+        leadership_3: "images/IMG-20251016-WA0005.jpg",
+
+        // ── Featured Talents (3 photos) ──────────────────────────
+        talent_1: "images/showcase.jpg",
+        talent_2: "images/program.jpg",
+        talent_3: "images/show.jpg",
+      };
+
+      // Applies the image map above — do not edit below this line
+      document.querySelectorAll("[data-img]").forEach(function(img) {
+        var key = img.getAttribute("data-img");
+        if (IMAGES[key]) img.src = IMAGES[key];
       });
     </script>
   </body>
