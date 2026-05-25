@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap"
       rel="stylesheet"
     />
     <!-- Custom CSS -->
@@ -561,6 +561,295 @@
           font-size: 1.2rem;
         }
       }
+
+      /* Egekabu Showcase Section */
+      .egekabu-section {
+        background: radial-gradient(circle at 10% 20%, rgba(240, 247, 240, 0.45) 0%, rgba(255, 255, 255, 1) 90%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .egekabu-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background-color: rgba(76, 175, 80, 0.08);
+        color: var(--primary-dark);
+        padding: 8px 18px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 1.5rem;
+        border: 1px solid rgba(76, 175, 80, 0.15);
+      }
+
+      .badge-dot {
+        width: 8px;
+        height: 8px;
+        background-color: var(--primary-color);
+        border-radius: 50%;
+        display: inline-block;
+        animation: pulse-green 2s infinite;
+      }
+
+      @keyframes pulse-green {
+        0% {
+          transform: scale(0.95);
+          box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+        }
+        70% {
+          transform: scale(1);
+          box-shadow: 0 0 0 6px rgba(76, 175, 80, 0);
+        }
+        100% {
+          transform: scale(0.95);
+          box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+        }
+      }
+
+      .egekabu-title {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 3.2rem;
+        font-weight: 800;
+        color: var(--text-dark);
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+      }
+
+      .egekabu-subtitle {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-style: italic;
+        font-size: 1.5rem;
+        color: var(--primary-dark);
+        font-weight: 600;
+        margin-bottom: 2rem;
+      }
+
+      .egekabu-definition-card {
+        background-color: #fff;
+        border-left: 5px solid var(--primary-color);
+        padding: 1.5rem;
+        border-radius: 0 16px 16px 0;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+        margin-bottom: 1.5rem;
+        transition: all 0.3s ease;
+      }
+
+      .egekabu-definition-card:hover {
+        transform: translateX(6px);
+        border-left-color: var(--primary-dark);
+        box-shadow: 0 12px 30px rgba(76, 175, 80, 0.08);
+      }
+
+      .definition-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--text-dark);
+        margin: 0;
+      }
+
+      .egekabu-description {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--text-medium);
+        margin-bottom: 2rem;
+      }
+
+      .support-quote-box {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+        color: white;
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: 0 12px 32px rgba(76, 175, 80, 0.2);
+        position: relative;
+      }
+
+      .support-quote-box::before {
+        content: "“";
+        position: absolute;
+        top: -15px;
+        left: 20px;
+        font-size: 6rem;
+        color: rgba(255, 255, 255, 0.15);
+        font-family: Georgia, serif;
+        line-height: 1;
+      }
+
+      .quote-text {
+        font-size: 1.15rem;
+        font-weight: 500;
+        line-height: 1.7;
+        margin-bottom: 0.8rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .support-hashtag {
+        font-weight: 700;
+        font-size: 1.15rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Gallery Grid Styles */
+      .egekabu-gallery-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+      }
+
+      .gallery-column {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .egekabu-card {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        height: 240px;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        background-color: #eaeaea;
+      }
+
+      .egekabu-card.tall {
+        height: 340px;
+      }
+
+      .gallery-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.6s ease;
+        filter: contrast(1.05) saturate(0.95);
+      }
+
+      .egekabu-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+      }
+
+      .egekabu-card:hover .gallery-img {
+        transform: scale(1.08);
+        filter: contrast(1.1) saturate(1.1);
+      }
+
+      .card-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
+        padding: 1.5rem;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        display: flex;
+        align-items: flex-end;
+        height: 50%;
+      }
+
+      .egekabu-card:hover .card-overlay {
+        opacity: 1;
+      }
+
+      .vintage-caption {
+        color: white;
+        font-weight: 700;
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+        transform: translateY(10px);
+        transition: transform 0.4s ease;
+      }
+
+      .egekabu-card:hover .vintage-caption {
+        transform: translateY(0);
+      }
+
+      /* Enhanced Cards styling */
+      .leadership-card, .talent-card {
+        border: 1px solid rgba(0, 0, 0, 0.05) !important;
+        border-radius: 18px !important;
+        overflow: hidden;
+        background: #ffffff;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+      }
+
+      .leadership-card:hover, .talent-card:hover {
+        transform: translateY(-8px) !important;
+        box-shadow: 0 20px 40px rgba(76, 175, 80, 0.12) !important;
+        border-color: rgba(76, 175, 80, 0.2) !important;
+      }
+
+      .leadership-badge, .talent-category {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%) !important;
+        box-shadow: 0 4px 10px rgba(76, 175, 80, 0.2) !important;
+        border-radius: 30px !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.5px;
+      }
+
+      .featured-speaker {
+        background-color: #f4faf4 !important;
+        border-left: 4px solid var(--primary-color) !important;
+        border-radius: 8px !important;
+        padding: 1.25rem !important;
+      }
+
+      .speaker-name {
+        color: var(--text-dark) !important;
+        font-size: 1.1rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .speaker-role {
+        color: var(--primary-color) !important;
+        font-weight: 600;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .reservation-info {
+        background: #eef7ee !important;
+        color: var(--primary-dark) !important;
+        border: 1px dashed rgba(76, 175, 80, 0.3) !important;
+        border-radius: 12px !important;
+        padding: 1rem !important;
+      }
+
+      /* Testimonial styling polish */
+      .testimonial-card {
+        border-radius: 20px !important;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05) !important;
+        border: 1px solid rgba(0, 0, 0, 0.03) !important;
+        background: #ffffff !important;
+      }
+
+      .testimonial-icon {
+        color: rgba(76, 175, 80, 0.08) !important;
+        font-size: 4rem !important;
+      }
+
+      .author-initials {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%) !important;
+        box-shadow: 0 4px 12px rgba(76, 175, 80, 0.25) !important;
+      }
+
+      @media (max-width: 576px) {
+        .egekabu-gallery-grid {
+          grid-template-columns: 1fr;
+        }
+        .egekabu-card,
+        .egekabu-card.tall {
+          height: 280px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -625,6 +914,112 @@
       </div>
     </header>
 
+    <!-- Spotlight Showcase: Egekabu Live Recording -->
+    <section class="egekabu-section content-section">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5" data-aos="fade-right">
+            <div class="egekabu-badge">
+              <span class="badge-dot"></span> Cultural Spotlight
+            </div>
+            <h2 class="egekabu-title">Egekabu Live Recording</h2>
+            <h4 class="egekabu-subtitle">Vintage Edition — Celebrating Our Roots</h4>
+            
+            <div class="egekabu-definition-card">
+              <p class="definition-text">
+                <strong>“Egekabu”</strong> is an Ekegusii word commonly used by the Abagusii community in Kenya. It loosely means heritage, roots, origin, or traditional identity—something that connects people to their culture and background.
+              </p>
+            </div>
+            
+            <p class="egekabu-description">
+              In events like <strong>Egekabu Live Recording Vintage Edition</strong>, the name represents celebrating culture, music, storytelling, fashion, and talent in an authentic African and Gusii inspired way. It gives a sense of going back to the roots while showcasing creativity in a modern style.
+            </p>
+            
+            <div class="support-quote-box">
+              <p class="quote-text">
+                "Let us continue supporting the music of now and uplifting young music talents by giving them platforms to shine, grow, and inspire the next generation."
+              </p>
+              <div class="support-hashtag">#IamInSupportForTalent ❤️</div>
+            </div>
+          </div>
+          
+          <div class="col-lg-7" data-aos="fade-left">
+            <div class="egekabu-gallery-grid">
+              <!-- Column 1 -->
+              <div class="gallery-column">
+                <div class="egekabu-card tall">
+                  <img
+                    src="images/egekabu_1.jpg"
+                    alt="Egekabu Vintage Radio Showcase"
+                    class="gallery-img"
+                  />
+                  <div class="card-overlay">
+                    <span class="vintage-caption">Vintage Melodies</span>
+                  </div>
+                </div>
+                <div class="egekabu-card">
+                  <img
+                    src="images/egekabu_3.jpg"
+                    alt="Egekabu Live Performance Group"
+                    class="gallery-img"
+                  />
+                  <div class="card-overlay">
+                    <span class="vintage-caption">Gusii Storytelling</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Column 2 -->
+              <div class="gallery-column">
+                <div class="egekabu-card">
+                  <img
+                    src="images/egekabu_5.jpg"
+                    alt="Egekabu Traditional Aesthetics"
+                    class="gallery-img"
+                  />
+                  <div class="card-overlay">
+                    <span class="vintage-caption">Cultural Expression</span>
+                  </div>
+                </div>
+                <div class="egekabu-card">
+                  <img
+                    src="images/egekabu_6.jpg"
+                    alt="Egekabu Culture Collective"
+                    class="gallery-img"
+                  />
+                  <div class="card-overlay">
+                    <span class="vintage-caption">Talent Convergence</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Column 3 -->
+              <div class="gallery-column">
+                <div class="egekabu-card">
+                  <img
+                    src="images/egekabu_4.jpg"
+                    alt="Egekabu Vintage Props and Talents"
+                    class="gallery-img"
+                  />
+                  <div class="card-overlay">
+                    <span class="vintage-caption">Authentic Identity</span>
+                  </div>
+                </div>
+                <div class="egekabu-card tall">
+                  <img
+                    src="images/egekabu_2.jpg"
+                    alt="Egekabu Live Crew and Talents"
+                    class="gallery-img"
+                  />
+                  <div class="card-overlay">
+                    <span class="vintage-caption">Celebrating Roots</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Leadership Events Section -->
     <section class="leadership-section content-section">
       <div class="container">
@@ -639,8 +1034,8 @@
         
         <div class="row g-4">
           <!-- ARISE Circle Event -->
-          <div class="col-lg-6" data-aos="fade-right">
-            <div class="leadership-card">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="leadership-card h-100 d-flex flex-column">
               <div class="leadership-img-container">
                 <img
                   src="images/IMG-20251016-WA0002.jpg"
@@ -649,14 +1044,14 @@
                 />
                 <div class="leadership-badge">Leadership Event</div>
               </div>
-              <div class="leadership-content">
-                <h3 class="leadership-title">ARISE Circle Leadership Conversations</h3>
+              <div class="leadership-content d-flex flex-column flex-grow-1">
+                <h3 class="leadership-title">ARISE Conversations</h3>
                 <p class="leadership-theme">Social Capital: Networks as the New Leadership Currency</p>
                 
-                <div class="leadership-details">
+                <div class="leadership-details mb-4">
                   <div class="leadership-detail">
                     <i class="fas fa-calendar-alt"></i>
-                    <span><strong>Date:</strong> Wed, 8th October 2025</span>
+                    <span><strong>Date:</strong> Wed, 8th Oct 2025</span>
                   </div>
                   <div class="leadership-detail">
                     <i class="fas fa-clock"></i>
@@ -664,20 +1059,19 @@
                   </div>
                   <div class="leadership-detail">
                     <i class="fas fa-map-marker-alt"></i>
-                    <span><strong>Venue:</strong> Kwanza Place, Kisii, Kenya</span>
+                    <span><strong>Venue:</strong> Kwanza Place, Kisii</span>
                   </div>
                 </div>
                 
-                <div class="featured-speaker">
+                <div class="featured-speaker mt-auto mb-3">
                   <h5 class="speaker-name">Peris Ongori</h5>
                   <p class="speaker-role">Panel Discussant</p>
-                  <p class="speaker-description">
-                    Multi award winning & Celebrated educationist, STEM champion, Keynote speaker, 
-                    Entrepreneur & Founder I got a talent-IGAT.
+                  <p class="speaker-description small mb-0">
+                    STEM champion, Keynote speaker, Entrepreneur & Founder I got a talent-IGAT.
                   </p>
                 </div>
                 
-                <div class="reservation-info">
+                <div class="reservation-info text-center mt-auto">
                   For Reservation: <strong>+254722513505</strong>
                 </div>
               </div>
@@ -685,8 +1079,8 @@
           </div>
           
           <!-- ARISE Circle Branding -->
-          <div class="col-lg-6" data-aos="fade-left">
-            <div class="leadership-card">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="leadership-card h-100 d-flex flex-column">
               <div class="leadership-img-container">
                 <img
                   src="images/IMG-20251016-WA0003.jpg"
@@ -695,62 +1089,52 @@
                 />
                 <div class="leadership-badge">Brand Identity</div>
               </div>
-              <div class="leadership-content">
-                <h3 class="leadership-title">ARISE Circle Brand Identity</h3>
+              <div class="leadership-content d-flex flex-column flex-grow-1">
+                <h3 class="leadership-title">ARISE Brand Identity</h3>
                 <p class="leadership-theme">Modern Leadership Platform</p>
                 
-                <div class="leadership-details">
-                  <p>This image displays the ARISE Circle branding with a clean, modern design featuring the organization's name prominently. The minimalist aesthetic reflects the professional nature of the leadership platform, showcasing the visual identity used for their events and materials.</p>
-                  <p>The design conveys sophistication and contemporary leadership principles, representing the high-quality conversations and networking opportunities that ARISE Circle facilitates.</p>
+                <div class="leadership-details mb-4">
+                  <p class="small text-muted">This branding displays the ARISE Circle visual language with a clean, modern design. The minimalist aesthetic reflects the professional nature of the platform, showcasing the visual identity used for their events and materials.</p>
+                  <p class="small text-muted">The design conveys sophistication and contemporary leadership principles, representing high-quality networking opportunities.</p>
                 </div>
                 
-                <div class="featured-speaker">
+                <div class="featured-speaker mt-auto">
                   <h5 class="speaker-name">Professional Design</h5>
                   <p class="speaker-role">Visual Identity</p>
-                  <p class="speaker-description">
-                    The clean, professional branding reflects the quality of leadership conversations 
-                    and networking opportunities offered by ARISE Circle.
+                  <p class="speaker-description small mb-0">
+                    The clean, professional branding reflects the quality of leadership conversations offered by ARISE Circle.
                   </p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        
-        <!-- ARISE Circle Theme -->
-        <div class="row mt-4">
-          <div class="col-12" data-aos="fade-up">
-            <div class="leadership-card">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <div class="leadership-img-container h-100">
-                    <img
-                      src="images/IMG-20251016-WA0005.jpg"
-                      class="leadership-img"
-                      alt="ARISE Circle Leadership Theme"
-                    />
-                    <div class="leadership-badge">Theme Preview</div>
-                  </div>
+
+          <!-- ARISE Circle Theme -->
+          <div class="col-lg-4 col-md-6 mx-auto" data-aos="fade-up" data-aos-delay="300">
+            <div class="leadership-card h-100 d-flex flex-column">
+              <div class="leadership-img-container">
+                <img
+                  src="images/IMG-20251016-WA0005.jpg"
+                  class="leadership-img"
+                  alt="ARISE Circle Leadership Theme"
+                />
+                <div class="leadership-badge">Theme Preview</div>
+              </div>
+              <div class="leadership-content d-flex flex-column flex-grow-1">
+                <h3 class="leadership-title">ARISE Theme Preview</h3>
+                <p class="leadership-theme">Building & Leveraging Networks</p>
+                
+                <div class="leadership-details mb-4">
+                  <p class="small text-muted">Highlighting "Social Capital: Networks as the New Leadership Currency." The theme explores how networks and relationships serve as key assets in modern leadership, nurturing talents for transformative impact.</p>
+                  <p class="small text-muted">This focus perfectly aligns with IGAT Club's mission of creating networks that empower young leaders to transform society.</p>
                 </div>
-                <div class="col-md-8">
-                  <div class="leadership-content h-100">
-                    <h3 class="leadership-title">ARISE Circle Leadership Theme</h3>
-                    <p class="leadership-theme">The Art of Building and Leveraging Networks for Transformation</p>
-                    
-                    <div class="leadership-details">
-                      <p>This graphic provides a thematic overview of the ARISE Circle leadership conversations, highlighting the focus on "Social Capital: Networks as the New Leadership Currency."</p>
-                      <p>The design elements suggest an exploration of how networks and relationships serve as valuable assets in modern leadership, emphasizing the art of building connections for transformative impact.</p>
-                      <p>This theme aligns perfectly with IGAT Club's mission of nurturing talents and creating networks that empower young leaders to transform society.</p>
-                    </div>
-                    
-                    <div class="featured-speaker">
-                      <h5 class="speaker-name">Transformative Networking</h5>
-                      <p class="speaker-role">Leadership Development</p>
-                      <p class="speaker-description">
-                        Building meaningful connections that create opportunities for personal and professional growth.
-                      </p>
-                    </div>
-                  </div>
+                
+                <div class="featured-speaker mt-auto">
+                  <h5 class="speaker-name">Transformative Networks</h5>
+                  <p class="speaker-role">Leadership Development</p>
+                  <p class="speaker-description small mb-0">
+                    Building meaningful connections that create opportunities for personal and professional growth.
+                  </p>
                 </div>
               </div>
             </div>
@@ -774,7 +1158,7 @@
         <div class="row g-4">
           <!-- Talent 1 -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="talent-card">
+            <div class="talent-card h-100 d-flex flex-column">
               <div class="talent-img-container">
                 <img
                   src="images/showcase.jpg"
@@ -783,21 +1167,25 @@
                 />
                 <div class="talent-category">Music</div>
               </div>
-              <div class="talent-card-body">
+              <div class="talent-card-body d-flex flex-column flex-grow-1">
                 <h4 class="talent-name">Sarah M.</h4>
                 <p class="talent-role">Vocalist & Songwriter</p>
-                <p class="talent-description">
+                <p class="talent-description text-muted">
                   Won Kenya's Got Talent after being discovered at KNP Talent
                   Day. Now a recording artist with two singles.
                 </p>
-                <a href="#" class="btn btn-primary">View Profile</a>
+                <div class="mt-auto">
+                  <a href="#" class="btn btn-outline-primary w-100 rounded-pill">
+                    View Profile <i class="fas fa-arrow-right ms-1"></i>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
           
           <!-- Talent 2 -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="talent-card">
+            <div class="talent-card h-100 d-flex flex-column">
               <div class="talent-img-container">
                 <img
                   src="images/program.jpg"
@@ -806,21 +1194,25 @@
                 />
                 <div class="talent-category">Technology</div>
               </div>
-              <div class="talent-card-body">
+              <div class="talent-card-body d-flex flex-column flex-grow-1">
                 <h4 class="talent-name">James K.</h4>
                 <p class="talent-role">App Developer</p>
-                <p class="talent-description">
+                <p class="talent-description text-muted">
                   Developed inventory management app that's now used by 50+
                   businesses. Runs his own startup.
                 </p>
-                <a href="#" class="btn btn-primary">View Profile</a>
+                <div class="mt-auto">
+                  <a href="#" class="btn btn-outline-primary w-100 rounded-pill">
+                    View Profile <i class="fas fa-arrow-right ms-1"></i>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
           
           <!-- Talent 3 -->
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
-            <div class="talent-card">
+          <div class="col-md-6 col-lg-4 mx-auto" data-aos="fade-up" data-aos-delay="400">
+            <div class="talent-card h-100 d-flex flex-column">
               <div class="talent-img-container">
                 <img
                   src="images/show.jpg"
@@ -829,14 +1221,18 @@
                 />
                 <div class="talent-category">Visual Arts</div>
               </div>
-              <div class="talent-card-body">
+              <div class="talent-card-body d-flex flex-column flex-grow-1">
                 <h4 class="talent-name">Grace W.</h4>
                 <p class="talent-role">Painter & Visual Artist</p>
-                <p class="talent-description">
+                <p class="talent-description text-muted">
                   Earned full scholarship to Italy for her paintings. Currently
                   studying fine art in Florence.
                 </p>
-                <a href="#" class="btn btn-primary">View Profile</a>
+                <div class="mt-auto">
+                  <a href="#" class="btn btn-outline-primary w-100 rounded-pill">
+                    View Profile <i class="fas fa-arrow-right ms-1"></i>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
