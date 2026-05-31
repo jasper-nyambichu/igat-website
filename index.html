@@ -4,407 +4,233 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home - IGAT Club</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-    <!-- Custom CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
     <style>
-      :root {
-        --primary: #4caf50;
-        --primary-dark: #388e3c;
-        --primary-light: #c8e6c9;
-        --text-dark: #2c3e50;
-        --text-medium: #555;
-        --transition: all 0.3s ease;
-      }
+      /* INDEX-PAGE ONLY LAYOUT */
 
-      body {
-        font-family: "Poppins", sans-serif;
-        color: var(--text-medium);
-        line-height: 1.7;
-        overflow-x: hidden;
-      }
-
-      h1, h2, h3, h4, h5, h6 {
-        font-weight: 700;
-        color: var(--text-dark);
-      }
-
-      /* Modern Hero Section */
-      .hero-section {
-        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
-                  url("images/WhatsApp Image 2025-10-07 at 13.55.16_25f21e11.jpg");
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
+      /* HERO */
+      .ig-hero {
+        background: var(--charcoal-800);
         min-height: 100vh;
         display: flex;
-        align-items: center;
-        text-align: center;
-        position: relative;
-        margin: 0;
-        padding: 0;
-      }
-
-      .hero-section h1 {
-        font-size: 4rem;
-        font-weight: 800;
-        color: white;
-        margin-bottom: 1.5rem;
-        text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.8);
-        line-height: 1.1;
-      }
-
-      .hero-section .lead {
-        font-size: 1.5rem;
-        font-weight: 400;
-        color: white;
-        text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
-        margin-bottom: 2.5rem;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-        line-height: 1.6;
-      }
-
-      /* Modern Buttons */
-      .btn-modern {
-        padding: 15px 35px;
-        font-weight: 600;
-        border-radius: 50px;
-        border: none;
-        transition: var(--transition);
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 1.1rem;
-      }
-
-      .btn-primary-modern {
-        background: var(--primary);
-        color: white;
-      }
-
-      .btn-primary-modern:hover {
-        background: var(--primary-dark);
-        transform: translateY(-3px);
-        box-shadow: 0 10px 25px rgba(76, 175, 80, 0.3);
-        color: white;
-      }
-
-      .btn-outline-modern {
-        background: transparent;
-        color: white;
-        border: 2px solid white;
-      }
-
-      .btn-outline-modern:hover {
-        background: white;
-        color: var(--primary);
-        transform: translateY(-3px);
-        box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
-      }
-
-      /* Content Sections */
-      .content-section {
-        padding: 100px 0;
-      }
-
-      .section-title {
-        position: relative;
-        padding-bottom: 1rem;
-        margin-bottom: 3rem;
-        text-align: center;
-      }
-
-      .section-title h2 {
-        font-size: 2.8rem;
-        margin-bottom: 1rem;
-        font-weight: 700;
-      }
-
-      .section-title p {
-        font-size: 1.2rem;
-        color: var(--text-medium);
-        max-width: 600px;
-        margin: 0 auto;
-      }
-
-      .section-title::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 4px;
-        background: var(--primary);
-        border-radius: 2px;
-      }
-
-      /* Modern Mission Section */
-      .mission-section {
-        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-      }
-
-      .mission-image-container {
-        position: relative;
-        border-radius: 20px;
+        align-items: stretch;
+        padding-top: 80px;
         overflow: hidden;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-      }
-
-      .mission-image-container img {
-        width: 100%;
-        height: 500px;
-        object-fit: cover;
-      }
-
-      .mission-badge {
-        position: absolute;
-        bottom: 20px;
-        right: 20px;
-        background: var(--primary);
-        color: white;
-        padding: 12px 20px;
-        border-radius: 50px;
-        font-weight: 600;
-        font-size: 1rem;
-        box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
-      }
-
-      .mission-content h2 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-        color: var(--text-dark);
-      }
-
-      .mission-content p {
-        font-size: 1.3rem;
-        line-height: 1.8;
-        color: var(--text-medium);
-        margin-bottom: 2rem;
-      }
-
-      /* Modern Events Section */
-      .events-section {
-        background: white;
-      }
-
-      .event-card-modern {
-        border: none;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        transition: var(--transition);
-        height: 100%;
-        background: white;
         position: relative;
       }
-
-      .event-card-modern:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+      .ig-hero::before {
+        content: '';
+        position: absolute; inset: 0;
+        background: radial-gradient(ellipse at 20% 60%, rgba(46,125,82,0.18) 0%, transparent 60%);
+        pointer-events: none;
       }
-
-      .event-date-modern {
-        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-        color: white;
-        padding: 20px;
-        text-align: center;
-        position: relative;
+      .ig-hero-left {
+        display: flex; flex-direction: column; justify-content: center;
+        padding: 4rem 3rem 4rem 4rem; position: relative; z-index: 2;
       }
-
-      .event-day {
-        display: block;
-        font-size: 2.5rem;
-        font-weight: 800;
-        line-height: 1;
-      }
-
-      .event-month {
-        display: block;
-        font-size: 1.1rem;
-        font-weight: 600;
-        opacity: 0.9;
-        text-transform: uppercase;
-      }
-
-      .event-badge-modern {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        background: white;
-        color: var(--primary);
-        padding: 8px 15px;
-        border-radius: 20px;
-        font-size: 0.8rem;
-        font-weight: 700;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-      }
-
-      .event-content {
-        padding: 2rem;
-      }
-
-      .event-title {
-        font-size: 1.4rem;
-        font-weight: 700;
-        color: var(--text-dark);
-        margin-bottom: 1rem;
-        line-height: 1.3;
-      }
-
-      .event-description {
-        color: var(--text-medium);
-        line-height: 1.6;
+      .ig-hero-eyebrow {
+        display: inline-flex; align-items: center; gap: 8px;
+        font-family: var(--font-display); font-size: 0.72rem; font-weight: 600;
+        letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold);
         margin-bottom: 1.5rem;
       }
+      .ig-hero-eyebrow::before {
+        content: ''; display: inline-block; width: 28px; height: 2px;
+        background: var(--gold); border-radius: 1px;
+      }
+      .ig-hero-title {
+        font-family: var(--font-display);
+        font-size: clamp(2.6rem, 4.5vw, 4.5rem);
+        font-weight: 900; color: white; line-height: 1.06;
+        letter-spacing: -0.04em; margin-bottom: 1.5rem;
+      }
+      .ig-hero-title em {
+        font-style: normal; color: var(--gold); position: relative;
+      }
+      .ig-hero-title em::after {
+        content: ''; position: absolute; bottom: 2px; left: 0; right: 0;
+        height: 3px; background: var(--gold); border-radius: 2px; opacity: 0.45;
+      }
+      .ig-hero-desc {
+        font-family: var(--font-body); font-size: 1.05rem;
+        color: rgba(255,255,255,0.68); line-height: 1.82;
+        margin-bottom: 2.5rem; max-width: 420px;
+      }
+      .ig-hero-btns { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+      .ig-btn-play {
+        display: inline-flex; align-items: center; gap: 10px;
+        font-family: var(--font-display); font-size: 0.88rem; font-weight: 600;
+        color: rgba(255,255,255,0.82); text-decoration: none; transition: color 0.2s;
+      }
+      .ig-btn-play:hover { color: var(--gold); }
+      .ig-btn-play-icon {
+        width: 44px; height: 44px; border-radius: 50%;
+        border: 2px solid rgba(255,255,255,0.38);
+        display: flex; align-items: center; justify-content: center;
+        transition: all 0.3s; font-size: 0.78rem; padding-left: 3px; color: white;
+      }
+      .ig-btn-play:hover .ig-btn-play-icon { background: var(--gold); border-color: var(--gold); }
 
-      .event-features {
-        display: flex;
-        gap: 0.5rem;
-        flex-wrap: wrap;
-        margin-bottom: 1.5rem;
+      /* Hero right */
+      .ig-hero-right { position: relative; overflow: hidden; padding: 0; }
+      .ig-hero-right .carousel,
+      .ig-hero-right .carousel-inner,
+      .ig-hero-right .carousel-item { height: 100%; min-height: 100vh; }
+      .ig-hero-right .carousel-item img {
+        width: 100%; height: 100%; object-fit: cover; object-position: center top;
+      }
+      .ig-hero-right .carousel-item::after {
+        content: ''; position: absolute; inset: 0;
+        background: linear-gradient(to right, var(--charcoal-800) 0%, transparent 28%);
+      }
+      .ig-hero-accent {
+        position: absolute; bottom: 2.5rem; right: 2rem; z-index: 4;
+        background: var(--gold); border-radius: var(--radius-md);
+        padding: 1.25rem 1.75rem; min-width: 160px;
+      }
+      .ig-hero-accent-num {
+        font-family: var(--font-display); font-size: 2.2rem; font-weight: 900;
+        color: var(--charcoal-800); line-height: 1;
+      }
+      .ig-hero-accent-label {
+        font-family: var(--font-display); font-size: 0.7rem; font-weight: 600;
+        letter-spacing: 0.08em; text-transform: uppercase; color: rgba(30,42,34,0.72); margin-top: 4px;
+      }
+      .ig-hero-right .carousel-control-prev,
+      .ig-hero-right .carousel-control-next {
+        width: 46px; height: 46px; top: auto; bottom: 2.5rem;
+        border-radius: 50%; background: rgba(255,255,255,0.14);
+        border: 1px solid rgba(255,255,255,0.25); backdrop-filter: blur(6px);
+        opacity: 0.9; transition: all 0.3s; transform: none; z-index: 5;
+      }
+      .ig-hero-right .carousel-control-prev { right: 12.5rem; left: auto; }
+      .ig-hero-right .carousel-control-next { right: 10.8rem; }
+      .ig-hero-right .carousel-control-prev:hover,
+      .ig-hero-right .carousel-control-next:hover { background: var(--primary-color); border-color: var(--primary-color); opacity: 1; }
+      .ig-hero-right .carousel-indicators { bottom: 3rem; left: 1.5rem; right: auto; margin: 0; z-index: 5; }
+      .ig-hero-right .carousel-indicators [data-bs-target] {
+        width: 8px; height: 8px; border-radius: 50%; opacity: 0.5; background: white; border: 0; transition: all 0.3s;
+      }
+      .ig-hero-right .carousel-indicators .active { opacity: 1; width: 24px; border-radius: 4px; background: var(--gold); }
+
+      @media (max-width: 991.98px) {
+        .ig-hero { flex-direction: column; min-height: auto; }
+        .ig-hero-left { padding: 3rem 1.5rem 2rem; }
+        .ig-hero-right { min-height: 60vw; }
+        .ig-hero-right .carousel, .ig-hero-right .carousel-inner, .ig-hero-right .carousel-item { min-height: 60vw; height: 60vw; }
+        .ig-hero-right .carousel-item::after { background: none; }
+      }
+      @media (max-width: 575.98px) {
+        .ig-hero-left { padding: 2.5rem 1.25rem 1.5rem; }
+        .ig-hero-title { font-size: 2rem; }
+        .ig-hero-right { min-height: 72vw; }
+        .ig-hero-right .carousel, .ig-hero-right .carousel-inner, .ig-hero-right .carousel-item { min-height: 72vw; height: 72vw; }
       }
 
-      .feature-tag {
-        background: var(--primary-light);
-        color: var(--primary-dark);
-        padding: 6px 12px;
-        border-radius: 15px;
-        font-size: 0.8rem;
-        font-weight: 600;
+      /* QUICK LINKS */
+      .ig-quick-strip { background: white; }
+      .ig-quick-grid { display: grid; grid-template-columns: repeat(3,1fr); }
+      .ig-quick-card { position: relative; overflow: hidden; height: 200px; cursor: pointer; }
+      .ig-quick-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; filter: brightness(0.58); }
+      .ig-quick-card:hover img { transform: scale(1.08); filter: brightness(0.45); }
+      .ig-quick-overlay {
+        position: absolute; inset: 0;
+        background: linear-gradient(to top, rgba(15,26,20,0.85) 0%, rgba(15,26,20,0.3) 55%, transparent 100%);
+        display: flex; flex-direction: column; justify-content: flex-end;
+        padding: 1.4rem 1.5rem; transition: background 0.3s;
+      }
+      .ig-quick-card:hover .ig-quick-overlay { background: linear-gradient(to top, rgba(46,125,82,0.88) 0%, rgba(46,125,82,0.38) 55%, transparent 100%); }
+      .ig-quick-tag { font-family: var(--font-display); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+      .ig-quick-title { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; color: white; line-height: 1.3; margin: 0; }
+      .ig-quick-arrow {
+        position: absolute; top: 1rem; right: 1rem; width: 34px; height: 34px;
+        border-radius: 50%; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.3);
+        display: flex; align-items: center; justify-content: center;
+        color: white; font-size: 0.78rem; text-decoration: none; transition: all 0.3s;
+      }
+      .ig-quick-card:hover .ig-quick-arrow { background: var(--gold); border-color: var(--gold); transform: rotate(-45deg); }
+      @media (max-width: 767.98px) { .ig-quick-grid { grid-template-columns: 1fr; } .ig-quick-card { height: 150px; } }
+
+      /* PARTNERS */
+      .ig-partners { background: var(--charcoal-50); padding: 2.5rem 0; }
+      .ig-partners-label { font-family: var(--font-display); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-light); text-align: center; margin-bottom: 1.5rem; }
+      .ig-partners-grid { display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+      .ig-partner-item { display: flex; align-items: center; gap: 8px; font-family: var(--font-display); font-size: 0.85rem; font-weight: 700; color: var(--text-light); opacity: 0.6; transition: opacity 0.2s; white-space: nowrap; }
+      .ig-partner-item:hover { opacity: 1; color: var(--primary-color); }
+      .ig-partner-item i { font-size: 1.1rem; color: var(--primary-color); }
+
+      /* IMPACT */
+      .ig-impact { background: white; padding: 6rem 0; overflow: hidden; }
+      .ig-impact-media { position: relative; }
+      .ig-impact-main-img { width: 100%; height: 480px; object-fit: cover; border-radius: var(--radius-xl); display: block; box-shadow: var(--shadow-lg); }
+      .ig-impact-quote {
+        position: absolute; bottom: -2rem; left: -1.5rem;
+        background: white; border-radius: var(--radius-lg); padding: 1.5rem 1.75rem;
+        box-shadow: var(--shadow-lg); max-width: 270px; border-left: 4px solid var(--primary-color);
+      }
+      .ig-impact-quote p { font-family: var(--font-serif); font-style: italic; font-size: 0.88rem; color: var(--text-medium); line-height: 1.7; margin-bottom: 0.5rem; }
+      .ig-impact-quote-author { font-family: var(--font-display); font-size: 0.72rem; font-weight: 700; color: var(--primary-color); text-transform: uppercase; letter-spacing: 0.08em; }
+      .ig-impact-content { padding-left: 3rem; }
+      .ig-impact-gift-label { font-family: var(--font-display); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+      .ig-impact-title { font-family: var(--font-display); font-size: clamp(1.9rem, 3vw, 2.6rem); font-weight: 800; color: var(--text-dark); line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 1.25rem; }
+      .ig-impact-desc { font-size: 0.95rem; color: var(--text-light); line-height: 1.85; margin-bottom: 2rem; }
+      .ig-progress-item { margin-bottom: 1.5rem; }
+      .ig-progress-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
+      .ig-progress-label { font-family: var(--font-display); font-size: 0.88rem; font-weight: 600; color: var(--text-dark); }
+      .ig-progress-pct { font-family: var(--font-display); font-size: 0.88rem; font-weight: 700; color: var(--primary-color); }
+      .ig-progress-track { height: 8px; background: var(--charcoal-100); border-radius: 4px; overflow: hidden; }
+      .ig-progress-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--primary-color), var(--gold)); }
+      @media (max-width: 991.98px) {
+        .ig-impact-content { padding-left: 0; margin-top: 4rem; }
+        .ig-impact-main-img { height: 320px; }
+        .ig-impact-quote { left: 0; bottom: -1.5rem; }
       }
 
-      /* Impact Stats - Simplified */
-      .impact-stats {
-        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-        color: white;
-        padding: 80px 0;
-        text-align: center;
-      }
+      /* SOLUTIONS */
+      .ig-solutions { background: var(--charcoal-800); padding: 6rem 0; position: relative; overflow: hidden; }
+      .ig-solutions::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 20%, rgba(46,125,82,0.12) 0%, transparent 55%); pointer-events: none; }
+      .ig-solutions-eyebrow { font-family: var(--font-display); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+      .ig-solutions-title { font-family: var(--font-display); font-size: clamp(1.9rem, 3vw, 2.6rem); font-weight: 800; color: white; line-height: 1.15; letter-spacing: -0.03em; }
+      .ig-solutions-desc { font-size: 0.93rem; color: rgba(255,255,255,0.58); line-height: 1.8; }
+      .ig-sol-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.4s; height: 100%; }
+      .ig-sol-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(46,125,82,0.42); transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.28); }
+      .ig-sol-img { width: 100%; height: 200px; object-fit: cover; display: block; transition: transform 0.55s; filter: brightness(0.82) saturate(0.9); }
+      .ig-sol-card:hover .ig-sol-img { transform: scale(1.06); filter: brightness(0.95) saturate(1.05); }
+      .ig-sol-body { padding: 1.5rem; }
+      .ig-sol-title { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: white; margin-bottom: 0.6rem; line-height: 1.3; }
+      .ig-sol-text { font-size: 0.85rem; color: rgba(255,255,255,0.52); line-height: 1.7; margin: 0; }
 
-      .stat-item {
-        padding: 20px;
-      }
+      /* EVENTS */
+      .ig-events { background: var(--charcoal-50); padding: 6rem 0; }
 
-      .stat-number {
-        font-size: 3rem;
-        font-weight: 800;
-        margin-bottom: 0.5rem;
-        display: block;
-      }
+      /* STATS */
+      .ig-stats { background: linear-gradient(135deg, var(--charcoal-800) 0%, var(--charcoal-700) 100%); padding: 5rem 0; position: relative; overflow: hidden; }
+      .ig-stats::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 60% 50%, rgba(46,125,82,0.14) 0%, transparent 70%); pointer-events: none; }
+      .ig-stat-box { text-align: center; padding: 1.5rem 1rem; position: relative; }
+      .ig-stat-box::after { content: ''; position: absolute; right: 0; top: 20%; bottom: 20%; width: 1px; background: rgba(255,255,255,0.1); }
+      .ig-stat-box:last-child::after { display: none; }
+      .ig-stat-num { font-family: var(--font-display); font-size: clamp(2.4rem,4vw,3.5rem); font-weight: 900; color: white; line-height: 1; margin-bottom: 0.5rem; letter-spacing: -0.03em; }
+      .ig-stat-num span { color: var(--gold); }
+      .ig-stat-label { font-family: var(--font-display); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.58); }
 
-      .stat-label {
-        font-size: 1.1rem;
-        font-weight: 600;
-        opacity: 0.9;
-      }
-
-      /* Modern CTA Section */
-      .cta-section-modern {
-        background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-        color: white;
-        padding: 100px 0;
-        text-align: center;
-      }
-
-      .cta-section-modern h2 {
-        color: white;
-        font-size: 2.5rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .cta-section-modern p {
-        font-size: 1.2rem;
-        margin-bottom: 2.5rem;
-        opacity: 0.9;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      /* Responsive Design */
-      @media (max-width: 992px) {
-        .hero-section h1 {
-          font-size: 3rem;
-        }
-        
-        .hero-section .lead {
-          font-size: 1.3rem;
-        }
-        
-        .section-title h2 {
-          font-size: 2.3rem;
-        }
-        
-        .mission-content h2 {
-          font-size: 2rem;
-        }
-        
-        .mission-content p {
-          font-size: 1.1rem;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .hero-section {
-          background-attachment: scroll;
-          min-height: 80vh;
-          padding: 100px 0;
-        }
-        
-        .hero-section h1 {
-          font-size: 2.5rem;
-        }
-        
-        .hero-section .lead {
-          font-size: 1.2rem;
-        }
-        
-        .content-section {
-          padding: 80px 0;
-        }
-        
-        .btn-modern {
-          padding: 12px 25px;
-          font-size: 1rem;
-        }
-        
-        .mission-image-container img {
-          height: 300px;
-        }
-      }
-
-      @media (max-width: 576px) {
-        .hero-section h1 {
-          font-size: 2rem;
-        }
-        
-        .hero-section .lead {
-          font-size: 1.1rem;
-        }
-        
-        .section-title h2 {
-          font-size: 2rem;
-        }
-        
-        .stat-number {
-          font-size: 2.5rem;
-        }
-      }
+      /* CTA */
+      .ig-cta { background: var(--primary-color); padding: 5.5rem 0; position: relative; overflow: hidden; text-align: center; }
+      .ig-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.08) 0%, transparent 60%); }
+      .ig-cta h2 { font-family: var(--font-display); font-size: clamp(1.9rem,3.5vw,2.8rem); font-weight: 800; color: white; letter-spacing: -0.03em; margin-bottom: 1rem; }
+      .ig-cta p { font-size: 1.05rem; color: rgba(255,255,255,0.8); margin-bottom: 2.5rem; max-width: 520px; margin-left: auto; margin-right: auto; }
+      .ig-btn-white { background: white; color: var(--primary-dark); font-family: var(--font-display); font-weight: 700; padding: 14px 36px; border-radius: 50px; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s; border: none; font-size: 0.92rem; }
+      .ig-btn-white:hover { background: var(--charcoal-800); color: white; transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,0,0,0.2); }
+      .ig-btn-outline-w { background: transparent; color: white; font-family: var(--font-display); font-weight: 600; padding: 13px 32px; border-radius: 50px; border: 2px solid rgba(255,255,255,0.6); text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s; font-size: 0.92rem; }
+      .ig-btn-outline-w:hover { background: white; color: var(--primary-dark); border-color: white; transform: translateY(-3px); }
     </style>
   </head>
   <body>
-    <!-- Navigation -->
+
+    <!-- NAVBAR -->
     <nav class="navbar">
       <div class="brand">
         <a href="index.html" class="logo-link">
@@ -412,13 +238,8 @@
         </a>
         <a href="#" class="brand-name">IGAT Club</a>
       </div>
-
-      <button class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-list">
-        ☰
-      </button>
-
+      <button class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-list">☰</button>
       <div class="nav-overlay" aria-hidden="true"></div>
-
       <div class="nav-container">
         <ul class="nav-list" id="nav-list" aria-hidden="true">
           <li class="nav-item active"><a href="index.html">Home</a></li>
@@ -439,77 +260,252 @@
       </div>
     </nav>
 
-    <!-- Modern Hero Section -->
-    <header class="hero-section" data-aos="fade-in">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 text-center">
-            <h1 data-aos="fade-up" data-aos-delay="200">Unlocking Potential Through Talent</h1>
-            <p data-aos="fade-up" data-aos-delay="300" class="lead">
-              Discover, Develop, and Showcase Your Hidden Talents
-            </p>
-            <div class="d-flex justify-content-center gap-3 flex-wrap" data-aos="fade-up" data-aos-delay="400">
-              <a href="programs.html" class="btn btn-primary-modern btn-modern">
-                Explore Programs <i class="fas fa-arrow-right"></i>
-              </a>
-              <a href="support.html" class="btn btn-outline-modern btn-modern">
-                Support Us
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
+    <!-- ═══ SECTION 1: SPLIT HERO ═══ -->
+    <section class="ig-hero">
+      <div class="container-fluid px-0 w-100">
+        <div class="row g-0 align-items-stretch" style="min-height:100vh">
 
-    <!-- Modern Mission Section -->
-    <section class="mission-section content-section">
-      <div class="container">
-        <div class="row align-items-center g-5">
-          <div class="col-lg-6" data-aos="fade-right">
-            <div class="mission-content">
-              <h2>Our Mission</h2>
-              <p>
-                To identify, nurture, and develop talents among students and youths, 
-                creating future stars and innovators who will transform society.
-              </p>
-              <div class="d-flex flex-wrap gap-3">
-                <a href="about.html" class="btn btn-primary-modern btn-modern">
-                  Learn More About Us <i class="fas fa-arrow-right"></i>
-                </a>
-                <a href="programs.html" class="btn btn-outline-modern btn-modern" style="color: var(--primary); border-color: var(--primary);">
-                  Our Programs
-                </a>
-              </div>
+          <!-- Left: headline -->
+          <div class="col-lg-5 ig-hero-left" data-aos="fade-right" data-aos-duration="800">
+            <span class="ig-hero-eyebrow">NGO · Talent Development</span>
+            <h1 class="ig-hero-title">
+              Unlocking <em>Potential</em><br>Through Talent
+            </h1>
+            <p class="ig-hero-desc">
+              We identify, nurture, and champion the hidden talents of students
+              and youth — creating future stars who will transform our society.
+            </p>
+            <div class="ig-hero-btns">
+              <a href="support.html" class="btn btn-primary-modern btn-modern">
+                Support Us <i class="fas fa-arrow-right"></i>
+              </a>
+              <a href="showcase.html" class="ig-btn-play">
+                <span class="ig-btn-play-icon"><i class="fas fa-play"></i></span>
+                View Showcase
+              </a>
             </div>
           </div>
-          <div class="col-lg-6" data-aos="fade-left">
-            <div class="mission-image-container">
-              <img src="images/new pic (3).jpg" alt="Talent Show" />
-              <div class="mission-badge">
-                <i class="fas fa-star me-2"></i>Since 2018
+
+          <!-- Right: auto-carousel -->
+          <div class="col-lg-7 ig-hero-right">
+            <div id="heroMainCarousel" class="carousel slide h-100" data-bs-ride="carousel" data-bs-interval="4500">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroMainCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                <button type="button" data-bs-target="#heroMainCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroMainCarousel" data-bs-slide-to="2"></button>
               </div>
+              <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                  <img src="images/egekabu_1.jpg" alt="IGAT Talent Show" />
+                </div>
+                <div class="carousel-item h-100">
+                  <img src="images/egekabu_6.jpg" alt="Egekabu Experience" />
+                </div>
+                <div class="carousel-item h-100">
+                  <img src="images/peris_event(1).jpeg" alt="IGAT Students" />
+                </div>
+                <div class="carousel-item h-100">
+                  <img src="images/egekabu_6.jpg" alt="IGAT Students" />
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#heroMainCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#heroMainCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+            <!-- Floating badge -->
+            <div class="ig-hero-accent">
+              <div class="ig-hero-accent-num">500+</div>
+              <div class="ig-hero-accent-label">Students Engaged</div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Upcoming Events Section -->
-    <section class="events-section content-section">
+    <!-- ═══ SECTION 2: QUICK LINKS STRIP ═══ -->
+    <section class="ig-quick-strip">
+      <div class="ig-quick-grid">
+        <div class="ig-quick-card" data-aos="fade-up">
+          <img src="images/peris_event(1).jpeg" alt="Who We Are" />
+          <div class="ig-quick-overlay">
+            <span class="ig-quick-tag">Who We Are</span>
+            <h3 class="ig-quick-title">IGAT Community</h3>
+          </div>
+          <a href="about.html" class="ig-quick-arrow"><i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="ig-quick-card" data-aos="fade-up" data-aos-delay="100">
+          <img src="images/peris_egekabu(5).jpeg" alt="Volunteer" />
+          <div class="ig-quick-overlay">
+            <span class="ig-quick-tag">Volunteer</span>
+            <h3 class="ig-quick-title">Take Action Today</h3>
+          </div>
+          <a href="support.html" class="ig-quick-arrow"><i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="ig-quick-card" data-aos="fade-up" data-aos-delay="200">
+          <img src="images/peris_egekabu.jpeg" alt="Stories" />
+          <div class="ig-quick-overlay">
+            <span class="ig-quick-tag">Stories</span>
+            <h3 class="ig-quick-title">Building a Future in Talent</h3>
+          </div>
+          <a href="news.html" class="ig-quick-arrow"><i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SECTION 3: PARTNERS ═══ -->
+    <div class="ig-partners" data-aos="fade-up">
+      <p class="ig-partners-label">Non-Profit Partners &amp; Collaborators</p>
+      <div class="ig-partners-grid">
+        <span class="ig-partner-item"><i class="fas fa-university"></i> Kisii National Poly</span>
+        <span class="ig-partner-item"><i class="fas fa-graduation-cap"></i> KNP Talent Club</span>
+        <span class="ig-partner-item"><i class="fas fa-handshake"></i> ICT Authority</span>
+        <span class="ig-partner-item"><i class="fas fa-star"></i> Heartbeat of Style</span>
+        <span class="ig-partner-item"><i class="fas fa-globe-africa"></i> Youth Kenya</span>
+      </div>
+    </div>
+
+    <!-- ═══ SECTION 4: IMPACT / MISSION ═══ -->
+    <section class="ig-impact">
+      <div class="container">
+        <div class="row align-items-center g-5">
+
+          <div class="col-lg-5" data-aos="fade-right">
+            <div class="ig-impact-media">
+              <img src="images/egekabu_6.jpg" alt="IGAT Impact" class="ig-impact-main-img" />
+              <div class="ig-impact-quote">
+                <p>"This club changed my life. I found my confidence and my voice through performance art."</p>
+                <div class="ig-impact-quote-author">— IGAT Student, 2024</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7" data-aos="fade-left">
+            <div class="ig-impact-content">
+              <p class="ig-impact-gift-label">Our Impact at a Glance</p>
+              <h2 class="ig-impact-title">Helping Others Unlock Their World</h2>
+              <p class="ig-impact-desc">
+                We ensure that youth in underserved communities have access to life-changing
+                talent development — from mentorship and coaching to showcase platforms and
+                industry connections — before they graduate.
+              </p>
+              <div class="ig-progress-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="ig-progress-header">
+                  <span class="ig-progress-label">Talent Identification Rate</span>
+                  <span class="ig-progress-pct">82%</span>
+                </div>
+                <div class="ig-progress-track"><div class="ig-progress-fill" style="width:82%"></div></div>
+              </div>
+              <div class="ig-progress-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="ig-progress-header">
+                  <span class="ig-progress-label">Student Satisfaction</span>
+                  <span class="ig-progress-pct">96%</span>
+                </div>
+                <div class="ig-progress-track"><div class="ig-progress-fill" style="width:96%"></div></div>
+              </div>
+              <div class="ig-progress-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="ig-progress-header">
+                  <span class="ig-progress-label">Program Completion</span>
+                  <span class="ig-progress-pct">74%</span>
+                </div>
+                <div class="ig-progress-track"><div class="ig-progress-fill" style="width:74%"></div></div>
+              </div>
+              <div class="mt-3">
+                <a href="about.html" class="btn btn-outline-modern btn-modern">
+                  About Us <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SECTION 5: SOLUTIONS / PROGRAMS (DARK) ═══ -->
+    <section class="ig-solutions">
+      <div class="container">
+        <div class="row align-items-end mb-5">
+          <div class="col-lg-5" data-aos="fade-right">
+            <p class="ig-solutions-eyebrow">How We Help</p>
+            <h2 class="ig-solutions-title">Delivering Solutions<br>That Shape Futures</h2>
+          </div>
+          <div class="col-lg-6 offset-lg-1" data-aos="fade-left">
+            <p class="ig-solutions-desc">
+              We are a talent-focused NGO committed to creating sustainable impact in communities.
+              Through our programs, we empower the next generation with the tools to build a better future.
+            </p>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
+            <div class="ig-sol-card">
+              <img src="images/school(5).jpeg" alt="Talent Day" class="ig-sol-img" />
+              <div class="ig-sol-body">
+                <h4 class="ig-sol-title">IGAT Talent Day Showcase</h4>
+                <p class="ig-sol-text">Biannual flagship event where students perform and compete across music, dance, art, and innovation.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="ig-sol-card">
+              <img src="images/event(4).jpeg" alt="Workshops" class="ig-sol-img" />
+              <div class="ig-sol-body">
+                <h4 class="ig-sol-title">Talent Development Workshops</h4>
+                <p class="ig-sol-text">Monthly sessions led by industry professionals providing hands-on training and skill refinement.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="ig-sol-card">
+              <img src="images/egekabu_2.jpg" alt="Exchange" class="ig-sol-img" />
+              <div class="ig-sol-body">
+                <h4 class="ig-sol-title">College Exchange Programs</h4>
+                <p class="ig-sol-text">Quarterly inter-institutional visits fostering collaboration, exposure and national-level participation.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="ig-sol-card">
+              <img src="images/egekabu_6.jpg" alt="Mentorship" class="ig-sol-img" />
+              <div class="ig-sol-body">
+                <h4 class="ig-sol-title">Youth Mentorship Program</h4>
+                <p class="ig-sol-text">Free transformative mentorship connecting youth with experienced professionals across all fields.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5" data-aos="fade-up">
+          <a href="programs.html" class="btn btn-primary-modern btn-modern">
+            Explore All Programs <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SECTION 6: EVENTS ═══ -->
+    <section class="ig-events">
       <div class="container">
         <div class="row mb-5">
           <div class="col-12 text-center">
             <div class="section-title" data-aos="fade-up">
               <h2>Upcoming Events</h2>
-              <p>Don't miss out on our exciting upcoming events. Mark your calendar and join us!</p>
+              <p>Don't miss out on our exciting events. Mark your calendar and join us!</p>
             </div>
           </div>
         </div>
-
         <div class="row g-4">
-          <!-- Event 1 -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="event-card-modern">
+              <div class="event-img-wrap">
+                <img src="images/IMG-20250407-WA0457.jpg" alt="Youth Mentorship" />
+                <div class="event-img-fade"></div>
+              </div>
               <div class="event-date-modern">
                 <span class="event-day">21</span>
                 <span class="event-month">November</span>
@@ -517,10 +513,7 @@
               </div>
               <div class="event-content">
                 <h3 class="event-title">IGAT Youth Mentorship</h3>
-                <p class="event-description">
-                  Transformative mentorship program guiding young talents towards success. 
-                  Registration opens at 6:07 PM for this transformative journey.
-                </p>
+                <p class="event-description">Transformative mentorship program guiding young talents towards success. Limited slots available.</p>
                 <div class="event-features">
                   <span class="feature-tag">Limited Slots</span>
                   <span class="feature-tag">Free</span>
@@ -531,189 +524,169 @@
               </div>
             </div>
           </div>
-
-          <!-- Event 2 -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="event-card-modern">
-              <div class="event-date-modern" style="background: linear-gradient(135deg, #28a745 0%, #218838 100%);">
+              <div class="event-img-wrap">
+                <img src="images/IMG-20250407-WA0425.jpg" alt="Talent Search" />
+                <div class="event-img-fade"></div>
+              </div>
+              <div class="event-date-modern" style="background:linear-gradient(135deg,#28a745,#218838)">
                 <span class="event-day">31</span>
                 <span class="event-month">January</span>
-                <div class="event-badge-modern" style="background: white; color: #28a745;">Coming Soon</div>
+                <div class="event-badge-modern" style="background:white;color:#28a745">Coming Soon</div>
               </div>
               <div class="event-content">
                 <h3 class="event-title">IGAT Talent Search 2024</h3>
-                <p class="event-description">
-                  Discover your hidden talents in our annual talent search competition. 
-                  Showcase your skills and stand a chance to win amazing prizes.
-                </p>
+                <p class="event-description">Annual competition where students showcase skills for prizes, recognition and industry connections.</p>
                 <div class="event-features">
                   <span class="feature-tag">Prize Pool</span>
                   <span class="feature-tag">All Talents</span>
                 </div>
-                <a href="programs.html#upcoming-events" class="btn btn-primary-modern btn-modern w-100 justify-content-center" style="background: #28a745;">
+                <a href="programs.html#upcoming-events" class="btn btn-primary-modern btn-modern w-100 justify-content-center" style="background:#28a745">
                   <i class="fas fa-binoculars me-2"></i>Get Notified
                 </a>
               </div>
             </div>
           </div>
-
-          <!-- Event 3 -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="event-card-modern">
-              <div class="event-date-modern" style="background: linear-gradient(135deg, #ffc107 0%, #e0a800 100%); color: #212529;">
+              <div class="event-img-wrap">
+                <img src="images/IMG-20250407-WA0427.jpg" alt="More Events" />
+                <div class="event-img-fade"></div>
+              </div>
+              <div class="event-date-modern" style="background:linear-gradient(135deg,#b8973a,#8f6e1d)">
                 <span class="event-day">Multiple</span>
                 <span class="event-month">Dates</span>
-                <div class="event-badge-modern" style="background: #212529; color: #ffc107;">New Events</div>
+                <div class="event-badge-modern" style="background:white;color:#b8973a">New Events</div>
               </div>
               <div class="event-content">
-                <h3 class="event-title">More Exciting Events</h3>
-                <p class="event-description">
-                  We're constantly organizing new workshops, showcases, and talent 
-                  development sessions throughout the year.
-                </p>
+                <h3 class="event-title">Workshops &amp; Showcases</h3>
+                <p class="event-description">Constantly organized workshops, exchange programs and talent development sessions year-round.</p>
                 <div class="event-features">
                   <span class="feature-tag">Weekly Updates</span>
                   <span class="feature-tag">Exclusive</span>
                 </div>
-                <a href="programs.html#upcoming-events" class="btn btn-primary-modern btn-modern w-100 justify-content-center" style="background: #ffc107; color: #212529;">
+                <a href="programs.html#upcoming-events" class="btn btn-primary-modern btn-modern w-100 justify-content-center" style="background:#b8973a">
                   <i class="fas fa-bell me-2"></i>Subscribe
                 </a>
               </div>
             </div>
           </div>
         </div>
-
         <div class="text-center mt-5" data-aos="fade-up">
-          <a href="programs.html#upcoming-events" class="btn btn-outline-modern btn-modern" style="color: var(--primary); border-color: var(--primary);">
+          <a href="programs.html#upcoming-events" class="btn btn-outline-modern btn-modern">
             View All Upcoming Events <i class="fas fa-arrow-right ms-2"></i>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Simplified Impact Stats -->
-    <section class="impact-stats">
+    <!-- ═══ SECTION 7: STATS ═══ -->
+    <section class="ig-stats">
       <div class="container">
-        <div class="row">
-          <div class="col-md-3 col-6" data-aos="fade-up">
-            <div class="stat-item">
-              <span class="stat-number">500+</span>
-              <span class="stat-label">Students Engaged</span>
+        <div class="row g-0">
+          <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="0">
+            <div class="ig-stat-box">
+              <div class="ig-stat-num">500<span>+</span></div>
+              <div class="ig-stat-label">Students Engaged</div>
             </div>
           </div>
-          <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="stat-item">
-              <span class="stat-number">50+</span>
-              <span class="stat-label">Talents Identified</span>
+          <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="ig-stat-box">
+              <div class="ig-stat-num">50<span>+</span></div>
+              <div class="ig-stat-label">Talents Identified</div>
             </div>
           </div>
-          <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="stat-item">
-              <span class="stat-number">10+</span>
-              <span class="stat-label">Industry Partners</span>
+          <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="ig-stat-box">
+              <div class="ig-stat-num">10<span>+</span></div>
+              <div class="ig-stat-label">Industry Partners</div>
             </div>
           </div>
-          <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="stat-item">
-              <span class="stat-number">5+</span>
-              <span class="stat-label">Annual Events</span>
+          <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="ig-stat-box">
+              <div class="ig-stat-num">5<span>+</span></div>
+              <div class="ig-stat-label">Annual Events</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Modern Call to Action -->
-    <section class="cta-section-modern">
-      <div class="container">
-        <h2 data-aos="fade-up">Ready to Make a Difference?</h2>
-        <p data-aos="fade-up" data-aos-delay="100">
-          Support talented students by donating, volunteering or partnering with us.
-        </p>
-        <div class="d-flex justify-content-center gap-3 flex-wrap" data-aos="fade-up" data-aos-delay="200">
-          <a href="support.html" class="btn btn-primary-modern btn-modern">
-            Support Our Cause
+    <!-- ═══ SECTION 8: CTA ═══ -->
+    <section class="ig-cta" data-aos="fade-up">
+      <div class="container position-relative" style="z-index:2">
+        <h2>Ready to Make a Difference?</h2>
+        <p>Support talented students by donating, volunteering or partnering with us to shape the next generation.</p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+          <a href="support.html" class="ig-btn-white">
+            Support Our Cause <i class="fas fa-heart"></i>
           </a>
-          <a href="contact.html" class="btn btn-outline-modern btn-modern">
-            Contact Us
+          <a href="contact.html" class="ig-btn-outline-w">
+            Contact Us <i class="fas fa-arrow-right"></i>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="bg-dark text-white py-5">
       <div class="container">
         <div class="row">
           <div class="col-lg-4 mb-4 mb-lg-0">
             <h3 class="h4 mb-3">IGAT Club</h3>
-            <p>
-              Identifying and nurturing talents among students, youths creating
-              future stars.
-            </p>
+            <p>Identifying and nurturing talents among students and youth — creating future stars.</p>
             <div class="social-icons mt-4">
-              <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
-              <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
           </div>
           <div class="col-lg-2 mb-4 mb-lg-0">
             <h3 class="h4 mb-3">Quick Links</h3>
             <ul class="list-unstyled">
-              <li class="mb-2"><a href="index.html" class="text-white">Home</a></li>
-              <li class="mb-2"><a href="about.html" class="text-white">About</a></li>
-              <li class="mb-2"><a href="programs.html" class="text-white">Programs</a></li>
-              <li class="mb-2"><a href="news.html" class="text-white">News</a></li>
-              <li><a href="contact.html" class="text-white">Contact</a></li>
+              <li class="mb-2"><a href="index.html">Home</a></li>
+              <li class="mb-2"><a href="about.html">About</a></li>
+              <li class="mb-2"><a href="programs.html">Programs</a></li>
+              <li class="mb-2"><a href="news.html">News</a></li>
+              <li><a href="contact.html">Contact</a></li>
             </ul>
           </div>
           <div class="col-lg-3 mb-4 mb-lg-0">
             <h3 class="h4 mb-3">Contact Info</h3>
             <ul class="list-unstyled">
-              <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> I got a talent club</li>
-              <li class="mb-2"><i class="fas fa-phone me-2"></i> 0722 995 763/ 0729 669 820/ 0725 597 121</li>
-              <li class="mb-2"><i class="fas fa-envelope me-2"></i> bosiboriperis@gmail.com</li>
+              <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i>I Got a Talent Club</li>
+              <li class="mb-2"><i class="fas fa-phone me-2"></i>0722 995 763 / 0729 669 820</li>
+              <li class="mb-2"><i class="fas fa-envelope me-2"></i>bosiboriperis@gmail.com</li>
             </ul>
           </div>
           <div class="col-lg-3">
             <h3 class="h4 mb-3">Newsletter</h3>
-            <p>Subscribe to our newsletter for updates</p>
-            <form class="mb-3">
-              <div class="input-group">
-                <input type="email" class="form-control" placeholder="Your Email" />
-                <button class="btn btn-primary" type="submit">Subscribe</button>
-              </div>
-            </form>
+            <p>Subscribe for updates on events and programs.</p>
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Your Email" />
+              <button class="btn btn-primary" type="button">Subscribe</button>
+            </div>
           </div>
         </div>
-        <hr class="my-4 bg-light" />
+        <hr class="my-4" />
         <div class="row">
           <div class="col-md-6 text-center text-md-start">
-            <p class="small mb-0">&copy; 2023 IGAT Club. All rights reserved.</p>
+            <p class="small mb-0">&copy; 2024 IGAT Club. All rights reserved.</p>
           </div>
           <div class="col-md-6 text-center text-md-end">
-            <a href="privacy.html" class="text-white me-3 small">Privacy Policy</a>
-            <a href="terms.html" class="text-white small">Terms of Service</a>
+            <a href="privacy.html" class="me-3 small">Privacy Policy</a>
+            <a href="terms.html" class="small">Terms of Service</a>
           </div>
         </div>
       </div>
     </footer>
 
-    <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
     <script src="script.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init({
-        duration: 1000,
-        once: true,
-        disable: function() {
-          return window.innerWidth <= 768;
-        },
-      });
-    </script>
+    <script>AOS.init({ duration: 900, once: true, offset: 60 });</script>
     <script src="https://kit.fontawesome.com/7b3b6f1d2f.js" crossorigin="anonymous"></script>
   </body>
 </html>
